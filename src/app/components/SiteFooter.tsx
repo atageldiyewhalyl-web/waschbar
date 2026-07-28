@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Icon } from "./Icon";
 import { Logo } from "./Logo";
-import { contactInfo } from "../data/site-data";
+import { GoogleLogo } from "./GoogleLogo";
+import { SocialComingSoon } from "./SocialComingSoon";
+import { contactInfo, locations } from "../data/site-data";
 
 export function SiteFooter() {
   return (
@@ -13,9 +15,20 @@ export function SiteFooter() {
           Ludwigshafen. Sauber, schnell und einfach.
         </p>
         <div className="socials" aria-label="Social Links">
-          <span>◎</span>
-          <span>f</span>
-          <span>G</span>
+          <SocialComingSoon label="Instagram">
+            <Icon name="instagram" />
+          </SocialComingSoon>
+          <SocialComingSoon label="Facebook">
+            <Icon name="facebook" />
+          </SocialComingSoon>
+          <a
+            href={locations[0].mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Waschbar auf Google Maps öffnen"
+          >
+            <GoogleLogo />
+          </a>
         </div>
       </div>
       <div>
