@@ -44,7 +44,7 @@ export const locations: Location[] = [
       "https://www.google.com/maps?q=Waschbar%20Heidelberg%20GmbH%20Rohrbacher%20Str.%2083-85%2069115%20Heidelberg&output=embed",
     angle: "Ideal für Studierende, WGs und große Wochenwäsche.",
     longAngle:
-      "Waschbar Heidelberg liegt im Heidelberger Stadtgebiet und ist auf den Alltag von Studierenden und WGs ausgelegt: große Trommeln für den Wäscheberg mehrerer Mitbewohner, geöffnet bis 22 Uhr für alle, die erst nach der Vorlesung oder Schicht dazu kommen. Kein Warten auf einen freien Slot, keine Reservierung nötig.",
+      "Waschbar Heidelberg liegt im Heidelberger Stadtgebiet und ist auf den Alltag von Studierenden und WGs ausgelegt: große Trommeln für den Wäscheberg mehrerer Mitbewohner, bis Mitternacht geöffnet für alle, die erst spät nach der Vorlesung oder Schicht dazu kommen. Kein Warten auf einen freien Slot, keine Reservierung nötig.",
     audienceLabel: "Studierende, WGs & Alltagswäsche",
     transitCopy:
       "Der Standort liegt im Heidelberger Stadtgebiet und ist mit Bus und Bahn sowie zu Fuß erreichbar.",
@@ -76,7 +76,7 @@ export const locations: Location[] = [
       "https://maps.google.com/maps?f=q&source=s_q&hl=de&q=Waschbar%20Ludwigshafen%20GmbH&ll=49.49045,8.4376725&z=17&output=embed",
     angle: "Praktisch für Familien, Pendler und große Textilien.",
     longAngle:
-      "Waschbar Ludwigshafen bedient Familien und Pendler in Ludwigshafen am Rhein: praktisch, wenn Bettdecken, Handtücher oder der ganze Wochenwäscheberg anstehen. Moderne Maschinen, klare Preise und tägliche Öffnungszeiten von 06:00 bis 22:00 Uhr machen den Wäschetag planbar, ganz ohne Termin.",
+      "Waschbar Ludwigshafen bedient Familien und Pendler in Ludwigshafen am Rhein: praktisch, wenn Bettdecken, Handtücher oder der ganze Wochenwäscheberg anstehen. Moderne Maschinen, klare Preise und tägliche Öffnungszeiten von 06:00 bis 24:00 Uhr machen den Wäschetag planbar, ganz ohne Termin.",
     audienceLabel: "Familien, Pendler & Wochenwäsche",
     transitCopy:
       "Der Standort liegt an der Prinzregentenstraße in Ludwigshafen am Rhein und ist für Besuche aus dem Stadtgebiet gut erreichbar.",
@@ -100,7 +100,7 @@ export const locations: Location[] = [
       },
       {
         title: "Waschen & trocknen vor Ort",
-        copy: "Während die Maschine läuft, kurz einkaufen oder entspannen - der Standort in der Prinzregentenstraße ist täglich bis 22 Uhr geöffnet, auch nach einer späten Schicht.",
+        copy: "Während die Maschine läuft, kurz einkaufen oder entspannen - der Standort in der Prinzregentenstraße ist täglich bis Mitternacht geöffnet, auch nach einer späten Schicht.",
       },
       {
         title: "Sauber mitnehmen",
@@ -119,7 +119,7 @@ export const contactInfo = {
 export const trustItems: Array<[string, string]> = [
   ["Hygienisch & zuverlässig", "shield"],
   ["Nachhaltig & effizient", "leaf"],
-  ["Täglich 06-22 Uhr", "clock"],
+  ["Täglich 06-24 Uhr", "clock"],
 ];
 
 export const machineSizes: Array<[string, string]> = [
@@ -256,7 +256,7 @@ export function buildLocalBusinessJsonLd(location: Location) {
           "Sunday",
         ],
         opens: "06:00",
-        closes: "22:00",
+        closes: "24:00",
       },
     ],
     priceRange: "€€",

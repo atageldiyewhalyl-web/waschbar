@@ -79,7 +79,7 @@ export function LocationPageBody({
     },
     {
       question: `Wie sind die Öffnungszeiten bei Waschbar ${location.city}?`,
-      answer: "Täglich von 06:00 bis 22:00 Uhr geöffnet, auch an Sonn- und Feiertagen.",
+      answer: "Täglich von 06:00 bis 24:00 Uhr geöffnet, auch an Sonn- und Feiertagen.",
     },
     {
       question: `Wie komme ich zum Standort ${location.city}?`,
@@ -171,7 +171,7 @@ export function LocationPageBody({
               <p>{location.angle}</p>
               <div className="mobile-hero-status">
                 <OpeningStatus />
-                <span>Täglich 06-22 Uhr</span>
+                <span>Täglich 06-24 Uhr</span>
               </div>
             </article>
           </div>
@@ -208,7 +208,7 @@ export function LocationPageBody({
           <article>
             <Icon name="clock" />
             <span>Jetzt einplanen</span>
-            <strong><OpeningStatus /> Täglich 06:00 - 22:00 Uhr</strong>
+            <strong><OpeningStatus /> Täglich 06:00 - 24:00 Uhr</strong>
           </article>
           <article>
             <Icon name="washer" />
@@ -284,7 +284,7 @@ export function LocationPageBody({
                   <h3>Öffnungszeiten</h3>
                 </div>
                 <p>
-                  Täglich 06:00 - 22:00 Uhr
+                  Täglich 06:00 - 24:00 Uhr
                   <br />
                   Auch an Sonn- und Feiertagen geöffnet.
                 </p>
@@ -377,7 +377,7 @@ export function LocationPageBody({
                   <h3>Öffnungszeiten</h3>
                 </div>
                 <p>
-                  Täglich 06:00 - 22:00 Uhr
+                  Täglich 06:00 - 24:00 Uhr
                   <br />
                   Auch an Sonn- und Feiertagen geöffnet.
                 </p>

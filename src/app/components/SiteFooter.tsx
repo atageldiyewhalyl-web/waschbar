@@ -54,7 +54,7 @@ export function SiteFooter() {
         <h2>Kontakt</h2>
         <p>Heidelberg: Rohrbacher Str. 83-85</p>
         <p>Ludwigshafen: Prinzregentenstraße 60</p>
-        <p>Täglich 06:00 - 22:00 Uhr</p>
+        <p>Täglich 06:00 - 24:00 Uhr</p>
         <p>
           <a href={`tel:${contactInfo.phoneHref}`}>{contactInfo.phone}</a>
         </p>

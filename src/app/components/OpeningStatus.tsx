@@ -16,7 +16,7 @@ function getBerlinStatus(): Status {
   const minute = Number(parts.find((part) => part.type === "minute")?.value ?? 0);
   const minutesNow = hour * 60 + minute;
 
-  return minutesNow >= 6 * 60 && minutesNow < 22 * 60 ? "open" : "closed";
+  return minutesNow >= 6 * 60 && minutesNow < 24 * 60 ? "open" : "closed";
 }
 
 export function OpeningStatus() {

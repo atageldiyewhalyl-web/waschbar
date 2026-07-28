@@ -99,11 +99,11 @@ export default function Home() {
               Waschbar ist dein SB Waschsalon in Heidelberg und Ludwigshafen:
               moderne Waschmaschinen und Trockner, faire Preise und
               Self-Service für Alltagswäsche, Bettdecken und große Textilien
-              - täglich von 06:00 bis 22:00 Uhr geöffnet.
+              - täglich von 06:00 bis 24:00 Uhr geöffnet.
             </p>
             <div className="mobile-hero-status">
               <OpeningStatus />
-              <span>Täglich 06-22 Uhr</span>
+              <span>Täglich 06-24 Uhr</span>
             </div>
             <div className="hero-actions">
               <a className="button button-primary" href="#standorte">
@@ -161,7 +161,7 @@ export default function Home() {
               </p>
               <div className="mobile-hero-status">
                 <span className="status-pill" data-status="open">Geöffnet</span>
-                <span>Täglich 06-22 Uhr</span>
+                <span>Täglich 06-24 Uhr</span>
               </div>
             </article>
           </div>
@@ -188,7 +188,7 @@ export default function Home() {
                   <p>{location.street}</p>
                   <span>
                     <strong>Geöffnet</strong>
-                    <small>06-22 Uhr</small>
+                    <small>06-24 Uhr</small>
                   </span>
                 </div>
               </Link>
@@ -221,7 +221,7 @@ export default function Home() {
           <article>
             <Icon name="clock" />
             <span>Jetzt einplanen</span>
-            <strong><OpeningStatus /> Täglich 06:00 - 22:00 Uhr</strong>
+            <strong><OpeningStatus /> Täglich 06:00 - 24:00 Uhr</strong>
           </article>
           <article>
             <Icon name="washer" />
@@ -255,7 +255,7 @@ export default function Home() {
                   <p>{location.address}</p>
                   <div className="open-row">
                     <OpeningStatus />
-                    <strong>06:00 - 22:00 Uhr</strong>
+                    <strong>06:00 - 24:00 Uhr</strong>
                   </div>
                   <p className="location-angle">{location.angle}</p>
                   <div className="machine-row" aria-label="Maschinengrößen">
