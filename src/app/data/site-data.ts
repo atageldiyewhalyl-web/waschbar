@@ -36,7 +36,7 @@ export const locations: Location[] = [
     address: "Rohrbacher Str. 83-85, 69115 Heidelberg",
     latitude: 49.4007793,
     longitude: 8.6911677,
-    image: "/images/waschbar-location-heidelberg-entry.png",
+    image: "/images/waschbar-location-heidelberg-entry.webp",
     href: "/heidelberg",
     mapsUrl:
       "https://www.google.com/maps/place/Waschbar+Heidelberg+GmbH/@49.4007793,8.6885928,769m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797c1b59771ab9d:0xbdd656ab9faf321e!8m2!3d49.4007793!4d8.6911677!16s%2Fg%2F11zgwxfcvc",
@@ -69,7 +69,7 @@ export const locations: Location[] = [
     address: "Prinzregentenstraße 60, 67063 Ludwigshafen am Rhein",
     latitude: 49.49045,
     longitude: 8.4376725,
-    image: "/images/waschbar-location-ludwigshafen-premium.png",
+    image: "/images/waschbar-location-ludwigshafen-premium.webp",
     href: "/ludwigshafen",
     mapsUrl:
       "https://www.google.com/maps/place/Waschbar+Ludwigshafen+GmbH/@49.49045,8.4350976,767m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797cd859c2fece1:0x9942ef2d5e00add5!8m2!3d49.49045!4d8.4376725!16s%2Fg%2F11zh1wgnqd?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
@@ -143,7 +143,7 @@ export const priceItems: PriceItem[] = [
     animation: "/animations/laundry.json",
     featured: false,
     programPreview: {
-      image: "/images/waschbar-program-7kg-cropped.jpeg",
+      image: "/images/waschbar-program-7kg-cropped.webp",
       alt: "Waschprogramm-Auswahl am Terminal für die 7 kg Waschmaschine",
       placement: "right",
     },
@@ -160,7 +160,7 @@ export const priceItems: PriceItem[] = [
     animation: "/animations/washing-machine.json",
     featured: true,
     programPreview: {
-      image: "/images/waschbar-program-15kg-cropped.jpeg",
+      image: "/images/waschbar-program-15kg-cropped.webp",
       alt: "Waschprogramm-Auswahl am Terminal für die 15 kg Waschmaschine",
       placement: "left",
     },
@@ -194,7 +194,7 @@ export const reviews: Review[] = [
   {
     name: "Ali Yilmaz",
     initial: "A",
-    avatar: "/images/review-avatar-ali.png",
+    avatar: "/images/review-avatar-ali.webp",
     city: "Heidelberg-Bergheim",
     locationIndex: 0,
     age: "Student",
@@ -205,7 +205,7 @@ export const reviews: Review[] = [
   {
     name: "Mustafa Ulvi",
     initial: "M",
-    avatar: "/images/review-avatar-mustafa.png",
+    avatar: "/images/review-avatar-mustafa.webp",
     city: "Heidelberg-Rohrbach",
     locationIndex: 0,
     age: "Monteur",
@@ -216,7 +216,7 @@ export const reviews: Review[] = [
   {
     name: "Kayra Aktas",
     initial: "K",
-    avatar: "/images/review-avatar-kayra.png",
+    avatar: "/images/review-avatar-kayra.webp",
     city: "Heidelberg-Weststadt",
     locationIndex: 0,
     age: "WG",
@@ -227,7 +227,7 @@ export const reviews: Review[] = [
   {
     name: "Meryem Sahin",
     initial: "M",
-    avatar: "/images/review-avatar-ali.png",
+    avatar: "/images/review-avatar-ali.webp",
     city: "Heidelberg-Handschuhsheim",
     locationIndex: 0,
     age: "Familie",
@@ -238,7 +238,7 @@ export const reviews: Review[] = [
   {
     name: "Nour Al-Khatib",
     initial: "N",
-    avatar: "/images/review-avatar-mustafa.png",
+    avatar: "/images/review-avatar-mustafa.webp",
     city: "Heidelberg-Altstadt",
     locationIndex: 0,
     age: "Alltagswäsche",
@@ -249,7 +249,7 @@ export const reviews: Review[] = [
   {
     name: "Johanna Becker",
     initial: "J",
-    avatar: "/images/review-avatar-kayra.png",
+    avatar: "/images/review-avatar-kayra.webp",
     city: "Heidelberg-Kirchheim",
     locationIndex: 0,
     age: "Haustiere",
@@ -260,7 +260,7 @@ export const reviews: Review[] = [
   {
     name: "Emre Demir",
     initial: "E",
-    avatar: "/images/review-avatar-ali.png",
+    avatar: "/images/review-avatar-ali.webp",
     city: "Ludwigshafen-Mitte",
     locationIndex: 1,
     age: "Pendler",
@@ -271,7 +271,7 @@ export const reviews: Review[] = [
   {
     name: "Aylin Korkmaz",
     initial: "A",
-    avatar: "/images/review-avatar-mustafa.png",
+    avatar: "/images/review-avatar-mustafa.webp",
     city: "Ludwigshafen-Friesenheim",
     locationIndex: 1,
     age: "Familie",
@@ -282,7 +282,7 @@ export const reviews: Review[] = [
   {
     name: "Samir Haddad",
     initial: "S",
-    avatar: "/images/review-avatar-kayra.png",
+    avatar: "/images/review-avatar-kayra.webp",
     city: "Ludwigshafen-Hemshof",
     locationIndex: 1,
     age: "Reinigung",
@@ -293,7 +293,7 @@ export const reviews: Review[] = [
   {
     name: "Claudia Schneider",
     initial: "C",
-    avatar: "/images/review-avatar-ali.png",
+    avatar: "/images/review-avatar-ali.webp",
     city: "Ludwigshafen-Oggersheim",
     locationIndex: 1,
     age: "Große Wäsche",
@@ -304,7 +304,7 @@ export const reviews: Review[] = [
   {
     name: "Yusuf Karaca",
     initial: "Y",
-    avatar: "/images/review-avatar-mustafa.png",
+    avatar: "/images/review-avatar-mustafa.webp",
     city: "Ludwigshafen-Süd",
     locationIndex: 1,
     age: "Monteur",
@@ -315,7 +315,7 @@ export const reviews: Review[] = [
   {
     name: "Mina Alami",
     initial: "M",
-    avatar: "/images/review-avatar-kayra.png",
+    avatar: "/images/review-avatar-kayra.webp",
     city: "Ludwigshafen-Mundenheim",
     locationIndex: 1,
     age: "Alltag",
@@ -402,25 +402,25 @@ export const useCases = [
 export const mobileUseCaseStories = [
   {
     ...useCases[0],
-    image: "/images/waschbar-use-bedding-mobile-blue.png",
+    image: "/images/waschbar-use-bedding-mobile-blue.webp",
     icon: "stack",
     shortLabel: "Bettdecken",
   },
   {
     ...useCases[1],
-    image: "/images/waschbar-use-students-mobile-blue.png",
+    image: "/images/waschbar-use-students-mobile-blue.webp",
     icon: "basket",
     shortLabel: "WG-Wäsche",
   },
   {
     ...useCases[2],
-    image: "/images/waschbar-use-cleaning-mobile-blue.png",
+    image: "/images/waschbar-use-cleaning-mobile-blue.webp",
     icon: "shirt",
     shortLabel: "Reinigung",
   },
   {
     ...useCases[3],
-    image: "/images/waschbar-use-pets-mobile-blue.png",
+    image: "/images/waschbar-use-pets-mobile-blue.webp",
     icon: "paw",
     shortLabel: "Haustiere",
   },

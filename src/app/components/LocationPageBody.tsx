@@ -158,7 +158,7 @@ export function LocationPageBody({
               <Image src={location.image} alt="" fill priority sizes="100vw" />
               <Image
                 className="mobile-hero-speed-badge"
-                src="/images/waschbar-29min-badge.png"
+                src="/images/waschbar-29min-badge.webp"
                 alt=""
                 width={1254}
                 height={1254}
@@ -465,7 +465,7 @@ export function LocationPageBody({
         <section className="section use-case-section" id="waesche">
           <div className="use-case-scene">
             <Image
-              src="/images/waschbar-use-cases-scene-v2.png"
+              src="/images/waschbar-use-cases-scene-v2.webp"
               alt={`Waschbar ${location.city} mit Bettdecken, Wäschekorb, Sportkleidung und Sachen für Haustiere`}
               width={1672}
               height={941}
@@ -512,7 +512,7 @@ export function LocationPageBody({
           </div>
           <div className="feature-stage">
             <Image
-              src="/images/waschbar-pet-cleaning-section-v2.png"
+              src="/images/waschbar-pet-cleaning-section-v2.webp"
               alt={`Pet Station und Cleaning Station bei Waschbar ${location.city}`}
               fill
               sizes="100vw"
@@ -581,7 +581,7 @@ export function LocationPageBody({
             </div>
             <div className="kundenkarte-hero">
               <Image
-                src="/images/card.png"
+                src="/images/card.webp"
                 alt={`Waschbar Rabattkarte am Standort ${location.city} mit Waschmaschinen, Handtüchern und Waschmittel`}
                 fill
                 priority={false}
@@ -632,14 +632,14 @@ export function LocationPageBody({
               <div className="mobile-kundenkarte-savings">
                 <div className="mobile-kundenkarte-visual">
                   <Image
-                    src="/images/waschbar-kundenkarte-mobile-dashboard-bg.png"
+                    src="/images/waschbar-kundenkarte-mobile-dashboard-bg.webp"
                     alt="Moderne Waschmaschinen mit Handtuechern als Hintergrund fuer die Rabattkarte"
                     fill
                     sizes="100vw"
                   />
                   <Image
                     className="mobile-kundenkarte-card-image"
-                    src="/images/waschbar-kundenkarte-real-card.png"
+                    src="/images/waschbar-kundenkarte-real-card.webp"
                     alt="Waschbar Rabattkarte"
                     width={1535}
                     height={868}
@@ -709,7 +709,7 @@ export function LocationPageBody({
             <div className="faq-media-grid" aria-label={`Waschbar ${location.city} Eindrücke`}>
               <div className="faq-media-large">
                 <Image
-                  src="/images/waschbar-faq-entrance-real.jpeg"
+                  src="/images/waschbar-faq-entrance-real.webp"
                   alt={`Waschbar ${location.city} Innenraum mit Holzwand, Logo, Kassenautomat und Eingang`}
                   fill
                   sizes="(max-width: 900px) 100vw, 56vw"
@@ -717,7 +717,7 @@ export function LocationPageBody({
               </div>
               <div className="faq-media-small">
                 <Image
-                  src="/images/waschbar-faq-machines-real.jpeg"
+                  src="/images/waschbar-faq-machines-real.webp"
                   alt={`Waschbar ${location.city} Waschmaschinen mit Pet Station und Cleaning Station`}
                   fill
                   sizes="(max-width: 900px) 50vw, 26vw"
@@ -725,7 +725,7 @@ export function LocationPageBody({
               </div>
               <div className="faq-media-small">
                 <Image
-                  src="/images/waschbar-faq-dryers-real.jpeg"
+                  src="/images/waschbar-faq-dryers-real.webp"
                   alt={`Waschbar ${location.city} Trocknerwand mit Dry Bereich`}
                   fill
                   sizes="(max-width: 900px) 50vw, 26vw"
@@ -733,7 +733,7 @@ export function LocationPageBody({
               </div>
               <div className="faq-media-small">
                 <Image
-                  src="/images/waschbar-faq-storefront-real.jpeg"
+                  src="/images/waschbar-faq-storefront-real.webp"
                   alt={`Waschbar ${location.city} Eingang mit Leuchtschild`}
                   fill
                   sizes="(max-width: 900px) 50vw, 26vw"
@@ -741,7 +741,7 @@ export function LocationPageBody({
               </div>
               <div className="faq-media-small">
                 <Image
-                  src="/images/waschbar-faq-wash-wall-real.jpeg"
+                  src="/images/waschbar-faq-wash-wall-real.webp"
                   alt={`Waschbar ${location.city} Waschmaschinenreihe mit Wash-Beschriftung`}
                   fill
                   sizes="(max-width: 900px) 50vw, 26vw"

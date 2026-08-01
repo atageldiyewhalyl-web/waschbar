@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Waschsalon Ludwigshafen | Waschbar",
     description:
       "SB Waschsalon in Ludwigshafen am Rhein, Prinzregentenstraße 60. Moderne Maschinen, faire Preise, täglich 06:00-24:00 Uhr geöffnet.",
-    images: ["/images/waschbar-location-ludwigshafen-premium.png"],
+    images: ["/images/waschbar-location-ludwigshafen-premium.webp"],
     type: "website",
     url: absoluteUrl("/ludwigshafen"),
     locale: "de_DE",

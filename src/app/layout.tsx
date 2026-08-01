@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Waschsalon Heidelberg & Ludwigshafen | Waschbar",
     description:
       "Self-Service waschen und trocknen in Heidelberg und Ludwigshafen.",
-    images: ["/images/waschbar-hero-logo.png"],
+    images: ["/images/waschbar-hero-logo.webp"],
     type: "website",
     url: absoluteUrl("/"),
     locale: "de_DE",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Waschsalon Heidelberg & Ludwigshafen | Waschbar",
     description:
       "Self-Service waschen und trocknen in Heidelberg und Ludwigshafen.",
-    images: ["/images/waschbar-hero-logo.png"],
+    images: ["/images/waschbar-hero-logo.webp"],
   },
 };
 

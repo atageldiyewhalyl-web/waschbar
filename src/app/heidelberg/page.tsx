@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Waschsalon Heidelberg | Waschbar",
     description:
       "SB Waschsalon in Heidelberg, Rohrbacher Str. 83-85. Moderne Maschinen, faire Preise, täglich 06:00-24:00 Uhr geöffnet.",
-    images: ["/images/waschbar-location-heidelberg-premium.png"],
+    images: ["/images/waschbar-location-heidelberg-premium.webp"],
     type: "website",
     url: absoluteUrl("/heidelberg"),
     locale: "de_DE",

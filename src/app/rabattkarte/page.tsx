@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "Rabattkarte im Waschsalon kaufen, Guthaben aufladen und bis zu 25% Bonusguthaben erhalten.",
     url: absoluteUrl("/rabattkarte"),
     type: "website",
-    images: ["/images/rabattkarte-hero-latest.png"],
+    images: ["/images/rabattkarte-hero-latest.webp"],
   },
 };
 
@@ -109,7 +109,7 @@ export default function RabattkartePage() {
 
         <div className="rabatt-hero-visual" aria-label="Waschbar Rabattkarte im Waschsalon">
           <Image
-            src="/images/rabattkarte-hero-latest.png"
+            src="/images/rabattkarte-hero-latest.webp"
             alt="Waschbar Logo an Holzlamellenwand"
             fill
             priority
@@ -121,7 +121,7 @@ export default function RabattkartePage() {
       <section className="rabatt-process section" id="ablauf">
         <div className="rabatt-process-visual">
           <Image
-            src="/images/rabattkarte-terminal-wall-realistic.png"
+            src="/images/rabattkarte-terminal-wall-realistic.webp"
             alt="Realistischer Waschbar Kassenautomat mit Waschmittelstation"
             width={1024}
             height={1536}

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "Moderne Maschinen, faire Preise und Self-Service in Heidelberg und Ludwigshafen.",
     url: absoluteUrl("/"),
     type: "website",
-    images: ["/images/waschbar-hero-background-v2.png"],
+    images: ["/images/waschbar-hero-background-v2.webp"],
   },
 };
 
@@ -56,7 +56,7 @@ function JsonLd() {
           "Waschbar betreibt moderne SB Waschsalons in Heidelberg und Ludwigshafen.",
         areaServed: ["Heidelberg", "Ludwigshafen am Rhein"],
         url: absoluteUrl("/"),
-        logo: absoluteUrl("/images/waschbar-logo-transparent.png"),
+        logo: absoluteUrl("/images/waschbar-logo-transparent.webp"),
         sameAs: locations.map((location) => location.mapsUrl),
       },
       {
@@ -129,7 +129,7 @@ export default function Home() {
           <div className="hero-media">
             <Image
               className="hero-base-image"
-              src="/images/waschbar-hero-background-v2.png"
+              src="/images/waschbar-hero-background-v2.webp"
               alt="Waschbar SB Waschsalon Logo an Holzlamellenwand mit Waschbar Tragetasche"
               fill
               priority
@@ -144,7 +144,7 @@ export default function Home() {
           <div className="mobile-static-hero-layer" aria-hidden="true">
             <div className="mobile-static-hero-image">
               <Image
-                src="/images/waschbar-hero-logo.png"
+                src="/images/waschbar-hero-logo.webp"
                 alt=""
                 fill
                 priority
@@ -152,7 +152,7 @@ export default function Home() {
               />
               <Image
                 className="mobile-hero-speed-badge"
-                src="/images/waschbar-29min-badge.png"
+                src="/images/waschbar-29min-badge.webp"
                 alt=""
                 width={1254}
                 height={1254}
@@ -320,7 +320,7 @@ export default function Home() {
         <section className="section use-case-section" id="waesche">
           <div className="use-case-scene">
             <Image
-              src="/images/waschbar-use-cases-scene-v2.png"
+              src="/images/waschbar-use-cases-scene-v2.webp"
               alt="Bettdecken, Wäschekorb, Reinigungsutensilien und Sachen für Haustiere vor blauem Hintergrund"
               width={1672}
               height={941}
@@ -363,7 +363,7 @@ export default function Home() {
           </div>
           <div className="feature-stage">
             <Image
-              src="/images/waschbar-pet-cleaning-section-v2.png"
+              src="/images/waschbar-pet-cleaning-section-v2.webp"
               alt="Waschmaschine mit Hund, Tierdecke und Reinigungsutensilien im modernen Waschbar Waschsalon"
               fill
               sizes="100vw"
@@ -452,7 +452,7 @@ export default function Home() {
             </div>
             <div className="kundenkarte-hero">
               <Image
-                src="/images/card.png"
+                src="/images/card.webp"
                 alt="Waschbar Rabattkarte mit Waschmaschinen, Handtuechern und Waschmittel"
                 fill
                 priority={false}
@@ -502,14 +502,14 @@ export default function Home() {
               <div className="mobile-kundenkarte-savings">
                 <div className="mobile-kundenkarte-visual">
                   <Image
-                    src="/images/waschbar-kundenkarte-mobile-dashboard-bg.png"
+                    src="/images/waschbar-kundenkarte-mobile-dashboard-bg.webp"
                     alt="Moderne Waschmaschinen mit Handtuechern als Hintergrund fuer die Rabattkarte"
                     fill
                     sizes="100vw"
                   />
                   <Image
                     className="mobile-kundenkarte-card-image"
-                    src="/images/waschbar-kundenkarte-real-card.png"
+                    src="/images/waschbar-kundenkarte-real-card.webp"
                     alt="Waschbar Rabattkarte"
                     width={1535}
                     height={868}

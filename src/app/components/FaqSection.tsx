@@ -32,7 +32,7 @@ export function FaqSection() {
         <div className="faq-media-grid" aria-label="Waschbar Eindrücke">
           <div className="faq-media-large">
             <Image
-              src="/images/waschbar-faq-entrance-real.jpeg"
+              src="/images/waschbar-faq-entrance-real.webp"
               alt="Waschbar Innenraum mit Holzwand, Logo, Kassenautomat und Eingang"
               fill
               sizes="(max-width: 900px) 100vw, 56vw"
@@ -40,7 +40,7 @@ export function FaqSection() {
           </div>
           <div className="faq-media-small">
             <Image
-              src="/images/waschbar-faq-machines-real.jpeg"
+              src="/images/waschbar-faq-machines-real.webp"
               alt="Waschbar Waschmaschinen mit Pet Station und Cleaning Station"
               fill
               sizes="(max-width: 900px) 50vw, 26vw"
@@ -48,7 +48,7 @@ export function FaqSection() {
           </div>
           <div className="faq-media-small">
             <Image
-              src="/images/waschbar-faq-dryers-real.jpeg"
+              src="/images/waschbar-faq-dryers-real.webp"
               alt="Waschbar Trocknerwand mit Dry Bereich"
               fill
               sizes="(max-width: 900px) 50vw, 26vw"

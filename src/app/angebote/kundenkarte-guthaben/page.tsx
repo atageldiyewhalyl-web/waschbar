@@ -66,7 +66,7 @@ export default function KundenkarteGuthabenPage() {
         <div className="campaign-hero-bg">
           <Image
             className="campaign-hero-bg-desktop"
-            src="/images/waschbar-rabattkarte-hero-wall.png"
+            src="/images/waschbar-rabattkarte-hero-wall.webp"
             alt=""
             fill
             priority
@@ -74,7 +74,7 @@ export default function KundenkarteGuthabenPage() {
           />
           <Image
             className="campaign-hero-bg-mobile"
-            src="/images/Waschbar angebot phone.png"
+            src="/images/Waschbar angebot phone.webp"
             alt=""
             fill
             priority
