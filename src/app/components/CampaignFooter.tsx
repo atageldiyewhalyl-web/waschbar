@@ -8,6 +8,7 @@ export function CampaignFooter() {
       <div className="campaign-footer-legal">
         <p>© {new Date().getFullYear()} Waschbar. Alle Rechte vorbehalten.</p>
         <nav aria-label="Rechtliches">
+          <Link href="/impressum">Impressum</Link>
           <Link href="/datenschutz">Datenschutz</Link>
         </nav>
       </div>

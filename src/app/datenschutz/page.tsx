@@ -60,10 +60,10 @@ export default function DatenschutzPage() {
 
           <article className="legal-article">
             <section>
-              <h2>1. Verantwortliche Stellen</h2>
+              <h2>1. Verantwortliche Stelle</h2>
               <p>
-                Verantwortlich für die Datenverarbeitung auf dieser Website sind die Betreiber
-                der beiden Waschbar Standorte:
+                Verantwortlich für die Datenverarbeitung auf dieser Website ist die
+                Waschbar Unternehmensgruppe GmbH, die beide Waschbar Standorte betreibt:
               </p>
               {locations.map((location) => (
                 <address key={location.slug} className="legal-address">
@@ -72,11 +72,13 @@ export default function DatenschutzPage() {
                   {location.street}
                   <br />
                   {location.postalCode} {location.addressLocality}
-                  <br />
-                  Die vollständigen Angaben zur Vertretung (Geschäftsführung) und zum
-                  Handelsregistereintrag finden Sie im Impressum {location.city}.
                 </address>
               ))}
+              <p>
+                Die vollständigen Angaben zur Vertretung (Geschäftsführung) und zum
+                Handelsregistereintrag finden Sie im{" "}
+                <a href="/impressum">Impressum</a>.
+              </p>
               <p>
                 Kontakt:
                 <br />
