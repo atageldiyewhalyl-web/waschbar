@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LocationPageBody } from "../components/LocationPageBody";
+import { absoluteUrl } from "../seo";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -17,6 +18,9 @@ export const metadata: Metadata = {
       "SB Waschsalon in Heidelberg, Rohrbacher Str. 83-85. Moderne Maschinen, faire Preise, täglich 06:00-24:00 Uhr geöffnet.",
     images: ["/images/waschbar-location-heidelberg-premium.png"],
     type: "website",
+    url: absoluteUrl("/heidelberg"),
+    locale: "de_DE",
+    siteName: "Waschbar",
   },
 };
 

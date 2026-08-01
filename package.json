@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.12",
+    "@supabase/supabase-js": "^2.111.0",
     "lottie-web": "^5.13.0",
     "next": "16.2.12",
     "react": "19.2.4",

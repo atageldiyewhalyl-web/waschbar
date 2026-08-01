@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "./Icon";
-import { GoogleLogo } from "./GoogleLogo";
+import { Logo } from "./Logo";
 import { LottieIcon } from "./LottieIcon";
 import { OpeningStatus } from "./OpeningStatus";
+import { ReviewMarqueeSection } from "./ReviewMarqueeSection";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 import { MobileStickyActions } from "./MobileStickyActions";
 import { MobileUseCarousel } from "./MobileUseCarousel";
+import { PriceCard } from "./PriceCard";
 import {
   locations,
   priceItems,
@@ -98,8 +100,8 @@ export function LocationPageBody({
         ]
       : []),
     {
-      question: `Gilt die Waschbar Kundenkarte auch in ${location.city}?`,
-      answer: `Ja. Die Waschbar Kundenkarte gilt an beiden Standorten und bringt dir 10% Rabatt auf jeden Waschgang und jede Trocknung.`,
+      question: `Gilt die Waschbar Rabattkarte auch in ${location.city}?`,
+      answer: `Ja. Die Waschbar Rabattkarte gilt an beiden Standorten. Du lädst Guthaben auf und erhältst je nach Ladebetrag bis zu 25% Bonusguthaben.`,
     },
   ];
 
@@ -113,12 +115,7 @@ export function LocationPageBody({
         <div className="hero-sticky-wrap">
         <section className="hero">
           <div className="hero-copy">
-            <p className="eyebrow">SB Waschsalon {location.city}</p>
-            <h1>
-              Waschsalon {location.city}
-              <span>{location.audienceLabel}</span>
-            </h1>
-            <p className="hero-text">{location.longAngle}</p>
+            <h1 className="location-hero-title">Waschsalon {location.city}</h1>
             <div className="hero-actions">
               <a
                 className="button button-primary"
@@ -159,6 +156,14 @@ export function LocationPageBody({
           <div className="mobile-static-hero-layer" aria-hidden="true">
             <div className="mobile-static-hero-image">
               <Image src={location.image} alt="" fill priority sizes="100vw" />
+              <Image
+                className="mobile-hero-speed-badge"
+                src="/images/waschbar-29min-badge.png"
+                alt=""
+                width={1254}
+                height={1254}
+                priority
+              />
             </div>
           </div>
           <div className="mobile-static-hero-content">
@@ -194,9 +199,9 @@ export function LocationPageBody({
         </section>
 
         <MobileStickyActions
-          primaryLabel="Route planen"
-          primaryHref={location.mapsUrl}
-          primaryExternal
+          primaryLabel="10 € Gratis sichern"
+          primaryHref="/angebote/kundenkarte-guthaben"
+          primaryIcon="gift"
           phoneHref={`tel:${contactInfo.phoneHref}`}
           mapsHref={location.mapsUrl}
         />
@@ -206,12 +211,12 @@ export function LocationPageBody({
           aria-label={`${location.name} Standort- und Serviceversprechen`}
         >
           <article>
-            <Icon name="clock" />
+            <LottieIcon src="/animations/wait.json" label="Uhr Animation" />
             <span>Jetzt einplanen</span>
-            <strong><OpeningStatus /> Täglich 06:00 - 24:00 Uhr</strong>
+            <strong>Täglich 06:00 - 24:00 Uhr</strong>
           </article>
           <article>
-            <Icon name="washer" />
+            <LottieIcon src="/animations/washing-machine.json" label="Waschmaschine Animation" />
             <span>Self-Service</span>
             <strong>Waschen und trocknen direkt vor Ort</strong>
           </article>
@@ -220,6 +225,18 @@ export function LocationPageBody({
             <span>Adresse</span>
             <strong>{location.address}</strong>
           </article>
+        </section>
+
+        <section className="section seo-intro">
+          <div className="seo-intro-logo">
+            <Logo />
+          </div>
+          <h2>
+            Waschsalon {location.city}
+            <br />
+            {location.audienceLabel}
+          </h2>
+          <p>{location.longAngle}</p>
         </section>
 
         {location.processSteps && (
@@ -306,30 +323,30 @@ export function LocationPageBody({
             </div>
             <div className="mobile-overview-strip">
               <div>
-                <Icon name="shield" />
+                <LottieIcon src="/animations/wait.json" label="Ohne Termin Animation" />
                 <div>
                   <strong>Ohne Termin</strong>
                   <span>Einfach vorbeikommen.</span>
                 </div>
               </div>
               <div>
-                <Icon name="washer" />
+                <LottieIcon src="/animations/washing-machine-2.json" label="Große Trommeln Animation" />
                 <div>
                   <strong>Große Trommeln</strong>
                   <span>Bis 15 kg waschen.</span>
                 </div>
               </div>
               <div>
-                <Icon name="drop" />
+                <LottieIcon src="/animations/laundry-2.json" label="Self-Service Animation" />
                 <div>
                   <strong>Self-Service</strong>
                   <span>Selbst erledigen.</span>
                 </div>
               </div>
               <div>
-                <Icon name="card" />
+                <LottieIcon src="/animations/credit-card-2.json" label="Rabattkarte Animation" />
                 <div>
-                  <strong>Kundenkarte</strong>
+                  <strong>Rabattkarte</strong>
                   <span>Bargeldlos zahlen.</span>
                 </div>
               </div>
@@ -400,30 +417,30 @@ export function LocationPageBody({
           </div>
           <div className="overview-strip">
             <div>
-              <Icon name="shield" />
+              <LottieIcon src="/animations/wait.json" label="Ohne Termin Animation" />
               <div>
                 <strong>Ohne Termin</strong>
                 <span>Einfach vorbeikommen und starten.</span>
               </div>
             </div>
             <div>
-              <Icon name="washer" />
+              <LottieIcon src="/animations/washing-machine-2.json" label="Große Trommeln Animation" />
               <div>
                 <strong>Große Trommeln</strong>
                 <span>Waschen bis 15 kg, direkt vor Ort trocknen.</span>
               </div>
             </div>
             <div>
-              <Icon name="drop" />
+              <LottieIcon src="/animations/laundry-2.json" label="Self-Service Animation" />
               <div>
                 <strong>Self-Service</strong>
                 <span>Waschen und trocknen selbst erledigen.</span>
               </div>
             </div>
             <div>
-              <Icon name="card" />
+              <LottieIcon src="/animations/credit-card-2.json" label="Rabattkarte Animation" />
               <div>
-                <strong>Kundenkarte</strong>
+                <strong>Rabattkarte</strong>
                 <span>Bargeldlos zahlen und Vorteile sichern.</span>
               </div>
             </div>
@@ -435,43 +452,23 @@ export function LocationPageBody({
           <h2>Klare Preise in {location.city}</h2>
           <p className="section-copy">
             Am Terminal wählst du die passende Maschine aus und siehst sofort,
-            ob sie frei ist. Die folgenden Preise orientieren sich an der
-            aktuellen Anzeige vor Ort.
+            ob sie frei ist. Mit der Waschbar Rabattkarte lädst du Guthaben auf
+            und erhältst je nach Ladebetrag bis zu 25% Bonusguthaben.
           </p>
           <div className="price-grid">
             {priceItems.map((item) => (
-              <article
-                className={item.featured ? "price-card price-card-featured" : "price-card"}
-                key={item.title}
-              >
-                <div className="price-card-top">
-                  <LottieIcon src={item.animation} label={`${item.title} Animation`} />
-                  {item.featured && <span>Beliebt für große Wäsche</span>}
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.subtitle}</p>
-                <div className="price-value">
-                  <strong>{item.price}</strong>
-                  <span>{item.meta}</span>
-                </div>
-              </article>
+              <PriceCard item={item} key={item.title} />
             ))}
           </div>
-          <p className="price-note">
-            <span aria-hidden="true">◆</span>
-            <span>
-              Waschmittel und Weichspüler werden am Terminal mit 0,00 € angezeigt. Maßgeblich ist immer die Anzeige am Standort.
-            </span>
-          </p>
         </section>
 
         <section className="section use-case-section" id="waesche">
           <div className="use-case-scene">
             <Image
-              src="/images/waschbar-use-cases-scene.png"
-              alt={`Waschbar ${location.city} mit Bettdecken, Wäschekorb, Sportkleidung und Haustiertextilien`}
-              width={1680}
-              height={945}
+              src="/images/waschbar-use-cases-scene-v2.png"
+              alt={`Waschbar ${location.city} mit Bettdecken, Wäschekorb, Sportkleidung und Sachen für Haustiere`}
+              width={1672}
+              height={941}
               sizes="100vw"
             />
             <div className="use-case-heading">
@@ -498,15 +495,24 @@ export function LocationPageBody({
 
         <section
           className="feature-band"
+          id="ausstattung"
           aria-label={`Pet Station und Cleaning Station in ${location.city}`}
         >
           <div className="mobile-feature-heading">
             <p className="section-kicker">Spezialstationen</p>
-            <h2>Extra sauber für besondere Textilien in {location.city}</h2>
+            <h2>Extra sauber für besondere Wäsche in {location.city}</h2>
+          </div>
+          <div className="feature-stage-intro">
+            <p className="section-kicker">Spezialstationen</p>
+            <h2>
+              Wir haben spezielle Maschinen, in denen du Tierdecken und
+              Reinigungsutensilien waschen kannst – so wird alles
+              hygienischer sauber.
+            </h2>
           </div>
           <div className="feature-stage">
             <Image
-              src="/images/waschbar-pet-cleaning-section.png"
+              src="/images/waschbar-pet-cleaning-section-v2.png"
               alt={`Pet Station und Cleaning Station bei Waschbar ${location.city}`}
               fill
               sizes="100vw"
@@ -523,7 +529,7 @@ export function LocationPageBody({
             {location.hasCleaningStation && (
               <article className="feature-panel feature-panel-cleaning">
                 <Icon name="shirt" />
-                <p className="section-kicker">Starke Textilien</p>
+                <p className="section-kicker">Reinigungsutensilien</p>
                 <h2>Cleaning Station</h2>
                 <p>{location.cleaningStationCopy}</p>
                 <a href="#preise">Mehr erfahren</a>
@@ -565,21 +571,23 @@ export function LocationPageBody({
         <section className="section kundenkarte" id="kundenkarte">
           <div className="kundenkarte-card">
             <div className="kundenkarte-heading">
-              <p className="section-kicker">Kundenkarte</p>
+              <p className="section-kicker">Rabattkarte</p>
               <h2>
-                10% Rabatt bei Waschbar
-                <span>{location.city}</span>
+                <span className="kundenkarte-heading-line">Bis zu 25% Ladebonus</span>
+                <span className="kundenkarte-heading-line kundenkarte-heading-accent">
+                  <span>bei Waschbar</span> {location.city}
+                </span>
               </h2>
             </div>
             <div className="kundenkarte-hero">
               <Image
-                src="/images/waschbar-kundenkarte-ai-section.png"
-                alt={`Waschbar Kundenkarte am Standort ${location.city} mit Waschmaschinen, Handtüchern und Waschmittel`}
+                src="/images/card.png"
+                alt={`Waschbar Rabattkarte am Standort ${location.city} mit Waschmaschinen, Handtüchern und Waschmittel`}
                 fill
                 priority={false}
                 sizes="100vw"
               />
-              <div className="kundenkarte-benefits" aria-label="Vorteile der Waschbar Kundenkarte">
+              <div className="kundenkarte-benefits" aria-label="Vorteile der Waschbar Rabattkarte">
                 <span>
                   <Icon name="card" />
                   <strong>Bargeldlos bezahlen</strong>
@@ -590,48 +598,55 @@ export function LocationPageBody({
                 </span>
               </div>
             </div>
-            <p className="kundenkarte-seo-text">
-              Die Waschbar Kundenkarte ist die praktische Bezahlkarte für unseren SB
-              Waschsalon in {location.city}. Einfach vor Ort aufladen und bargeldlos an
-              Waschmaschine, Trockner und Wertstoffautomat bezahlen – ganz ohne
-              Münzgeld oder App. Kundenkarten-Inhaber sparen dauerhaft 10% Rabatt auf
-              jeden Waschgang und jede Trocknung, und die Karte gilt genauso am
-              zweiten Waschbar Standort. Kostenlos erhältlich, sofort einsatzbereit
-              und jederzeit am Terminal wieder aufladbar.
-            </p>
+            <div className="kundenkarte-seo-text">
+              <p>
+                <strong>Deine Waschbar Rabattkarte.</strong> Mehr waschen.
+                Weniger zahlen.{" "}
+                Mit der Waschbar Rabattkarte sparst du bei jedem Waschgang und
+                jeder Trocknung automatisch über dein Bonusguthaben – direkt bei
+                Waschbar {location.city} und genauso am zweiten Standort. Du lädst
+                vor Ort Guthaben auf und zahlst am Terminal bargeldlos. Die Karte gibt es direkt im
+                Waschsalon: kein Abo, keine Anmeldung, keine App.
+              </p>
+              <div className="kundenkarte-page-action">
+                <Link className="button button-primary" href="/rabattkarte">
+                  Mehr zur Rabattkarte
+                </Link>
+              </div>
+            </div>
             <div className="mobile-kundenkarte-dashboard">
               <div className="mobile-kundenkarte-copy">
-                <p className="section-kicker">Kundenkarte</p>
+                <p className="section-kicker">Rabattkarte</p>
                 <h2>
-                  <span className="mobile-kundenkarte-title-line">10% sparen</span>
+                  <span className="mobile-kundenkarte-title-line">Bis zu 25%</span>
                   <span className="mobile-kundenkarte-title-line">bei Waschbar</span>
                   <span className="mobile-kundenkarte-title-line mobile-kundenkarte-title-accent">
                     {location.city}
                   </span>
                 </h2>
                 <p>
-                  Einmal Karte holen, Guthaben aufladen und bei jedem Waschgang
-                  in {location.city} automatisch sparen.
+                  Mehr waschen, weniger zahlen: Karte holen, Guthaben aufladen
+                  und in {location.city} automatisch Bonusguthaben erhalten.
                 </p>
               </div>
               <div className="mobile-kundenkarte-savings">
                 <div className="mobile-kundenkarte-visual">
                   <Image
                     src="/images/waschbar-kundenkarte-mobile-dashboard-bg.png"
-                    alt="Moderne Waschmaschinen mit Handtuechern als Hintergrund fuer die Kundenkarte"
+                    alt="Moderne Waschmaschinen mit Handtuechern als Hintergrund fuer die Rabattkarte"
                     fill
                     sizes="100vw"
                   />
                   <Image
                     className="mobile-kundenkarte-card-image"
                     src="/images/waschbar-kundenkarte-real-card.png"
-                    alt="Waschbar Kundenkarte"
-                    width={560}
-                    height={350}
+                    alt="Waschbar Rabattkarte"
+                    width={1535}
+                    height={868}
                   />
-                  <div className="mobile-kundenkarte-discount" aria-label="10 Prozent Rabatt">
-                    <strong>10%</strong>
-                    <span>Rabatt</span>
+                  <div className="mobile-kundenkarte-discount" aria-label="Bis zu 25 Prozent Ladebonus">
+                    <strong>25%</strong>
+                    <span>Bonus</span>
                   </div>
                 </div>
                 <div className="mobile-kundenkarte-benefits">
@@ -649,103 +664,21 @@ export function LocationPageBody({
                     </div>
                   ))}
                 </div>
-                <a className="mobile-kundenkarte-cta" href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
+                <Link className="mobile-kundenkarte-cta" href="/rabattkarte">
                   <Icon name="pin" />
-                  Kundenkarte in {location.city} holen
-                </a>
+                  Mehr zur Rabattkarte
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section review-section" id="bewertungen">
-          <div className="review-showcase">
-            <div className="review-visual">
-              <Image
-                src="/images/waschbar-reviews-laundry-scene.png"
-                alt={`Waschbar Waschsalon ${location.city} mit modernen Waschmaschinen`}
-                fill
-                sizes="(max-width: 980px) 100vw, 54vw"
-              />
-              <div className="review-visual-copy">
-                <p className="section-kicker">Bewertungen</p>
-                <h2>Kundenstimmen aus {location.city}</h2>
-                <p className="review-visual-subtitle">
-                  Echte Google Bewertungen aus {location.city}.
-                </p>
-                <span className="review-google-source">
-                  <GoogleLogo className="google-logo google-logo-large" />
-                  Google Bewertungen
-                </span>
-              </div>
-              <div className="review-proof-badge">
-                <Icon name="washer" />
-                <span>
-                  <strong>Sauber. Schnell. Selbstbedient.</strong>
-                  <small>{location.reviewProofLine}</small>
-                </span>
-              </div>
-            </div>
-            {cityReviews.length > 0 ? (
-              <div className="review-list" aria-label={`Google Bewertungen ${location.city}`}>
-                {cityReviews.map((review, index) => (
-                  <article
-                    className={index === 0 ? "review-card review-card-featured" : "review-card"}
-                    key={review.name}
-                  >
-                    <div className="review-card-top">
-                      <div className="reviewer">
-                        <Image
-                          src={review.avatar}
-                          alt={`Profilbild ${review.initial}`}
-                          width={52}
-                          height={52}
-                        />
-                        <div>
-                          <strong>{review.name}</strong>
-                          <small>{review.city}</small>
-                        </div>
-                      </div>
-                      <span className="google-badge" aria-label="Google Bewertung">
-                        <GoogleLogo className="google-logo" />
-                        Google
-                      </span>
-                    </div>
-                    <div className="review-stars-row">
-                      <span className="stars" aria-label="5 von 5 Sternen">★★★★★</span>
-                      <small>{review.age}</small>
-                    </div>
-                    <p>&ldquo;{review.quote}&rdquo;</p>
-                    <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                      Auf Google ansehen
-                    </a>
-                  </article>
-                ))}
-                <div className="review-actions">
-                  <a href={location.mapsUrl} target="_blank" rel="noopener noreferrer">
-                    Bewertungen {location.city} ansehen
-                  </a>
-                </div>
-              </div>
-            ) : (
-              <div className="no-reviews-card">
-                <p>
-                  Für Waschbar {location.city} liegen aktuell noch keine
-                  Google-Bewertungen vor. Warst du schon da? Teile deine
-                  Erfahrung auf Google.
-                </p>
-                <a
-                  className="button button-primary"
-                  href={location.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Bewertung abgeben <Icon name="pin" />
-                </a>
-              </div>
-            )}
-          </div>
-        </section>
+        <ReviewMarqueeSection
+          reviews={cityReviews}
+          title={`Beispielstimmen aus ${location.city}.`}
+          subtitle={`Stimmen rund um Waschbar ${location.city}: große Wäsche, Alltagswäsche und Spezialstationen.`}
+          mapsUrl={location.mapsUrl}
+        />
 
         <section className="section faq-section" id="faq">
           <div className="faq-showcase">
@@ -776,24 +709,40 @@ export function LocationPageBody({
             <div className="faq-media-grid" aria-label={`Waschbar ${location.city} Eindrücke`}>
               <div className="faq-media-large">
                 <Image
-                  src="/images/waschbar-faq-support-strip.png"
-                  alt={`Waschbar ${location.city} Innenraum mit Waschmaschinen, Handtüchern und Waschmittel`}
+                  src="/images/waschbar-faq-entrance-real.jpeg"
+                  alt={`Waschbar ${location.city} Innenraum mit Holzwand, Logo, Kassenautomat und Eingang`}
                   fill
                   sizes="(max-width: 900px) 100vw, 56vw"
                 />
               </div>
               <div className="faq-media-small">
                 <Image
-                  src="/images/waschbar-kundenkarte-real-product.png"
-                  alt="Waschbar Kundenkarte"
+                  src="/images/waschbar-faq-machines-real.jpeg"
+                  alt={`Waschbar ${location.city} Waschmaschinen mit Pet Station und Cleaning Station`}
                   fill
                   sizes="(max-width: 900px) 50vw, 26vw"
                 />
               </div>
               <div className="faq-media-small">
                 <Image
-                  src="/images/waschbar-use-cases-scene.png"
-                  alt="Wäschekorb mit großen Textilien im Waschsalon"
+                  src="/images/waschbar-faq-dryers-real.jpeg"
+                  alt={`Waschbar ${location.city} Trocknerwand mit Dry Bereich`}
+                  fill
+                  sizes="(max-width: 900px) 50vw, 26vw"
+                />
+              </div>
+              <div className="faq-media-small">
+                <Image
+                  src="/images/waschbar-faq-storefront-real.jpeg"
+                  alt={`Waschbar ${location.city} Eingang mit Leuchtschild`}
+                  fill
+                  sizes="(max-width: 900px) 50vw, 26vw"
+                />
+              </div>
+              <div className="faq-media-small">
+                <Image
+                  src="/images/waschbar-faq-wash-wall-real.jpeg"
+                  alt={`Waschbar ${location.city} Waschmaschinenreihe mit Wash-Beschriftung`}
                   fill
                   sizes="(max-width: 900px) 50vw, 26vw"
                 />

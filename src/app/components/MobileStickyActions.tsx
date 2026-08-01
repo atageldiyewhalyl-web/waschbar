@@ -4,6 +4,7 @@ type MobileStickyActionsProps = {
   primaryLabel: string;
   primaryHref: string;
   primaryExternal?: boolean;
+  primaryIcon?: string;
   phoneHref: string;
   mapsHref: string;
 };
@@ -12,6 +13,7 @@ export function MobileStickyActions({
   primaryLabel,
   primaryHref,
   primaryExternal = false,
+  primaryIcon = "pin",
   phoneHref,
   mapsHref,
 }: MobileStickyActionsProps) {
@@ -23,7 +25,7 @@ export function MobileStickyActions({
         target={primaryExternal ? "_blank" : undefined}
         rel={primaryExternal ? "noopener noreferrer" : undefined}
       >
-        <Icon name="pin" />
+        <Icon name={primaryIcon} />
         {primaryLabel}
       </a>
       <a

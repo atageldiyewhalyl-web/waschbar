@@ -6,10 +6,48 @@ import { locations } from "../data/site-data";
 
 export function VoucherForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setSubmitError("");
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const lead = {
+      firstName: String(formData.get("firstName") || "").trim(),
+      lastName: String(formData.get("lastName") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      street: String(formData.get("street") || "").trim(),
+      postalCode: String(formData.get("postalCode") || "").trim(),
+      city: String(formData.get("addressCity") || "").trim(),
+      location: String(formData.get("location") || "").trim(),
+      consentEmail: formData.get("consentEmail") === "on",
+      consentEmailMarketing: formData.get("consentEmailMarketing") === "on",
+      consentMarketing: formData.get("consentMarketing") === "on",
+      pageUrl: window.location.href,
+    };
+
+    try {
+      const response = await fetch("/api/voucher-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lead),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result?.ok !== true) {
+        throw new Error("Anfrage fehlgeschlagen");
+      }
+      setSubmitted(true);
+    } catch {
+      setSubmitError(
+        "Deine Anfrage konnte nicht gesendet werden. Bitte versuche es erneut.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -18,9 +56,9 @@ export function VoucherForm() {
         <Icon name="gift" />
         <h2>Fast geschafft!</h2>
         <p>
-          Sobald der Versand aktiv ist, erhältst du deinen Gutschein-Code
-          per E-Mail zugeschickt. Zeig ihn einfach in deinem Waschbar-Standort
-          vor, um deine Kundenkarte mit 6,50 € Startguthaben abzuholen.
+          Wir versenden deine Waschbar Rabattkarte mit 10 € Startguthaben an
+          die angegebene Adresse. Den Gutschein-Code schicken wir dir zusätzlich
+          per E-Mail zu.
         </p>
       </div>
     );
@@ -28,15 +66,47 @@ export function VoucherForm() {
 
   return (
     <form className="voucher-ticket-form" id="formular" onSubmit={handleSubmit}>
-      <h2>Jetzt anmelden</h2>
+      <h2>10 € Gratis-Guthaben sichern</h2>
+      <div className="voucher-field-row">
+        <label className="voucher-field">
+          <span>Vorname</span>
+          <input type="text" name="firstName" autoComplete="given-name" required />
+        </label>
+        <label className="voucher-field">
+          <span>Nachname</span>
+          <input type="text" name="lastName" autoComplete="family-name" required />
+        </label>
+      </div>
+      <div className="voucher-field-row">
+        <label className="voucher-field">
+          <span>E-Mail-Adresse</span>
+          <input type="email" name="email" autoComplete="email" required />
+        </label>
+        <label className="voucher-field">
+          <span>Mobilnummer</span>
+          <input type="tel" name="phone" autoComplete="tel" required />
+        </label>
+      </div>
       <label className="voucher-field">
-        <span>Vorname</span>
-        <input type="text" name="firstName" autoComplete="given-name" required />
+        <span>Straße und Hausnummer</span>
+        <input type="text" name="street" autoComplete="street-address" required />
       </label>
-      <label className="voucher-field">
-        <span>E-Mail-Adresse</span>
-        <input type="email" name="email" autoComplete="email" required />
-      </label>
+      <div className="voucher-field-row">
+        <label className="voucher-field">
+          <span>PLZ</span>
+          <input
+            type="text"
+            name="postalCode"
+            inputMode="numeric"
+            autoComplete="postal-code"
+            required
+          />
+        </label>
+        <label className="voucher-field">
+          <span>Stadt</span>
+          <input type="text" name="addressCity" autoComplete="address-level2" required />
+        </label>
+      </div>
       <label className="voucher-field">
         <span>Dein Standort</span>
         <select name="location" required defaultValue="">
@@ -54,7 +124,8 @@ export function VoucherForm() {
       <label className="voucher-checkbox">
         <input type="checkbox" name="consentEmail" required />
         <span>
-          Ich möchte den Gutschein per E-Mail erhalten. <strong>*</strong>
+          Ich möchte den Gutschein per E-Mail erhalten und meine Rabattkarte
+          per Post zugeschickt bekommen. <strong>*</strong>
         </span>
       </label>
       <label className="voucher-checkbox">
@@ -64,9 +135,24 @@ export function VoucherForm() {
           Google/Meta übermittelt werden.
         </span>
       </label>
+      <label className="voucher-checkbox">
+        <input type="checkbox" name="consentEmailMarketing" />
+        <span>
+          Ich möchte regelmäßig per E-Mail Angebote, Erinnerungen und Aktionen
+          von Waschbar erhalten. Ich kann mich jederzeit über den Abmeldelink
+          in jeder E-Mail abmelden.
+        </span>
+      </label>
 
-      <button className="button button-primary voucher-submit" type="submit">
-        6,50 € sichern <Icon name="gift" />
+      {submitError && <p className="voucher-error">{submitError}</p>}
+
+      <button
+        className="button button-primary voucher-submit"
+        type="submit"
+        disabled={submitting}
+      >
+        {submitting ? "Wird gesendet..." : "10 € Gratis-Guthaben sichern"}{" "}
+        <Icon name="gift" />
       </button>
       <p className="voucher-note">
         <strong>*</strong> Pflichtfeld. Ohne diese Einwilligung können wir dir

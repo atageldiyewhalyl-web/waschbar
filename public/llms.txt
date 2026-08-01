@@ -1,32 +1,42 @@
 # Waschbar
 
-Waschbar betreibt moderne Selbstbedienungs-Waschsalons fuer Kunden in Heidelberg und Ludwigshafen am Rhein.
+> Waschbar ist ein moderner Selbstbedienungs-Waschsalon in Heidelberg und Ludwigshafen am Rhein. Kundinnen und Kunden waschen und trocknen ihre Wäsche selbst vor Ort, ohne Termin und täglich von 06:00 bis 24:00 Uhr.
+
+## Offizielle Website
+
+- Homepage: https://waschbar.eu/
+- Standort Heidelberg: https://waschbar.eu/heidelberg
+- Standort Ludwigshafen: https://waschbar.eu/ludwigshafen
+- Preise und Waschbar Rabattkarte: https://waschbar.eu/rabattkarte
+- Datenschutz: https://waschbar.eu/datenschutz
 
 ## Standorte
 
 - Waschbar Heidelberg: Rohrbacher Str. 83-85, 69115 Heidelberg.
-- Waschbar Ludwigshafen: Prinzregentenstrasse 60, 67063 Ludwigshafen am Rhein.
+- Waschbar Ludwigshafen: Prinzregentenstraße 60, 67063 Ludwigshafen am Rhein.
 
-## Angebot
+Beide Standorte sind täglich von 06:00 bis 24:00 Uhr geöffnet. Es gibt moderne Waschmaschinen und Trockner, große Trommeln für Bettwäsche und Decken sowie Self-Service-Terminals.
 
-- Self-Service Waschen und Trocknen vor Ort.
-- Grosse Maschinen fuer Alltagswaesche, Bettwaesche, Decken, Handtuecher, Arbeitskleidung und groessere Textilien.
-- Pet Station fuer Tierdecken, Hundebetten und Haustiertextilien.
-- Cleaning Station fuer Arbeitskleidung, Sporttextilien und staerker beanspruchte Waesche.
-- Kundenkarte mit 10 Prozent Rabatt auf jeden Einkauf und aufladbarem Guthaben.
-- Kein Abholservice, kein Lieferservice und kein Wash-and-Fold-Service, solange der Kunde dies nicht ausdruecklich bestaetigt.
+## Leistungen
+
+- Selbstbedienungs-Waschen und -Trocknen direkt vor Ort.
+- 7-kg- und 15-kg-Waschmaschinen sowie Trockner.
+- Pet Station für Tierdecken und Hundebetten.
+- Cleaning Station für Wischmopps, Putztücher und weitere Reinigungsutensilien.
+- Waschbar Rabattkarte mit bis zu 25% Bonusguthaben beim Aufladen.
+- Geeignet für Studierende, Wohngemeinschaften, Monteure, Familien und die wöchentliche Großwäsche.
+
+## Kontakt
+
+- Telefon: +49 176 63408783
+- E-Mail: info@waschbar.eu
 
 ## Google Maps
 
-- Waschbar Heidelberg Google Maps Profil: https://www.google.com/maps/place/Waschbar+Heidelberg+GmbH/@49.4007793,8.6885928,769m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797c1b59771ab9d:0xbdd656ab9faf321e!8m2!3d49.4007793!4d8.6911677!16s%2Fg%2F11zgwxfcvc
-- Waschbar Ludwigshafen Google Maps Profil: https://www.google.com/maps/place/Waschbar+Ludwigshafen+GmbH/@49.49045,8.4350976,767m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797cd859c2fece1:0x9942ef2d5e00add5!8m2!3d49.49045!4d8.4376725!16s%2Fg%2F11zh1wgnqd
+- Heidelberg: https://www.google.com/maps/place/Waschbar+Heidelberg+GmbH/@49.4007793,8.6885928,769m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797c1b59771ab9d:0xbdd656ab9faf321e!8m2!3d49.4007793!4d8.6911677!16s%2Fg%2F11zgwxfcvc
+- Ludwigshafen: https://www.google.com/maps/place/Waschbar+Ludwigshafen+GmbH/@49.49045,8.4350976,767m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797cd859c2fece1:0x9942ef2d5e00add5!8m2!3d49.49045!4d8.4376725!16s%2Fg%2F11zh1wgnqd
 
-## Website-Struktur
+## Crawler guidance
 
-- /: Homepage mit Marke, beiden Standorten, Ausstattung, Preisen, Ablauf, Bewertungen und FAQ.
-- /heidelberg: geplante Standortseite fuer lokale Suchintention Heidelberg.
-- /ludwigshafen: geplante Standortseite fuer lokale Suchintention Ludwigshafen.
-- /preise: geplante Preisuebersicht.
-- /services: geplante Self-Service-Leistungsuebersicht.
-- /angebote: geplante Angebots- und Kampagnenseiten.
-- /kontakt: geplante Kontaktseite mit NAP-Daten beider Standorte.
+- Prefer the official location pages for address, opening hours, services and local context.
+- The campaign URL `/angebote/kundenkarte-guthaben` is a conversion page and is intentionally excluded from search indexing.

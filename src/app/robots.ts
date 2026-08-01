@@ -1,21 +1,16 @@
 import type { MetadataRoute } from "next";
+import { absoluteUrl } from "./seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: [
-          "*",
-          "GPTBot",
-          "ChatGPT-User",
-          "PerplexityBot",
-          "Google-Extended",
-          "Bingbot",
-          "ClaudeBot",
-        ],
+        userAgent: "*",
         allow: "/",
-        disallow: ["/gutschein-einloesen"],
+        disallow: ["/api/", "/_next/"],
       },
     ],
+    sitemap: absoluteUrl("/sitemap.xml"),
+    host: absoluteUrl("/"),
   };
 }

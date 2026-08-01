@@ -1,16 +1,20 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { LottieIcon } from "./components/LottieIcon";
+import { Logo } from "./components/Logo";
 import { OpeningStatus } from "./components/OpeningStatus";
 import { Icon } from "./components/Icon";
-import { GoogleLogo } from "./components/GoogleLogo";
 import { MobileUseCarousel } from "./components/MobileUseCarousel";
+import { PriceCard } from "./components/PriceCard";
+import { ReviewMarqueeSection } from "./components/ReviewMarqueeSection";
+import { FaqSection } from "./components/FaqSection";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 import { MobileStickyActions } from "./components/MobileStickyActions";
+import { absoluteUrl } from "./seo";
 import {
   locations,
-  trustItems,
   machineSizes,
   priceItems,
   reviews,
@@ -19,31 +23,26 @@ import {
   mobilePriceTeasers,
   mobileKundenkarteBenefits,
   contactInfo,
+  faqs,
 } from "./data/site-data";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-const faqs = [
-  {
-    question: "Ist Waschbar ein SB Waschsalon?",
-    answer:
-      "Ja. Waschbar ist ein Selbstbedienungs-Waschsalon. Du wäschst und trocknest deine Wäsche direkt vor Ort an modernen Maschinen.",
-    icon: "washer",
+export const metadata: Metadata = {
+  title: "Waschsalon Heidelberg & Ludwigshafen | Waschbar",
+  description:
+    "Waschbar ist dein moderner SB Waschsalon in Heidelberg und Ludwigshafen. Waschen, trocknen und große Wäsche täglich von 06:00 bis 24:00 Uhr.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Waschsalon Heidelberg & Ludwigshafen | Waschbar",
+    description:
+      "Moderne Maschinen, faire Preise und Self-Service in Heidelberg und Ludwigshafen.",
+    url: absoluteUrl("/"),
+    type: "website",
+    images: ["/images/waschbar-hero-background-v2.png"],
   },
-  {
-    question: "Kann ich große Textilien waschen?",
-    answer:
-      "Ja. Die großen Maschinen eignen sich für größere Wäschestücke wie Decken, Bettwäsche, Handtücher oder Arbeitskleidung.",
-    icon: "stack",
-  },
-  {
-    question: "Gibt es eine Waschbar Kundenkarte?",
-    answer:
-      "Ja. Mit der Kundenkarte erhältst du 10% Rabatt auf jeden Einkauf und kannst Guthaben für spätere Besuche aufladen.",
-    icon: "card",
-  },
-];
+};
 
 function JsonLd() {
   const schema = {
@@ -51,12 +50,22 @@ function JsonLd() {
     "@graph": [
       {
         "@type": "Organization",
+        "@id": `${absoluteUrl("/")}#organization`,
         name: "Waschbar",
         description:
           "Waschbar betreibt moderne SB Waschsalons in Heidelberg und Ludwigshafen.",
         areaServed: ["Heidelberg", "Ludwigshafen am Rhein"],
-        url: "/",
+        url: absoluteUrl("/"),
+        logo: absoluteUrl("/images/waschbar-logo-transparent.png"),
         sameAs: locations.map((location) => location.mapsUrl),
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${absoluteUrl("/")}#website`,
+        name: "Waschbar",
+        url: absoluteUrl("/"),
+        inLanguage: "de-DE",
+        publisher: { "@id": `${absoluteUrl("/")}#organization` },
       },
       {
         "@type": "FAQPage",
@@ -90,43 +99,38 @@ export default function Home() {
         <div className="hero-sticky-wrap">
         <section className="hero">
           <div className="hero-copy">
-            <p className="eyebrow">SB Waschsalon Heidelberg & Ludwigshafen</p>
             <h1>
-              Waschsalon Heidelberg
-              <span>Ludwigshafen</span>
+              Waschbar macht deinen Waschtag
+              <span>einfach, schnell und stressfrei.</span>
             </h1>
-            <p className="hero-text">
-              Waschbar ist dein SB Waschsalon in Heidelberg und Ludwigshafen:
-              moderne Waschmaschinen und Trockner, faire Preise und
-              Self-Service für Alltagswäsche, Bettdecken und große Textilien
-              - täglich von 06:00 bis 24:00 Uhr geöffnet.
-            </p>
             <div className="mobile-hero-status">
               <OpeningStatus />
               <span>Täglich 06-24 Uhr</span>
             </div>
             <div className="hero-actions">
-              <a className="button button-primary" href="#standorte">
-                Standort finden <Icon name="pin" />
+              <a className="button button-primary" href="/angebote/kundenkarte-guthaben">
+                10 € Gratis sichern <Icon name="gift" />
               </a>
-              <a className="button button-secondary" href="#preise">
+              <a className="hero-secondary-link" href="#preise">
                 Preise ansehen
               </a>
             </div>
-            <ul className="trust-list" aria-label="Waschbar Vorteile">
-              {trustItems.map(([label, icon]) => (
-                <li key={label}>
-                  <Icon name={icon} />
-                  {label}
-                </li>
-              ))}
-            </ul>
+            <div className="hero-stats" aria-label="Waschbar Kennzahlen">
+              <div>
+                <strong>2</strong>
+                <span>Standorte in der Region</span>
+              </div>
+              <div>
+                <strong>29 Min</strong>
+                <span>Ø Waschzeit pro Ladung</span>
+              </div>
+            </div>
           </div>
           <div className="hero-media">
             <Image
               className="hero-base-image"
-              src="/images/waschbar-hero-logo.png"
-              alt="Moderner Waschbar SB Waschsalon mit Holzlamellen, Eingang und Waschmaschinen"
+              src="/images/waschbar-hero-background-v2.png"
+              alt="Waschbar SB Waschsalon Logo an Holzlamellenwand mit Waschbar Tragetasche"
               fill
               priority
               sizes="100vw"
@@ -146,18 +150,25 @@ export default function Home() {
                 priority
                 sizes="100vw"
               />
+              <Image
+                className="mobile-hero-speed-badge"
+                src="/images/waschbar-29min-badge.png"
+                alt=""
+                width={1254}
+                height={1254}
+                priority
+              />
             </div>
           </div>
           <div className="mobile-static-hero-content">
             <article className="mobile-static-hero-panel">
-              <p className="eyebrow">Waschbar</p>
               <h1>
                 SB Waschsalon
                 <span>Heidelberg & Ludwigshafen</span>
               </h1>
               <p>
-                Moderne Maschinen, faire Preise und Self-Service für deine
-                Alltagswäsche, Decken und große Textilien.
+                Ideal für Studierende, Wohngemeinschaften, Monteure und die
+                wöchentliche Großwäsche für jedermann.
               </p>
               <div className="mobile-hero-status">
                 <span className="status-pill" data-status="open">Geöffnet</span>
@@ -211,28 +222,49 @@ export default function Home() {
         </section>
 
         <MobileStickyActions
-          primaryLabel="Standort finden"
-          primaryHref="#standorte"
+          primaryLabel="10 € Gratis sichern"
+          primaryHref="/angebote/kundenkarte-guthaben"
+          primaryIcon="gift"
           phoneHref={`tel:${contactInfo.phoneHref}`}
           mapsHref={locations[0].mapsUrl}
         />
 
         <section className="trust-proof" aria-label="Waschbar Standort- und Serviceversprechen">
           <article>
-            <Icon name="clock" />
+            <LottieIcon src="/animations/wait.json" label="Uhr Animation" />
             <span>Jetzt einplanen</span>
-            <strong><OpeningStatus /> Täglich 06:00 - 24:00 Uhr</strong>
+            <strong>Täglich 06:00 - 24:00 Uhr</strong>
           </article>
           <article>
-            <Icon name="washer" />
+            <LottieIcon src="/animations/washing-machine.json" label="Waschmaschine Animation" />
             <span>Self-Service</span>
             <strong>Waschen und trocknen direkt vor Ort</strong>
           </article>
           <article>
-            <Icon name="pin" />
-            <span>Zwei Standorte</span>
-            <strong>Heidelberg und Ludwigshafen</strong>
+            <LottieIcon src="/animations/coming-soon.json" label="Uhr Animation" />
+            <span>29 Minuten</span>
+            <strong>In nur 29 min zur sauberen Wäsche</strong>
           </article>
+        </section>
+
+        <section className="section seo-intro">
+          <div className="seo-intro-logo">
+            <Logo />
+          </div>
+          <h2>
+            SB Waschsalon
+            <br />
+            in Heidelberg &amp; Ludwigshafen
+          </h2>
+          <p>
+            Waschbar ist dein moderner Selbstbedienungs-Waschsalon in
+            Heidelberg und Ludwigshafen. An beiden Standorten erwarten dich
+            leistungsstarke Waschmaschinen und Trockner sowie faire Preise
+            und Self-Service. Ideal für Studierende, Wohngemeinschaften,
+            Monteure und die wöchentliche Großwäsche für jedermann. Kein
+            Termin, keine Wartezeit. Täglich von 06:00 bis 24:00 Uhr
+            geöffnet.
+          </p>
         </section>
 
         <section className="section location-section" id="standorte">
@@ -288,10 +320,10 @@ export default function Home() {
         <section className="section use-case-section" id="waesche">
           <div className="use-case-scene">
             <Image
-              src="/images/waschbar-use-cases-scene.png"
-              alt="Moderner Waschsalon mit Bettdecken, Wäschekorb, Sportkleidung und Haustiertextilien"
-              width={1680}
-              height={945}
+              src="/images/waschbar-use-cases-scene-v2.png"
+              alt="Bettdecken, Wäschekorb, Reinigungsutensilien und Sachen für Haustiere vor blauem Hintergrund"
+              width={1672}
+              height={941}
               sizes="100vw"
             />
             <div className="use-case-heading">
@@ -319,12 +351,20 @@ export default function Home() {
         <section className="feature-band" id="ausstattung" aria-label="Pet Station und Cleaning Station">
           <div className="mobile-feature-heading">
             <p className="section-kicker">Spezialstationen</p>
-            <h2>Extra sauber für besondere Textilien</h2>
+            <h2>Extra sauber für besondere Wäsche</h2>
+          </div>
+          <div className="feature-stage-intro">
+            <p className="section-kicker">Spezialstationen</p>
+            <h2>
+              Wir haben spezielle Maschinen, in denen du Tierdecken und
+              Reinigungsutensilien waschen kannst – so wird alles
+              hygienischer sauber.
+            </h2>
           </div>
           <div className="feature-stage">
             <Image
-              src="/images/waschbar-pet-cleaning-section.png"
-              alt="Pet Station und Cleaning Station im modernen Waschbar Waschsalon"
+              src="/images/waschbar-pet-cleaning-section-v2.png"
+              alt="Waschmaschine mit Hund, Tierdecke und Reinigungsutensilien im modernen Waschbar Waschsalon"
               fill
               sizes="100vw"
             />
@@ -332,14 +372,20 @@ export default function Home() {
               <Icon name="paw" />
               <p className="section-kicker">Spezialwäsche</p>
               <h2>Pet Station</h2>
-              <p>Für Tierdecken und Haustiertextilien.</p>
+              <p className="feature-panel-copy">
+                Für Hundedecken, Tierbetten und Textilien, die du getrennt von
+                deiner Alltagswäsche reinigen möchtest.
+              </p>
               <a href="#faq">Mehr erfahren</a>
             </article>
             <article className="feature-panel feature-panel-cleaning">
               <Icon name="shirt" />
-              <p className="section-kicker">Starke Textilien</p>
+              <p className="section-kicker">Reinigungsutensilien</p>
               <h2>Cleaning Station</h2>
-              <p>Für Arbeitskleidung und stark beanspruchte Wäsche.</p>
+              <p className="feature-panel-copy">
+                Für Wischmopps, Putztücher und weitere Reinigungsutensilien,
+                die hygienisch sauber werden sollen.
+              </p>
               <a href="#faq">Mehr erfahren</a>
             </article>
           </div>
@@ -377,57 +423,42 @@ export default function Home() {
 
         <section className="section price-section" id="preise">
           <p className="section-kicker">Preise</p>
-          <h2>Klare Preise für Waschen und Trocknen</h2>
+          <h2>
+            <span className="price-heading-line">Klare Preise für</span>{" "}
+            <span className="price-heading-line">Waschen und Trocknen</span>
+          </h2>
           <p className="section-copy">
             Am Terminal wählst du die passende Maschine aus und siehst sofort,
-            ob sie frei ist. Die folgenden Preise orientieren sich an der
-            aktuellen Anzeige vor Ort.
+            ob sie frei ist. Mit der Waschbar Rabattkarte lädst du Guthaben auf
+            und erhältst je nach Ladebetrag bis zu 25% Bonusguthaben.
           </p>
           <div className="price-grid">
             {priceItems.map((item) => (
-              <article
-                className={item.featured ? "price-card price-card-featured" : "price-card"}
-                key={item.title}
-              >
-                <div className="price-card-top">
-                  <LottieIcon src={item.animation} label={`${item.title} Animation`} />
-                  {item.featured && <span>Beliebt für große Wäsche</span>}
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.subtitle}</p>
-                <div className="price-value">
-                  <strong>{item.price}</strong>
-                  <span>{item.meta}</span>
-                </div>
-              </article>
+              <PriceCard item={item} key={item.title} />
             ))}
           </div>
-          <p className="price-note">
-            <span aria-hidden="true">◆</span>
-            <span>
-              Waschmittel und Weichspüler werden am Terminal mit 0,00 € angezeigt. Maßgeblich ist immer die Anzeige am Standort.
-            </span>
-          </p>
         </section>
 
         <section className="section kundenkarte" id="kundenkarte">
           <div className="kundenkarte-card">
             <div className="kundenkarte-heading">
-              <p className="section-kicker">Kundenkarte</p>
+              <p className="section-kicker">Rabattkarte</p>
               <h2>
-                10% Rabatt mit der
-                <span>Waschbar Kundenkarte</span>
+                <span className="kundenkarte-heading-line">Bis zu 25% Ladebonus mit der</span>
+                <span className="kundenkarte-heading-line kundenkarte-heading-accent">
+                  Waschbar Rabattkarte
+                </span>
               </h2>
             </div>
             <div className="kundenkarte-hero">
               <Image
-                src="/images/waschbar-kundenkarte-ai-section.png"
-                alt="Waschbar Kundenkarte mit Waschmaschinen, Handtuechern und Waschmittel"
+                src="/images/card.png"
+                alt="Waschbar Rabattkarte mit Waschmaschinen, Handtuechern und Waschmittel"
                 fill
                 priority={false}
                 sizes="100vw"
               />
-              <div className="kundenkarte-benefits" aria-label="Vorteile der Waschbar Kundenkarte">
+              <div className="kundenkarte-benefits" aria-label="Vorteile der Waschbar Rabattkarte">
                 <span>
                   <Icon name="card" />
                   <strong>Bargeldlos bezahlen</strong>
@@ -438,48 +469,54 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <p className="kundenkarte-seo-text">
-              Die Waschbar Kundenkarte ist die praktische Bezahlkarte für unseren SB
-              Waschsalon in Heidelberg und Ludwigshafen. Einfach an einem unserer
-              Standorte aufladen und bargeldlos an Waschmaschine, Trockner und
-              Wertstoffautomat bezahlen – ganz ohne Münzgeld oder App. Kundenkarten-Inhaber
-              sparen dauerhaft 10% Rabatt auf jeden Waschgang und jede Trocknung. Die
-              Karte ist kostenlos erhältlich, sofort einsatzbereit und lässt sich jederzeit
-              am Terminal vor Ort wieder aufladen.
-            </p>
+            <div className="kundenkarte-seo-text">
+              <p>
+                <strong>Deine Waschbar Rabattkarte.</strong> Mehr waschen.
+                Weniger zahlen.{" "}
+                Mit der Waschbar Rabattkarte sparst du bei jedem Waschgang und
+                jeder Trocknung automatisch über dein Bonusguthaben – egal ob
+                in Heidelberg oder Ludwigshafen. Du lädst vor Ort Guthaben auf
+                und zahlst direkt am Terminal bargeldlos. Die Karte gibt es direkt im Waschsalon:
+                kein Abo, keine Anmeldung, keine App.
+              </p>
+              <div className="kundenkarte-page-action">
+                <Link className="button button-primary" href="/rabattkarte">
+                  Mehr zur Rabattkarte
+                </Link>
+              </div>
+            </div>
             <div className="mobile-kundenkarte-dashboard">
               <div className="mobile-kundenkarte-copy">
-                <p className="section-kicker">Kundenkarte</p>
+                <p className="section-kicker">Rabattkarte</p>
                 <h2>
-                  <span className="mobile-kundenkarte-title-line">10% sparen</span>
-                  <span className="mobile-kundenkarte-title-line">mit der Waschbar</span>
+                  <span className="mobile-kundenkarte-title-line">Bis zu 25% mit der</span>
                   <span className="mobile-kundenkarte-title-line mobile-kundenkarte-title-accent">
-                    Kundenkarte
+                    Waschbar Rabattkarte
                   </span>
                 </h2>
                 <p>
-                  Einmal Karte holen, Guthaben aufladen und bei jedem Waschgang
-                  automatisch sparen.
+                  Mehr waschen, weniger zahlen: Hol dir die Rabattkarte, lade
+                  Guthaben auf und erhalte automatisch bis zu 25 % Bonusguthaben.
                 </p>
               </div>
               <div className="mobile-kundenkarte-savings">
                 <div className="mobile-kundenkarte-visual">
                   <Image
                     src="/images/waschbar-kundenkarte-mobile-dashboard-bg.png"
-                    alt="Moderne Waschmaschinen mit Handtuechern als Hintergrund fuer die Kundenkarte"
+                    alt="Moderne Waschmaschinen mit Handtuechern als Hintergrund fuer die Rabattkarte"
                     fill
                     sizes="100vw"
                   />
                   <Image
                     className="mobile-kundenkarte-card-image"
                     src="/images/waschbar-kundenkarte-real-card.png"
-                    alt="Waschbar Kundenkarte"
-                    width={560}
-                    height={350}
+                    alt="Waschbar Rabattkarte"
+                    width={1535}
+                    height={868}
                   />
-                  <div className="mobile-kundenkarte-discount" aria-label="10 Prozent Rabatt">
-                    <strong>10%</strong>
-                    <span>Rabatt</span>
+                  <div className="mobile-kundenkarte-discount" aria-label="Bis zu 25 Prozent Ladebonus">
+                    <strong>25%</strong>
+                    <span>Bonus</span>
                   </div>
                 </div>
                 <div className="mobile-kundenkarte-benefits">
@@ -497,97 +534,21 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <a className="mobile-kundenkarte-cta" href="#standorte">
+                <Link className="mobile-kundenkarte-cta" href="/rabattkarte">
                   <Icon name="pin" />
-                  Kundenkarte im Salon holen
-                </a>
+                  Mehr zur Rabattkarte
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section review-section" id="bewertungen">
-          <div className="review-showcase">
-            <div className="review-visual">
-              <Image
-                src="/images/waschbar-reviews-laundry-scene.png"
-                alt="Waschbar Waschsalon mit modernen Waschmaschinen"
-                fill
-                sizes="(max-width: 980px) 100vw, 54vw"
-              />
-              <div className="review-visual-copy">
-                <p className="section-kicker">Bewertungen</p>
-                <h2>Kundenstimmen</h2>
-                <p className="review-visual-subtitle">
-                  Echte Google Bewertungen aus Heidelberg.
-                </p>
-                <span className="review-google-source">
-                  <GoogleLogo className="google-logo google-logo-large" />
-                  Google Bewertungen
-                </span>
-              </div>
-              <div className="review-proof-badge">
-                <Icon name="washer" />
-                <span>
-                  <strong>Sauber. Schnell. Selbstbedient.</strong>
-                  <small>Moderne Maschinen in Heidelberg und Ludwigshafen.</small>
-                </span>
-              </div>
-            </div>
-            <div className="review-list" aria-label="Google Bewertungen">
-              {reviews.map((review, index) => {
-                const location = locations[review.locationIndex];
-
-                return (
-                  <article
-                    className={index === 0 ? "review-card review-card-featured" : "review-card"}
-                    key={review.name}
-                  >
-                    <div className="review-card-top">
-                      <div className="reviewer">
-                        <Image
-                          src={review.avatar}
-                          alt={`Profilbild ${review.initial}`}
-                          width={52}
-                          height={52}
-                        />
-                        <div>
-                          <strong>{review.name}</strong>
-                          <small>{review.city}</small>
-                        </div>
-                      </div>
-                      <span className="google-badge" aria-label="Google Bewertung">
-                        <GoogleLogo className="google-logo" />
-                        Google
-                      </span>
-                    </div>
-                    <div className="review-stars-row">
-                      <span className="stars" aria-label="5 von 5 Sternen">★★★★★</span>
-                      <small>{review.age}</small>
-                    </div>
-                    <p>&ldquo;{review.quote}&rdquo;</p>
-                    <a
-                      href={location.mapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Auf Google ansehen
-                    </a>
-                  </article>
-                );
-              })}
-              <div className="review-actions">
-                <a
-                  href={locations[0].mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Bewertungen Heidelberg ansehen
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ReviewMarqueeSection
+          reviews={reviews}
+          title="Beispielstimmen aus dem Waschsalon."
+          subtitle="Stimmen aus Heidelberg, Ludwigshafen und der Rhein-Neckar-Region."
+          mapsUrl={locations[0].mapsUrl}
+        />
 
         <section className="maps-proof section" id="kontakt">
           <div className="maps-proof-copy">
@@ -632,82 +593,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section faq-section" id="faq">
-          <div className="faq-showcase">
-            <div className="faq-copy">
-              <p className="section-kicker">FAQ</p>
-              <h2>Häufige Fragen</h2>
-              <span className="section-rule" aria-hidden="true" />
-              <h3>Alles Wichtige vor deinem Besuch</h3>
-              <p>
-                Hier findest du Antworten auf die häufigsten Fragen rund um
-                unseren SB-Waschsalon, unsere Services und deinen Besuch.
-              </p>
-
-              <div className="faq-list">
-                {faqs.map((faq) => (
-                  <details className="faq-item" key={faq.question}>
-                    <summary>
-                      <span className="faq-question">{faq.question}</span>
-                      <span className="faq-toggle" aria-hidden="true" />
-                    </summary>
-                    <p>{faq.answer}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
-
-            <div className="faq-media-grid" aria-label="Waschbar Eindrücke">
-              <div className="faq-media-large">
-                <Image
-                  src="/images/waschbar-faq-support-strip.png"
-                  alt="Waschbar Innenraum mit Waschmaschinen, Handtüchern und Waschmittel"
-                  fill
-                  sizes="(max-width: 900px) 100vw, 56vw"
-                />
-              </div>
-              <div className="faq-media-small">
-                <Image
-                  src="/images/waschbar-kundenkarte-real-product.png"
-                  alt="Waschbar Kundenkarte"
-                  fill
-                  sizes="(max-width: 900px) 50vw, 26vw"
-                />
-              </div>
-              <div className="faq-media-small">
-                <Image
-                  src="/images/waschbar-use-cases-scene.png"
-                  alt="Wäschekorb mit großen Textilien im Waschsalon"
-                  fill
-                  sizes="(max-width: 900px) 50vw, 26vw"
-                />
-              </div>
-            </div>
-          </div>
-
-          <aside className="faq-location-strip" aria-label="Standort finden">
-            <div className="faq-location-intro">
-              <Icon name="pin" />
-              <div>
-                <strong>Standort finden</strong>
-                <p>Finde deinen nächsten Waschbar SB-Waschsalon in deiner Nähe.</p>
-              </div>
-            </div>
-            <div className="faq-location-actions">
-              {locations.map((location) => (
-                <a
-                  href={location.mapsUrl}
-                  key={`${location.city}-faq`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon name={location.city.toLowerCase()} />
-                  <span>{location.city}</span>
-                </a>
-              ))}
-            </div>
-          </aside>
-        </section>
+        <FaqSection />
 
         <SiteFooter />
         </div>

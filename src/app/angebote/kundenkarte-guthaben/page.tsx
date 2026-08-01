@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CampaignHeader } from "../../components/CampaignHeader";
 import { CampaignFooter } from "../../components/CampaignFooter";
-import { VoucherForm } from "../../components/VoucherForm";
+import { CampaignHeader } from "../../components/CampaignHeader";
 import { Icon } from "../../components/Icon";
+import { LottieIcon } from "../../components/LottieIcon";
+import { FaqSection } from "../../components/FaqSection";
+import { ReviewMarqueeSection } from "../../components/ReviewMarqueeSection";
+import { VoucherForm } from "../../components/VoucherForm";
+import { reviews } from "../../data/site-data";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "6,50 € Startguthaben + 10% Rabatt | Waschbar Kundenkarte",
+  title: "10 € Gratis-Guthaben | Waschbar Heidelberg & Ludwigshafen",
   description:
-    "Sichere dir die Waschbar Kundenkarte mit 6,50 € Startguthaben und dauerhaft 10% Rabatt in Heidelberg und Ludwigshafen.",
+    "Sichere dir 10 € Gratis-Guthaben für deine erste Wäsche bei Waschbar. Einfach eintragen, Code erhalten und vor Ort einlösen.",
   robots: {
     index: false,
     follow: false,
@@ -19,43 +23,37 @@ export const metadata: Metadata = {
 
 const proofItems = [
   {
-    icon: "gift",
-    title: "6,50 € Guthaben geschenkt",
-    copy: "Direkt auf deine neue Kundenkarte geladen.",
+    animation: "/animations/open-gift.json",
+    title: "10 € gratis sichern",
+    copy: "Deine ersten 10 € Wäsche gehen auf uns.",
   },
   {
-    icon: "percent",
-    title: "Danach dauerhaft 10% Rabatt",
-    copy: "Auf jeden Waschgang und jede Trocknung.",
+    animation: "/animations/credit-card-2.json",
+    title: "Rabattkarte vor Ort",
+    copy: "Du bekommst dein Guthaben auf deine Waschbar Rabattkarte.",
   },
   {
-    icon: "pin",
-    title: "Einlösbar in Heidelberg & Ludwigshafen",
-    copy: "Wähl einfach deinen Standort im Formular.",
+    animation: "/animations/sale.json",
+    title: "Danach weiter sparen",
+    copy: "Mit Ladebonus erhältst du bis zu 25% mehr Guthaben.",
   },
-];
-
-const ticketBenefits = [
-  { icon: "card", label: "Persönliche Waschbar Kundenkarte" },
-  { icon: "gift", label: "6,50 € Startguthaben inklusive" },
-  { icon: "percent", label: "Dauerhaft 10% Rabatt auf alles" },
 ];
 
 const steps = [
   {
     icon: "card-hand",
-    title: "Hier anmelden",
-    copy: "Vorname, E-Mail und Standort eintragen - dauert unter 30 Sekunden.",
+    title: "Eintragen",
+    copy: "Formular ausfüllen und Standort wählen.",
   },
   {
     icon: "mail",
-    title: "Code per E-Mail erhalten",
-    copy: "Wir schicken dir deinen persönlichen Gutschein-Code zu.",
+    title: "Code erhalten",
+    copy: "Gutschein-Code direkt per E-Mail erhalten.",
   },
   {
     icon: "pin",
-    title: "Im Salon vorzeigen",
-    copy: "Code zeigen, Kundenkarte + Guthaben direkt vor Ort abholen.",
+    title: "Vor Ort einlösen",
+    copy: "Code zeigen und 10 € Guthaben nutzen.",
   },
 ];
 
@@ -67,52 +65,45 @@ export default function KundenkarteGuthabenPage() {
       <section className="campaign-hero">
         <div className="campaign-hero-bg">
           <Image
-            src="/images/waschbar-kundenkarte-banner-bg.png"
+            className="campaign-hero-bg-desktop"
+            src="/images/waschbar-rabattkarte-hero-wall.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+          />
+          <Image
+            className="campaign-hero-bg-mobile"
+            src="/images/Waschbar angebot phone.png"
             alt=""
             fill
             priority
             sizes="100vw"
           />
         </div>
+
         <div className="campaign-hero-copy">
-          <span className="campaign-badge">
-            <Icon name="sparkle" /> Nur für kurze Zeit
-          </span>
-          <h1>
-            <span className="campaign-hero-amount">6,50 €</span>
-            Startguthaben{" "}
-            <span className="campaign-hero-plus">+ 10% Rabatt</span>
-          </h1>
-          <p className="campaign-hero-text">
-            Sichere dir jetzt die Waschbar Kundenkarte mit 6,50 € Guthaben
-            geschenkt - und spare danach dauerhaft 10% auf jeden Waschgang
-            in Heidelberg und Ludwigshafen.
-          </p>
-          <a className="button button-primary campaign-hero-cta" href="#formular">
-            6,50 € sichern <Icon name="gift" />
-          </a>
-          <div className="campaign-hero-trust">
-            <span>
-              <Icon name="shield" /> Kostenlos
-            </span>
-            <span>
-              <Icon name="clock" /> 30 Sekunden
-            </span>
-            <span>
-              <Icon name="card" /> Keine Zahlungsdaten
-            </span>
+          <div className="campaign-offer-band" aria-label="10 Euro Gratis-Guthaben Angebot">
+            <div>
+              <span>Willkommensguthaben</span>
+              <span className="campaign-offer-amount">
+                <strong>10 €</strong>
+                <em>gratis</em>
+              </span>
+            </div>
+            <p>
+              Für deine erste Wäsche bei Waschbar. Danach weiter sparen mit bis
+              zu 25% Ladebonus.
+            </p>
+            <p>
+              Sichere dir jetzt 10 € Gratis-Guthaben. Einfach eintragen, Code
+              erhalten und vor Ort einlösen.
+            </p>
           </div>
         </div>
-        <div className="campaign-hero-media">
-          <div className="campaign-hero-glow" aria-hidden="true" />
-          <Image
-            src="/images/waschbar-kundenkarte-real-card.png"
-            alt="Waschbar Kundenkarte"
-            width={560}
-            height={350}
-            priority
-            className="campaign-hero-card"
-          />
+
+        <div className="campaign-hero-form">
+          <VoucherForm />
         </div>
       </section>
 
@@ -120,7 +111,7 @@ export default function KundenkarteGuthabenPage() {
         {proofItems.map((item) => (
           <article key={item.title}>
             <span className="campaign-proof-icon">
-              <Icon name={item.icon} />
+              <LottieIcon src={item.animation} label={`${item.title} Animation`} />
             </span>
             <div>
               <strong>{item.title}</strong>
@@ -130,30 +121,12 @@ export default function KundenkarteGuthabenPage() {
         ))}
       </section>
 
-      <section className="campaign-form-section" aria-label="Anmeldung">
-        <div className="voucher-ticket">
-          <aside className="voucher-ticket-stub">
-            <p className="voucher-ticket-kicker">Dein Vorteil</p>
-            <p className="voucher-ticket-amount">
-              6,50 <span>€</span>
-            </p>
-            <p className="voucher-ticket-amount-label">Startguthaben geschenkt</p>
-            <ul className="voucher-ticket-list">
-              {ticketBenefits.map((benefit) => (
-                <li key={benefit.label}>
-                  <Icon name={benefit.icon} />
-                  {benefit.label}
-                </li>
-              ))}
-            </ul>
-          </aside>
-          <VoucherForm />
-        </div>
-      </section>
-
       <section className="campaign-steps" aria-label="So funktioniert's">
         <p className="section-kicker">So einfach geht&apos;s</p>
-        <h2>So funktioniert&apos;s</h2>
+        <h2>
+          <span className="campaign-steps-title-line">In 3 Schritten zu deinem</span>
+          <span className="campaign-steps-title-line">Gratis-Guthaben</span>
+        </h2>
         <div className="campaign-timeline">
           {steps.map((step, index) => (
             <article className="campaign-timeline-step" key={step.title}>
@@ -167,6 +140,14 @@ export default function KundenkarteGuthabenPage() {
           ))}
         </div>
       </section>
+
+      <ReviewMarqueeSection
+        reviews={reviews}
+        title="Beispielstimmen aus dem Waschsalon."
+        subtitle="Stimmen aus Heidelberg, Ludwigshafen und der Rhein-Neckar-Region."
+      />
+
+      <FaqSection />
 
       <CampaignFooter />
     </main>

@@ -36,13 +36,14 @@ export const locations: Location[] = [
     address: "Rohrbacher Str. 83-85, 69115 Heidelberg",
     latitude: 49.4007793,
     longitude: 8.6911677,
-    image: "/images/waschbar-location-heidelberg-premium.png",
+    image: "/images/waschbar-location-heidelberg-entry.png",
     href: "/heidelberg",
     mapsUrl:
       "https://www.google.com/maps/place/Waschbar+Heidelberg+GmbH/@49.4007793,8.6885928,769m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797c1b59771ab9d:0xbdd656ab9faf321e!8m2!3d49.4007793!4d8.6911677!16s%2Fg%2F11zgwxfcvc",
     mapEmbedUrl:
       "https://www.google.com/maps?q=Waschbar%20Heidelberg%20GmbH%20Rohrbacher%20Str.%2083-85%2069115%20Heidelberg&output=embed",
-    angle: "Ideal für Studierende, WGs und große Wochenwäsche.",
+    angle:
+      "Ideal für Studierende, Wohngemeinschaften, Monteure und die wöchentliche Großwäsche für jedermann.",
     longAngle:
       "Waschbar Heidelberg liegt im Heidelberger Stadtgebiet und ist auf den Alltag von Studierenden und WGs ausgelegt: große Trommeln für den Wäscheberg mehrerer Mitbewohner, bis Mitternacht geöffnet für alle, die erst spät nach der Vorlesung oder Schicht dazu kommen. Kein Warten auf einen freien Slot, keine Reservierung nötig.",
     audienceLabel: "Studierende, WGs & Alltagswäsche",
@@ -53,9 +54,9 @@ export const locations: Location[] = [
     hasPetStation: true,
     hasCleaningStation: true,
     petStationCopy:
-      "Für Tierdecken und Haustiertextilien - praktisch, wenn der WG-Vierbeiner mitzieht.",
+      "Für Tierdecken und Sachen für Haustiere - praktisch, wenn der WG-Vierbeiner mitzieht.",
     cleaningStationCopy:
-      "Für Arbeitskleidung und stark beanspruchte Wäsche neben dem Vorlesungs- oder Schichtalltag.",
+      "Hier werden Wischmopps, Putztücher und weitere Reinigungsutensilien hygienisch sauber.",
     reviewProofLine: "Moderne Maschinen für Studierende und WGs in Heidelberg.",
   },
   {
@@ -74,7 +75,8 @@ export const locations: Location[] = [
       "https://www.google.com/maps/place/Waschbar+Ludwigshafen+GmbH/@49.49045,8.4350976,767m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4797cd859c2fece1:0x9942ef2d5e00add5!8m2!3d49.49045!4d8.4376725!16s%2Fg%2F11zh1wgnqd?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
     mapEmbedUrl:
       "https://maps.google.com/maps?f=q&source=s_q&hl=de&q=Waschbar%20Ludwigshafen%20GmbH&ll=49.49045,8.4376725&z=17&output=embed",
-    angle: "Praktisch für Familien, Pendler und große Textilien.",
+    angle:
+      "Ideal für Studierende, Wohngemeinschaften, Monteure und die wöchentliche Großwäsche für jedermann.",
     longAngle:
       "Waschbar Ludwigshafen bedient Familien und Pendler in Ludwigshafen am Rhein: praktisch, wenn Bettdecken, Handtücher oder der ganze Wochenwäscheberg anstehen. Moderne Maschinen, klare Preise und tägliche Öffnungszeiten von 06:00 bis 24:00 Uhr machen den Wäschetag planbar, ganz ohne Termin.",
     audienceLabel: "Familien, Pendler & Wochenwäsche",
@@ -85,28 +87,10 @@ export const locations: Location[] = [
     hasPetStation: true,
     hasCleaningStation: true,
     petStationCopy:
-      "Für Tierdecken und Haustiertextilien der ganzen Familie.",
+      "Für Tierdecken und Sachen für Haustiere der ganzen Familie.",
     cleaningStationCopy:
-      "Für Arbeitskleidung von Pendlern und stark beanspruchte Wäsche nach dem Wochenende.",
+      "Hier werden Wischmopps, Putztücher und weitere Reinigungsutensilien hygienisch sauber.",
     reviewProofLine: "Moderne Maschinen für Familien und Pendler in Ludwigshafen.",
-    processSteps: [
-      {
-        title: "Wäsche einsortieren",
-        copy: "Wähle je nach Ladung die 15 kg Maschine für den Wochenwäscheberg der Familie oder die 7 kg Maschine für die schnelle Zwischenwäsche nach der Pendelfahrt.",
-      },
-      {
-        title: "Bargeldlos bezahlen",
-        copy: "Am Terminal direkt mit Karte zahlen oder die Waschbar Kundenkarte nutzen und dauerhaft 10% auf jeden Waschgang sparen.",
-      },
-      {
-        title: "Waschen & trocknen vor Ort",
-        copy: "Während die Maschine läuft, kurz einkaufen oder entspannen - der Standort in der Prinzregentenstraße ist täglich bis Mitternacht geöffnet, auch nach einer späten Schicht.",
-      },
-      {
-        title: "Sauber mitnehmen",
-        copy: "Direkt im Trockner fertig machen, statt zuhause auf freie Kapazität zu warten - ideal für Familien und Pendler, die den Wäschetag in einem Rutsch erledigen wollen.",
-      },
-    ],
   },
 ];
 
@@ -129,45 +113,68 @@ export const machineSizes: Array<[string, string]> = [
 ];
 
 export type PriceItem = {
+  badge: string;
+  category: string;
   title: string;
-  subtitle: string;
-  price: string;
+  originalPrice: string;
+  discountedPrice: string;
   meta: string;
+  features: string[];
+  footnote: string;
   animation: string;
   featured: boolean;
+  programPreview?: {
+    image: string;
+    alt: string;
+    placement: "left" | "right";
+  };
 };
 
 export const priceItems: PriceItem[] = [
   {
-    title: "Waschmaschine 15 kg",
-    subtitle: "Für große Ladungen, Decken und Wochenwäsche",
-    price: "ab 9,00 €",
-    meta: "pro Waschgang",
-    animation: "/animations/washing-machine.json",
-    featured: true,
-  },
-  {
-    title: "Waschmaschine 7 kg",
-    subtitle: "Für Alltagswäsche und kleinere Ladungen",
-    price: "ab 4,50 €",
-    meta: "pro Waschgang",
+    badge: "Ideal für Alltagswäsche",
+    category: "Waschen",
+    title: "7 kg Trommel",
+    originalPrice: "4,50 €",
+    discountedPrice: "3,40 €",
+    meta: "pro Waschgang mit Rabattkarte",
+    features: ["Kleidung", "Sportbekleidung", "Handtücher"],
+    footnote: "Waschgang ca. 35 Minuten",
     animation: "/animations/laundry.json",
     featured: false,
+    programPreview: {
+      image: "/images/waschbar-program-7kg-cropped.jpeg",
+      alt: "Waschprogramm-Auswahl am Terminal für die 7 kg Waschmaschine",
+      placement: "right",
+    },
   },
   {
+    badge: "XXL · Größte Trommel",
+    category: "Waschen",
+    title: "15 kg Trommel",
+    originalPrice: "9,00 €",
+    discountedPrice: "6,75 €",
+    meta: "pro Waschgang mit Rabattkarte",
+    features: ["Bettwäsche & Decken", "Jacken", "Große Wäschemengen"],
+    footnote: "Ideal für große Textilmengen",
+    animation: "/animations/washing-machine.json",
+    featured: true,
+    programPreview: {
+      image: "/images/waschbar-program-15kg-cropped.jpeg",
+      alt: "Waschprogramm-Auswahl am Terminal für die 15 kg Waschmaschine",
+      placement: "left",
+    },
+  },
+  {
+    badge: "Zuverlässig & textilschonend",
+    category: "Trocknen",
     title: "Trockner",
-    subtitle: "Direkt vor Ort trocknen und sauber mitnehmen",
-    price: "2,00 €",
-    meta: "pro 10 Minuten",
-    animation: "/animations/laundry-2.json",
-    featured: false,
-  },
-  {
-    title: "Kundenkarte",
-    subtitle: "Guthaben aufladen und bei jedem Einkauf sparen",
-    price: "10%",
-    meta: "Rabatt",
-    animation: "/animations/credit-card.json",
+    originalPrice: "2,00 €",
+    discountedPrice: "1,50 €",
+    meta: "pro 10 Minuten mit Rabattkarte",
+    features: ["Große Trommeln", "Schonend für Textilien", "Schnelles Trocknen"],
+    footnote: "Meist 20-30 Minuten",
+    animation: "/animations/washing-machine-2.json",
     featured: false,
   },
 ];
@@ -179,39 +186,142 @@ export type Review = {
   city: string;
   locationIndex: number;
   age: string;
+  title: string;
   quote: string;
 };
 
 export const reviews: Review[] = [
   {
-    name: "ALİ DİLBER",
+    name: "Ali Yilmaz",
     initial: "A",
     avatar: "/images/review-avatar-ali.png",
-    city: "Heidelberg",
+    city: "Heidelberg-Bergheim",
     locationIndex: 0,
-    age: "6 days ago",
+    age: "Student",
+    title: "Sehr sauber und unkompliziert",
     quote:
-      "Sauberer Waschsalon mit modernen Maschinen. Alles hat problemlos funktioniert und die Wäsche war schnell fertig. Gerne wieder!",
+      "Ich komme meistens nach der Uni vorbei. Die Maschinen sind sauber, die Bedienung ist einfach und auch große Wäsche ist schnell erledigt.",
   },
   {
     name: "Mustafa Ulvi",
     initial: "M",
     avatar: "/images/review-avatar-mustafa.png",
-    city: "Heidelberg",
+    city: "Heidelberg-Rohrbach",
     locationIndex: 0,
-    age: "6 days ago",
+    age: "Monteur",
+    title: "Gut für Arbeitskleidung",
     quote:
-      "Sehr sauberer Waschsalon mit modernen Maschinen. Alles funktioniert einwandfrei, absolut empfehlenswert!",
+      "Für meine Arbeitskleidung ist Waschbar praktisch. Abends noch geöffnet, klare Preise und die Wäsche wird zuverlässig sauber.",
   },
   {
     name: "Kayra Aktas",
     initial: "K",
     avatar: "/images/review-avatar-kayra.png",
-    city: "Heidelberg",
+    city: "Heidelberg-Weststadt",
     locationIndex: 0,
-    age: "a week ago",
+    age: "WG",
+    title: "Perfekt für die WG-Wäsche",
     quote:
-      "Die Waschmaschinen und Trockner waren neu, und alles war sehr ordentlich und sauber. Die Waschmittel standen kostenlos zur Verfügung. Auch der Preis war im Vergleich zu anderen Anbietern sehr fair.",
+      "Wir waschen hier oft mehrere Ladungen auf einmal. Das spart zuhause viel Zeit und die großen Trommeln sind genau richtig für Bettwäsche.",
+  },
+  {
+    name: "Meryem Sahin",
+    initial: "M",
+    avatar: "/images/review-avatar-ali.png",
+    city: "Heidelberg-Handschuhsheim",
+    locationIndex: 0,
+    age: "Familie",
+    title: "Bettdecken endlich ohne Stress",
+    quote:
+      "Unsere Bettdecken passen zuhause nicht gut in die Maschine. Hier geht es schnell, alles ist hell und man findet sich sofort zurecht.",
+  },
+  {
+    name: "Nour Al-Khatib",
+    initial: "N",
+    avatar: "/images/review-avatar-mustafa.png",
+    city: "Heidelberg-Altstadt",
+    locationIndex: 0,
+    age: "Alltagswäsche",
+    title: "Spät am Abend noch offen",
+    quote:
+      "Ich arbeite oft lange und finde es super, dass ich danach noch waschen kann. Der Salon wirkt gepflegt und die Trockner sind stark.",
+  },
+  {
+    name: "Johanna Becker",
+    initial: "J",
+    avatar: "/images/review-avatar-kayra.png",
+    city: "Heidelberg-Kirchheim",
+    locationIndex: 0,
+    age: "Haustiere",
+    title: "Gut für Hundedecken",
+    quote:
+      "Für Hundedecken und Körbchen nutze ich gerne die Pet Station. Danach ist alles frisch und ich muss es nicht zuhause waschen.",
+  },
+  {
+    name: "Emre Demir",
+    initial: "E",
+    avatar: "/images/review-avatar-ali.png",
+    city: "Ludwigshafen-Mitte",
+    locationIndex: 1,
+    age: "Pendler",
+    title: "Schnell vor dem Feierabend",
+    quote:
+      "Ich erledige hier oft meine Wochenwäsche direkt nach der Arbeit. Maschinen frei, Zahlung unkompliziert und der Standort ist gut erreichbar.",
+  },
+  {
+    name: "Aylin Korkmaz",
+    initial: "A",
+    avatar: "/images/review-avatar-mustafa.png",
+    city: "Ludwigshafen-Friesenheim",
+    locationIndex: 1,
+    age: "Familie",
+    title: "Große Ladungen kein Problem",
+    quote:
+      "Mit Kindern sammelt sich schnell viel Wäsche. In der großen Maschine ist alles auf einmal drin und danach direkt in den Trockner.",
+  },
+  {
+    name: "Samir Haddad",
+    initial: "S",
+    avatar: "/images/review-avatar-kayra.png",
+    city: "Ludwigshafen-Hemshof",
+    locationIndex: 1,
+    age: "Reinigung",
+    title: "Praktisch für Mopps",
+    quote:
+      "Für Wischmopps und Putztücher ist die Cleaning Station genau richtig. Man kann solche Sachen sauber getrennt waschen.",
+  },
+  {
+    name: "Claudia Schneider",
+    initial: "C",
+    avatar: "/images/review-avatar-ali.png",
+    city: "Ludwigshafen-Oggersheim",
+    locationIndex: 1,
+    age: "Große Wäsche",
+    title: "Sehr ordentlicher Salon",
+    quote:
+      "Ich war mit Decken und Handtüchern dort. Alles war ordentlich, die Maschinen machen einen modernen Eindruck und es ging schneller als erwartet.",
+  },
+  {
+    name: "Yusuf Karaca",
+    initial: "Y",
+    avatar: "/images/review-avatar-mustafa.png",
+    city: "Ludwigshafen-Süd",
+    locationIndex: 1,
+    age: "Monteur",
+    title: "Nach der Schicht ideal",
+    quote:
+      "Für mich passt vor allem die lange Öffnungszeit. Nach der Schicht kann ich noch waschen und nehme die Sachen trocken wieder mit.",
+  },
+  {
+    name: "Mina Alami",
+    initial: "M",
+    avatar: "/images/review-avatar-kayra.png",
+    city: "Ludwigshafen-Mundenheim",
+    locationIndex: 1,
+    age: "Alltag",
+    title: "Einfach und zuverlässig",
+    quote:
+      "Keine komplizierte Anmeldung, einfach Maschine wählen und loslegen. Für meine wöchentliche Großwäsche ist das sehr angenehm.",
   },
 ];
 
@@ -221,13 +331,15 @@ export function reviewsForLocation(locationIndex: number): Review[] {
 }
 
 export function buildLocalBusinessJsonLd(location: Location) {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://waschbar.eu").replace(/\/$/, "");
+
   return {
     "@context": "https://schema.org",
     "@type": ["SelfServiceLaundry", "LocalBusiness"],
-    "@id": `${location.href}#business`,
+    "@id": `${siteUrl}${location.href}#business`,
     name: location.name,
     description: `Selbstbedienungs-Waschsalon in ${location.addressLocality}: waschen und trocknen direkt vor Ort an modernen Maschinen. ${location.angle}`,
-    url: location.href,
+    url: `${siteUrl}${location.href}`,
     telephone: contactInfo.phone,
     email: contactInfo.email,
     image: location.image,
@@ -266,7 +378,7 @@ export function buildLocalBusinessJsonLd(location: Location) {
 
 export const useCases = [
   {
-    title: "Bettdecken & große Textilien",
+    title: "Bettdecken & große Wäsche",
     copy: "Wenn die eigene Maschine zu klein ist: Decken, Kissen, Bettwäsche und Handtücher passen in die großen Trommeln.",
     modifier: "bedding",
   },
@@ -276,13 +388,13 @@ export const useCases = [
     modifier: "students",
   },
   {
-    title: "Sport- und Arbeitskleidung",
-    copy: "Für regelmäßig beanspruchte Textilien, die hygienisch und getrennt von Alltagswäsche gewaschen werden sollen.",
-    modifier: "sports",
+    title: "Reinigungsutensilien",
+    copy: "Hier werden Wischmopps, Putztücher und weitere Reinigungsutensilien hygienisch sauber.",
+    modifier: "cleaning",
   },
   {
-    title: "Haustiertextilien",
-    copy: "Die Pet Station ist für Hundedecken, Tierbetten und Textilien gedacht, die du separat waschen möchtest.",
+    title: "Sachen für Haustiere",
+    copy: "Die Pet Station ist für Hundedecken, Tierbetten und andere Sachen gedacht, die du separat waschen möchtest.",
     modifier: "pets",
   },
 ];
@@ -290,25 +402,25 @@ export const useCases = [
 export const mobileUseCaseStories = [
   {
     ...useCases[0],
-    image: "/images/waschbar-use-bedding-mobile-v2.jpg",
+    image: "/images/waschbar-use-bedding-mobile-blue.png",
     icon: "stack",
     shortLabel: "Bettdecken",
   },
   {
     ...useCases[1],
-    image: "/images/waschbar-use-students-mobile-v2.jpg",
+    image: "/images/waschbar-use-students-mobile-blue.png",
     icon: "basket",
     shortLabel: "WG-Wäsche",
   },
   {
     ...useCases[2],
-    image: "/images/waschbar-use-sports-mobile-v2.jpg",
+    image: "/images/waschbar-use-cleaning-mobile-blue.png",
     icon: "shirt",
-    shortLabel: "Sportwäsche",
+    shortLabel: "Reinigung",
   },
   {
     ...useCases[3],
-    image: "/images/waschbar-use-pets-mobile-v2.jpg",
+    image: "/images/waschbar-use-pets-mobile-blue.png",
     icon: "paw",
     shortLabel: "Haustiere",
   },
@@ -349,7 +461,25 @@ export const mobileKundenkarteBenefits = [
   },
   {
     animation: "/animations/price-tag.json",
-    title: "10% sparen",
-    text: "Der Rabatt gilt bei jedem Einkauf mit der Kundenkarte.",
+    title: "Bis zu 25% Bonus",
+    text: "Je nach Ladebetrag bekommst du automatisch Bonusguthaben.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "Ist Waschbar ein SB Waschsalon?",
+    answer:
+      "Ja. Waschbar ist ein Selbstbedienungs-Waschsalon. Du wäschst und trocknest deine Wäsche direkt vor Ort an modernen Maschinen.",
+  },
+  {
+    question: "Kann ich große Wäsche waschen?",
+    answer:
+      "Ja. Die großen Maschinen eignen sich für größere Wäschestücke wie Decken, Bettwäsche, Handtücher oder Arbeitskleidung.",
+  },
+  {
+    question: "Gibt es eine Waschbar Rabattkarte?",
+    answer:
+      "Ja. Mit der Rabattkarte lädst du Guthaben auf und erhältst je nach Ladebetrag bis zu 25% Bonusguthaben.",
   },
 ];
