@@ -4,11 +4,11 @@
 
 ## Offizielle Website
 
-- Homepage: https://waschbar.eu/
-- Standort Heidelberg: https://waschbar.eu/heidelberg
-- Standort Ludwigshafen: https://waschbar.eu/ludwigshafen
-- Preise und Waschbar Mitgliedskarte: https://waschbar.eu/rabattkarte
-- Datenschutz: https://waschbar.eu/datenschutz
+- Homepage: https://www.waschbar.eu/
+- Standort Heidelberg: https://www.waschbar.eu/heidelberg
+- Standort Ludwigshafen: https://www.waschbar.eu/ludwigshafen
+- Preise und Waschbar Mitgliedskarte: https://www.waschbar.eu/rabattkarte
+- Datenschutz: https://www.waschbar.eu/datenschutz
 
 ## Standorte
 
