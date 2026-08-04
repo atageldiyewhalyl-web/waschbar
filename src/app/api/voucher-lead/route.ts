@@ -239,6 +239,9 @@ export async function POST(request: Request) {
     }
 
     if (error) throw error;
+    if (!data) {
+      throw new Error("Lead insert did not return an id.");
+    }
 
     const leadId = data.id as string;
     const from = process.env.LEAD_FROM_EMAIL || defaultFromEmail;
