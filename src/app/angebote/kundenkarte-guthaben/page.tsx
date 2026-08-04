@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CampaignFooter } from "../../components/CampaignFooter";
 import { CampaignHeader } from "../../components/CampaignHeader";
-import { Icon } from "../../components/Icon";
 import { LottieIcon } from "../../components/LottieIcon";
 import { FaqSection } from "../../components/FaqSection";
 import { ReviewMarqueeSection } from "../../components/ReviewMarqueeSection";
@@ -12,9 +11,9 @@ import { reviews } from "../../data/site-data";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "10 € Gratis-Guthaben | Waschbar Heidelberg & Ludwigshafen",
+  title: "SB-Wasch-Abo mit Mitgliedskarte | Waschbar Heidelberg",
   description:
-    "Sichere dir 10 € Gratis-Guthaben für deine erste Wäsche bei Waschbar. Einfach eintragen, Code erhalten und vor Ort einlösen.",
+    "Sichere dir das erste SB-Wasch-Abo in Heidelberg: 10 Waschgänge und 10 Trocknergänge für 29,99 € im Monat mit Waschbar Mitgliedskarte.",
   robots: {
     index: false,
     follow: false,
@@ -23,37 +22,48 @@ export const metadata: Metadata = {
 
 const proofItems = [
   {
-    animation: "/animations/open-gift.json",
-    title: "10 € gratis sichern",
-    copy: "Deine ersten 10 € Wäsche gehen auf uns.",
+    animation: "/animations/washing-machine.json",
+    title: "10 Waschgänge",
+    copy: "Monatliches Kontingent für deine regelmäßigen Waschtage.",
   },
   {
-    animation: "/animations/credit-card-2.json",
-    title: "Rabattkarte vor Ort",
-    copy: "Du bekommst dein Guthaben auf deine Waschbar Rabattkarte.",
+    animation: "/animations/laundry-2.json",
+    title: "10 Trocknergänge",
+    copy: "Je 20 Minuten trocknen - direkt an unseren modernen Maschinen.",
   },
   {
     animation: "/animations/sale.json",
-    title: "Danach weiter sparen",
-    copy: "Mit Ladebonus erhältst du bis zu 25% mehr Guthaben.",
+    title: "Über 60% sparen",
+    copy: "Für 29,99 € im Monat statt regulär 85 € Einzelpreis.",
   },
 ];
 
 const steps = [
   {
-    icon: "card-hand",
-    title: "Eintragen",
-    copy: "Formular ausfüllen und Standort wählen.",
+    image: "/images/generated/abo-step-form.png",
+    title: "Formular ausfüllen",
+    copy: "Fülle unser Online-Formular aus und wähle deinen Waschbar Standort aus.",
   },
   {
-    icon: "mail",
-    title: "Code erhalten",
-    copy: "Gutschein-Code direkt per E-Mail erhalten.",
+    image: "/images/generated/abo-step-email.png",
+    title: "Vertrag per E-Mail",
+    copy: "Wir senden dir deinen persönlichen Vertrag bequem per E-Mail zu.",
   },
   {
-    icon: "pin",
-    title: "Vor Ort einlösen",
-    copy: "Code zeigen und 10 € Guthaben nutzen.",
+    image: "/images/generated/abo-step-contract.png",
+    title: "Vertrag akzeptieren",
+    copy: "Prüfe den Vertrag und akzeptiere ihn einfach online mit deiner digitalen Unterschrift.",
+  },
+  {
+    image: "/images/generated/abo-step-delivery.png",
+    badge: "in ca. 4 Tagen",
+    title: "Mitgliedskarte nach Hause",
+    copy: "Deine Waschbar Mitgliedskarte erhältst du innerhalb von ca. 4 Tagen bequem per Post.",
+  },
+  {
+    image: "/images/generated/abo-step-use.png",
+    title: "Abo nutzen",
+    copy: "Karte an der Maschine nutzen und dein monatliches Kontingent starten.",
   },
 ];
 
@@ -66,7 +76,7 @@ export default function KundenkarteGuthabenPage() {
         <div className="campaign-hero-bg">
           <Image
             className="campaign-hero-bg-desktop"
-            src="/images/waschbar-rabattkarte-hero-wall.webp"
+            src="/images/generated/waschbar-abo-hero-wall-card-wide.png"
             alt=""
             fill
             priority
@@ -83,22 +93,36 @@ export default function KundenkarteGuthabenPage() {
         </div>
 
         <div className="campaign-hero-copy">
-          <div className="campaign-offer-band" aria-label="10 Euro Gratis-Guthaben Angebot">
-            <div>
-              <span>Willkommensguthaben</span>
-              <span className="campaign-offer-amount">
-                <strong>10 €</strong>
-                <em>gratis</em>
+          <div className="campaign-offer-band" aria-label="SB-Wasch-Abo Angebot">
+            <span className="campaign-offer-pill">Das erste SB-Wasch-Abo in Heidelberg</span>
+            <div className="campaign-offer-price">
+              <strong>29,99 €</strong>
+              <em>im Monat</em>
+            </div>
+            <p className="campaign-offer-old-price">statt 85 €</p>
+            <div className="campaign-offer-chips" aria-label="Im Abo enthalten">
+              <span>
+                <span className="campaign-offer-animation">
+                  <LottieIcon src="/animations/washing-machine.json" label="Waschmaschine Animation" />
+                </span>
+                <strong>10 Waschgänge</strong>
+              </span>
+              <span>
+                <span className="campaign-offer-animation">
+                  <LottieIcon src="/animations/laundry-2.json" label="Trockner Animation" />
+                </span>
+                <span className="campaign-offer-chip-copy">
+                  <strong>10 Trocknergänge</strong>
+                  <small>je 20 Minuten</small>
+                </span>
               </span>
             </div>
-            <p>
-              Für deine erste Wäsche bei Waschbar. Danach weiter sparen mit bis
-              zu 25% Ladebonus.
-            </p>
-            <p>
-              Sichere dir jetzt 10 € Gratis-Guthaben. Einfach eintragen, Code
-              erhalten und vor Ort einlösen.
-            </p>
+            <div className="campaign-offer-saving">
+              <span className="campaign-offer-saving-icon">
+                <LottieIcon src="/animations/sale.json" label="Sparen Animation" />
+              </span>
+              <strong>Spare über 60% mit Mitgliedskarte</strong>
+            </div>
           </div>
         </div>
 
@@ -123,17 +147,24 @@ export default function KundenkarteGuthabenPage() {
 
       <section className="campaign-steps" aria-label="So funktioniert's">
         <p className="section-kicker">So einfach geht&apos;s</p>
-        <h2>
-          <span className="campaign-steps-title-line">In 3 Schritten zu deinem</span>
-          <span className="campaign-steps-title-line">Gratis-Guthaben</span>
-        </h2>
+        <h2>So kommst du zu deinem SB-Wasch-Abo</h2>
+        <p className="campaign-steps-intro">
+          Anfragen, Vertrag bestätigen, Mitgliedskarte erhalten und direkt loswaschen.
+        </p>
         <div className="campaign-timeline">
           {steps.map((step, index) => (
             <article className="campaign-timeline-step" key={step.title}>
-              <span className="campaign-timeline-icon">
-                <Icon name={step.icon} />
-              </span>
               <span className="campaign-timeline-number">{index + 1}</span>
+              {step.badge && <span className="campaign-timeline-badge">{step.badge}</span>}
+              <span className="campaign-timeline-visual">
+                <Image
+                  className="campaign-timeline-art"
+                  src={step.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 150px, 170px"
+                />
+              </span>
               <h3>{step.title}</h3>
               <p>{step.copy}</p>
             </article>

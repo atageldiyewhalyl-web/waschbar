@@ -38,7 +38,7 @@ export function SiteFooter() {
         <Link href="/heidelberg">Waschbar Heidelberg</Link>
         <Link href="/ludwigshafen">Waschbar Ludwigshafen</Link>
         <Link href="/#preise">Preise</Link>
-        <Link href="/rabattkarte">Rabattkarte</Link>
+        <Link href="/rabattkarte">Mitgliedskarte</Link>
         <Link href="/#ausstattung">Ausstattung</Link>
         <Link href="/#bewertungen">Bewertungen</Link>
         <Link href="/#faq">FAQ</Link>
@@ -47,7 +47,7 @@ export function SiteFooter() {
         <h2>Service</h2>
         <Link href="/#faq">Häufige Fragen</Link>
         <Link href="/#preise">Preise</Link>
-        <Link href="/rabattkarte">Rabattkarte</Link>
+        <Link href="/rabattkarte">Mitgliedskarte</Link>
         <Link href="/#ausstattung">Pet Station</Link>
         <Link href="/#ausstattung">Cleaning Station</Link>
       </div>

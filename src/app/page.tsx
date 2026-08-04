@@ -6,9 +6,9 @@ import { Logo } from "./components/Logo";
 import { OpeningStatus } from "./components/OpeningStatus";
 import { Icon } from "./components/Icon";
 import { MobileUseCarousel } from "./components/MobileUseCarousel";
-import { PriceCard } from "./components/PriceCard";
 import { ReviewMarqueeSection } from "./components/ReviewMarqueeSection";
 import { FaqSection } from "./components/FaqSection";
+import { HomePriceToggle } from "./components/HomePriceToggle";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 import { MobileStickyActions } from "./components/MobileStickyActions";
@@ -21,7 +21,6 @@ import {
   useCases,
   mobileUseCaseStories,
   mobilePriceTeasers,
-  mobileKundenkarteBenefits,
   contactInfo,
   faqs,
 } from "./data/site-data";
@@ -109,7 +108,7 @@ export default function Home() {
             </div>
             <div className="hero-actions">
               <a className="button button-primary" href="/angebote/kundenkarte-guthaben">
-                10 € Gratis sichern <Icon name="gift" />
+                Abo heute sichern <Icon name="card" />
               </a>
               <a className="hero-secondary-link" href="#preise">
                 Preise ansehen
@@ -222,9 +221,9 @@ export default function Home() {
         </section>
 
         <MobileStickyActions
-          primaryLabel="10 € Gratis sichern"
+          primaryLabel="Abo heute sichern"
           primaryHref="/angebote/kundenkarte-guthaben"
-          primaryIcon="gift"
+          primaryIcon="card"
           phoneHref={`tel:${contactInfo.phoneHref}`}
           mapsHref={locations[0].mapsUrl}
         />
@@ -427,118 +426,91 @@ export default function Home() {
             <span className="price-heading-line">Klare Preise für</span>{" "}
             <span className="price-heading-line">Waschen und Trocknen</span>
           </h2>
-          <p className="section-copy">
-            Am Terminal wählst du die passende Maschine aus und siehst sofort,
-            ob sie frei ist. Mit der Waschbar Rabattkarte lädst du Guthaben auf
-            und erhältst je nach Ladebetrag bis zu 25% Bonusguthaben.
-          </p>
-          <div className="price-grid">
-            {priceItems.map((item) => (
-              <PriceCard item={item} key={item.title} />
-            ))}
-          </div>
+          <HomePriceToggle items={priceItems} />
         </section>
 
         <section className="section kundenkarte" id="kundenkarte">
-          <div className="kundenkarte-card">
-            <div className="kundenkarte-heading">
-              <p className="section-kicker">Rabattkarte</p>
-              <h2>
-                <span className="kundenkarte-heading-line">Bis zu 25% Ladebonus mit der</span>
-                <span className="kundenkarte-heading-line kundenkarte-heading-accent">
-                  Waschbar Rabattkarte
+          <div className="rabattkarte-abo-showcase">
+            <div className="rabattkarte-abo-offer">
+              <div className="rabattkarte-abo-kicker">
+                <span aria-hidden="true" />
+                Mitgliedskarte
+                <span aria-hidden="true" />
+              </div>
+              <h2>SB-Wasch-Abo</h2>
+              <div className="rabattkarte-abo-price">
+                <strong>29,99 €</strong>
+                <span>
+                  statt <s>85 €</s>
                 </span>
-              </h2>
-            </div>
-            <div className="kundenkarte-hero">
+              </div>
+              <div className="rabattkarte-abo-includes" aria-label="Enthalten im SB-Wasch-Abo">
+                <span>
+                  <LottieIcon src="/animations/washing-machine.json" label="Waschgang Animation" />
+                  <strong>10 Waschgänge</strong>
+                </span>
+                <span>
+                  <LottieIcon src="/animations/laundry-2.json" label="Trockner Animation" />
+                  <strong>10 Trocknergänge</strong>
+                </span>
+              </div>
               <Image
-                src="/images/card.webp"
-                alt="Waschbar Rabattkarte mit Waschmaschinen, Handtuechern und Waschmittel"
-                fill
-                priority={false}
-                sizes="100vw"
+                className="rabattkarte-abo-card-image"
+                src="/images/generated/waschbar-rabattkarte-product-cutout.png"
+                alt="Waschbar Mitgliedskarte"
+                width={1535}
+                height={1024}
+                sizes="(max-width: 700px) 82vw, 560px"
               />
-              <div className="kundenkarte-benefits" aria-label="Vorteile der Waschbar Rabattkarte">
-                <span>
-                  <Icon name="card" />
-                  <strong>Bargeldlos bezahlen</strong>
-                </span>
-                <span>
-                  <Icon name="tag" />
-                  <strong>Bei jedem Einkauf sparen</strong>
-                </span>
+              <div className="rabattkarte-abo-savings" aria-label="Spare über 60 Prozent mit Mitgliedskarte">
+                <strong>Spare über</strong>
+                <b>60%</b>
+                <span>mit Mitgliedskarte</span>
               </div>
             </div>
-            <div className="kundenkarte-seo-text">
+            <div className="rabattkarte-abo-explainer">
+              <h2>
+                <span>Mehr waschen.</span>
+                <span>Weniger zahlen.</span>
+              </h2>
               <p>
-                <strong>Deine Waschbar Rabattkarte.</strong> Mehr waschen.
-                Weniger zahlen.{" "}
-                Mit der Waschbar Rabattkarte sparst du bei jedem Waschgang und
-                jeder Trocknung automatisch über dein Bonusguthaben – egal ob
-                in Heidelberg oder Ludwigshafen. Du lädst vor Ort Guthaben auf
-                und zahlst direkt am Terminal bargeldlos. Die Karte gibt es direkt im Waschsalon:
-                kein Abo, keine Anmeldung, keine App.
+                Unser neues SB-Wasch-Abo mit Mitgliedskarte gibt dir jeden Monat
+                ein festes Kontingent - zum fairen Fixpreis und mit{" "}
+                <strong>über 60% Ersparnis.</strong>
               </p>
-              <div className="kundenkarte-page-action">
-                <Link className="button button-primary" href="/rabattkarte">
-                  Mehr zur Rabattkarte
-                </Link>
-              </div>
-            </div>
-            <div className="mobile-kundenkarte-dashboard">
-              <div className="mobile-kundenkarte-copy">
-                <p className="section-kicker">Rabattkarte</p>
-                <h2>
-                  <span className="mobile-kundenkarte-title-line">Bis zu 25% mit der</span>
-                  <span className="mobile-kundenkarte-title-line mobile-kundenkarte-title-accent">
-                    Waschbar Rabattkarte
-                  </span>
-                </h2>
-                <p>
-                  Mehr waschen, weniger zahlen: Hol dir die Rabattkarte, lade
-                  Guthaben auf und erhalte automatisch bis zu 25 % Bonusguthaben.
-                </p>
-              </div>
-              <div className="mobile-kundenkarte-savings">
-                <div className="mobile-kundenkarte-visual">
-                  <Image
-                    src="/images/waschbar-kundenkarte-mobile-dashboard-bg.webp"
-                    alt="Moderne Waschmaschinen mit Handtuechern als Hintergrund fuer die Rabattkarte"
-                    fill
-                    sizes="100vw"
-                  />
-                  <Image
-                    className="mobile-kundenkarte-card-image"
-                    src="/images/waschbar-kundenkarte-real-card.webp"
-                    alt="Waschbar Rabattkarte"
-                    width={1535}
-                    height={868}
-                  />
-                  <div className="mobile-kundenkarte-discount" aria-label="Bis zu 25 Prozent Ladebonus">
-                    <strong>25%</strong>
-                    <span>Bonus</span>
+              <div className="rabattkarte-abo-steps" aria-label="So funktioniert das SB-Wasch-Abo">
+                <article>
+                  <span className="rabattkarte-step-number">1</span>
+                  <Icon name="card" />
+                  <div>
+                    <h3>Mitgliedskarte nutzen</h3>
+                    <p>Mit deiner Mitgliedskarte meldest du dich an der Maschine an.</p>
                   </div>
-                </div>
-                <div className="mobile-kundenkarte-benefits">
-                  {mobileKundenkarteBenefits.map((benefit) => (
-                    <div className="mobile-kundenkarte-benefit" key={benefit.title}>
-                      <LottieIcon
-                        src={benefit.animation}
-                        label={`${benefit.title} Animation`}
-                        respectReducedMotion={false}
-                      />
-                      <div>
-                        <strong>{benefit.title}</strong>
-                        <span>{benefit.text}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <Link className="mobile-kundenkarte-cta" href="/rabattkarte">
-                  <Icon name="pin" />
-                  Mehr zur Rabattkarte
-                </Link>
+                </article>
+                <article>
+                  <span className="rabattkarte-step-number">2</span>
+                  <Icon name="washer" />
+                  <div>
+                    <h3>Wasch/Trockner starten</h3>
+                    <p>Starte Wasch- oder Trocknergänge wie gewohnt an unseren modernen Maschinen.</p>
+                  </div>
+                </article>
+                <article>
+                  <span className="rabattkarte-step-number">3</span>
+                  <Icon name="wallet-plus" />
+                  <div>
+                    <h3>monatliches Kontingent sparen</h3>
+                    <p>Du nutzt dein monatliches Kontingent und sparst über 60% gegenüber Einzelpreisen.</p>
+                  </div>
+                </article>
               </div>
+              <Link className="rabattkarte-abo-cta" href="/angebote/kundenkarte-guthaben">
+                <Icon name="card" />
+                <span>
+                  <strong>SB-Wasch-Abo heute sichern!</strong>
+                  <small>Mehr waschen. Weniger zahlen.</small>
+                </span>
+              </Link>
             </div>
           </div>
         </section>

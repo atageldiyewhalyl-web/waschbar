@@ -53,12 +53,11 @@ export function VoucherForm() {
   if (submitted) {
     return (
       <div className="voucher-ticket-form voucher-form-success" id="formular">
-        <Icon name="gift" />
+        <Icon name="card" />
         <h2>Fast geschafft!</h2>
         <p>
-          Wir versenden deine Waschbar Rabattkarte mit 10 € Startguthaben an
-          die angegebene Adresse. Den Gutschein-Code schicken wir dir zusätzlich
-          per E-Mail zu.
+          Danke für deine Anfrage. Wir melden uns bei dir mit den nächsten
+          Schritten zum SB-Wasch-Abo und deiner Waschbar Mitgliedskarte.
         </p>
       </div>
     );
@@ -66,7 +65,7 @@ export function VoucherForm() {
 
   return (
     <form className="voucher-ticket-form" id="formular" onSubmit={handleSubmit}>
-      <h2>10 € Gratis-Guthaben sichern</h2>
+      <h2>SB-Wasch-Abo anfragen</h2>
       <div className="voucher-field-row">
         <label className="voucher-field">
           <span>Vorname</span>
@@ -124,8 +123,8 @@ export function VoucherForm() {
       <label className="voucher-checkbox">
         <input type="checkbox" name="consentEmail" required />
         <span>
-          Ich möchte den Gutschein per E-Mail erhalten und meine Rabattkarte
-          per Post zugeschickt bekommen. <strong>*</strong>
+          Ich möchte Informationen zum SB-Wasch-Abo erhalten und bin
+          einverstanden, dass Waschbar mich dazu kontaktiert. <strong>*</strong>
         </span>
       </label>
       <label className="voucher-checkbox">
@@ -151,12 +150,12 @@ export function VoucherForm() {
         type="submit"
         disabled={submitting}
       >
-        {submitting ? "Wird gesendet..." : "10 € Gratis-Guthaben sichern"}{" "}
-        <Icon name="gift" />
+        {submitting ? "Wird gesendet..." : "Jetzt SB-Wasch-Abo anfragen"}{" "}
+        <Icon name="card" />
       </button>
       <p className="voucher-note">
         <strong>*</strong> Pflichtfeld. Ohne diese Einwilligung können wir dir
-        den Gutschein nicht zusenden.
+        keine Informationen zum SB-Wasch-Abo zusenden.
       </p>
     </form>
   );

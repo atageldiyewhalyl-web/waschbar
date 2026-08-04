@@ -116,8 +116,7 @@ export type PriceItem = {
   badge: string;
   category: string;
   title: string;
-  originalPrice: string;
-  discountedPrice: string;
+  price: string;
   meta: string;
   features: string[];
   footnote: string;
@@ -135,9 +134,8 @@ export const priceItems: PriceItem[] = [
     badge: "Ideal für Alltagswäsche",
     category: "Waschen",
     title: "7 kg Trommel",
-    originalPrice: "4,50 €",
-    discountedPrice: "3,40 €",
-    meta: "pro Waschgang mit Rabattkarte",
+    price: "4,50 €",
+    meta: "pro Waschgang",
     features: ["Kleidung", "Sportbekleidung", "Handtücher"],
     footnote: "Waschgang ca. 35 Minuten",
     animation: "/animations/laundry.json",
@@ -152,9 +150,8 @@ export const priceItems: PriceItem[] = [
     badge: "XXL · Größte Trommel",
     category: "Waschen",
     title: "15 kg Trommel",
-    originalPrice: "9,00 €",
-    discountedPrice: "6,75 €",
-    meta: "pro Waschgang mit Rabattkarte",
+    price: "9,00 €",
+    meta: "pro Waschgang",
     features: ["Bettwäsche & Decken", "Jacken", "Große Wäschemengen"],
     footnote: "Ideal für große Textilmengen",
     animation: "/animations/washing-machine.json",
@@ -169,9 +166,8 @@ export const priceItems: PriceItem[] = [
     badge: "Zuverlässig & textilschonend",
     category: "Trocknen",
     title: "Trockner",
-    originalPrice: "2,00 €",
-    discountedPrice: "1,50 €",
-    meta: "pro 10 Minuten mit Rabattkarte",
+    price: "2,00 €",
+    meta: "pro 10 Minuten",
     features: ["Große Trommeln", "Schonend für Textilien", "Schnelles Trocknen"],
     footnote: "Meist 20-30 Minuten",
     animation: "/animations/washing-machine-2.json",
@@ -451,18 +447,18 @@ export const mobilePriceTeasers = [
 export const mobileKundenkarteBenefits = [
   {
     animation: "/animations/credit-card-2.json",
-    title: "Bargeldlos zahlen",
-    text: "Karte am Terminal nutzen und ohne Münzgeld waschen.",
+    title: "Mitgliedskarte nutzen",
+    text: "Mit deiner Karte meldest du dich direkt an der Maschine an.",
   },
   {
-    animation: "/animations/wallet.json",
-    title: "Guthaben laden",
-    text: "Vor Ort aufladen und direkt für Waschmaschine oder Trockner einsetzen.",
+    animation: "/animations/washing-machine.json",
+    title: "10 Waschgänge",
+    text: "Monatliches Kontingent für regelmäßige Waschtage nutzen.",
   },
   {
-    animation: "/animations/price-tag.json",
-    title: "Bis zu 25% Bonus",
-    text: "Je nach Ladebetrag bekommst du automatisch Bonusguthaben.",
+    animation: "/animations/laundry-2.json",
+    title: "10 Trocknergänge",
+    text: "Je 20 Minuten trocknen und über 60% gegenüber Einzelpreisen sparen.",
   },
 ];
 
@@ -478,8 +474,8 @@ export const faqs = [
       "Ja. Die großen Maschinen eignen sich für größere Wäschestücke wie Decken, Bettwäsche, Handtücher oder Arbeitskleidung.",
   },
   {
-    question: "Gibt es eine Waschbar Rabattkarte?",
+    question: "Gibt es eine Waschbar Mitgliedskarte?",
     answer:
-      "Ja. Mit der Rabattkarte lädst du Guthaben auf und erhältst je nach Ladebetrag bis zu 25% Bonusguthaben.",
+      "Ja. Mit der Mitgliedskarte kannst du das SB-Wasch-Abo nutzen: 10 Waschgänge und 10 Trocknergänge für 29,99 € im Monat.",
   },
 ];

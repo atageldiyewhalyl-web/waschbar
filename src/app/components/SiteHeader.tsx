@@ -22,12 +22,12 @@ export function SiteHeader() {
           </div>
         </div>
         <Link href="/#preise">Preise</Link>
-        <Link href="/rabattkarte">Rabattkarte</Link>
+        <Link href="/rabattkarte">Mitgliedskarte</Link>
         <Link href="/#bewertungen">Bewertungen</Link>
         <Link href="/#faq">FAQ</Link>
       </nav>
       <Link className="nav-cta" href="/angebote/kundenkarte-guthaben">
-        10 € Gratis sichern <Icon name="gift" />
+        Abo heute sichern <Icon name="card" />
       </Link>
       <MobileNav />
     </header>

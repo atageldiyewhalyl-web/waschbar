@@ -16,11 +16,7 @@ export function PriceCard({ item }: { item: PriceItem }) {
       <p className="price-card-category">{item.category}</p>
       <h3>{item.title}</h3>
       <div className="price-value">
-        <div className="price-value-was-row">
-          <span className="price-value-was">{item.originalPrice}</span>
-          <span className="price-value-off">-25%</span>
-        </div>
-        <strong>{item.discountedPrice}</strong>
+        <strong>{item.price}</strong>
         <span className="price-value-meta">{item.meta}</span>
       </div>
       <ul className="price-card-features">

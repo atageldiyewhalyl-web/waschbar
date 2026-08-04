@@ -970,8 +970,12 @@ input {
 }
 
 .kundenkarte {
-  padding: 70px 0 58px;
-  background: #fbfdff;
+  padding: 0;
+  background: #fff;
+}
+
+.price-section + .kundenkarte {
+  margin-top: clamp(56px, 6vw, 96px);
 }
 
 .kundenkarte-card {
@@ -1127,6 +1131,334 @@ input {
   margin: 0 auto;
 }
 
+.rabattkarte-abo-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  height: clamp(690px, calc(100svh - 92px), 780px);
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.rabattkarte-abo-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 84%, rgba(0, 35, 116, 0.28) 0%, rgba(0, 35, 116, 0.08) 28%, transparent 48%),
+    linear-gradient(145deg, #0b55ff 0%, #1262ff 48%, #2378ff 100%);
+  padding: clamp(20px, 2.5vw, 34px) clamp(28px, 4vw, 70px) clamp(18px, 2.2vw, 30px);
+  color: #fff;
+}
+
+.rabattkarte-abo-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  min-height: 40px;
+  border-radius: 7px;
+  background: #fff;
+  padding: 0 28px;
+  color: var(--navy);
+  font-size: clamp(15px, 1.15vw, 21px);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 30px rgba(0, 27, 92, 0.12);
+}
+
+.rabattkarte-abo-kicker span {
+  width: 38px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+.rabattkarte-abo-offer h2 {
+  margin: clamp(16px, 2vw, 26px) 0 0;
+  color: #fff;
+  font-size: clamp(44px, 4.6vw, 72px);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.88;
+  text-align: center;
+}
+
+.rabattkarte-abo-price {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin-top: clamp(14px, 1.8vw, 22px);
+  position: relative;
+  z-index: 2;
+}
+
+.rabattkarte-abo-price strong {
+  color: #fff;
+  font-size: clamp(76px, 7.5vw, 118px);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.74;
+  white-space: nowrap;
+}
+
+.rabattkarte-abo-price span {
+  color: #fff;
+  font-size: clamp(20px, 1.75vw, 30px);
+  font-weight: 920;
+  line-height: 1;
+}
+
+.rabattkarte-abo-price s {
+  text-decoration-color: #65cfff;
+  text-decoration-thickness: 5px;
+}
+
+.rabattkarte-abo-includes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(26px, 4vw, 72px);
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(16px, 1.9vw, 24px);
+  position: relative;
+  z-index: 3;
+  color: #fff;
+}
+
+.rabattkarte-abo-includes::before {
+  content: "";
+  width: 1px;
+  height: 62px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: translate(-50%, -50%);
+}
+
+.rabattkarte-abo-includes span {
+  display: inline-grid;
+  grid-template-columns: 44px max-content;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.rabattkarte-abo-includes .lottie-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.rabattkarte-abo-includes strong {
+  color: #fff;
+  font-size: clamp(16px, 1.25vw, 23px);
+  font-weight: 900;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.rabattkarte-abo-card-image {
+  width: min(720px, 82%);
+  height: auto;
+  margin-top: clamp(10px, 1.3vw, 16px);
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 28px 42px rgba(0, 17, 68, 0.34));
+}
+
+.rabattkarte-abo-savings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(120px, 9vw, 160px);
+  height: clamp(120px, 9vw, 160px);
+  position: absolute;
+  left: clamp(24px, 2.8vw, 54px);
+  bottom: clamp(28px, 3vw, 52px);
+  z-index: 4;
+  border-radius: 50%;
+  background: #061b4c;
+  padding: 18px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 24px 44px rgba(0, 14, 60, 0.26);
+}
+
+.rabattkarte-abo-savings strong,
+.rabattkarte-abo-savings b,
+.rabattkarte-abo-savings span {
+  display: block;
+}
+
+.rabattkarte-abo-savings strong {
+  max-width: 92px;
+  font-size: clamp(16px, 1.22vw, 22px);
+  font-weight: 930;
+  line-height: 0.92;
+}
+
+.rabattkarte-abo-savings b {
+  margin-top: 8px;
+  font-size: clamp(36px, 3.1vw, 56px);
+  font-weight: 950;
+  line-height: 0.86;
+}
+
+.rabattkarte-abo-savings span {
+  margin-top: 8px;
+  color: #79b5ff;
+  font-size: clamp(11px, 0.82vw, 14px);
+  font-weight: 900;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.rabattkarte-abo-explainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  background:
+    radial-gradient(circle at 78% 15%, rgba(47, 118, 255, 0.06), transparent 32%),
+    #fff;
+  padding: clamp(34px, 3.8vw, 58px) clamp(42px, 5vw, 96px);
+}
+
+.rabattkarte-abo-explainer h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(42px, 3.8vw, 64px);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.96;
+  text-align: left;
+}
+
+.rabattkarte-abo-explainer h2 span {
+  display: block;
+}
+
+.rabattkarte-abo-explainer h2 span:last-child {
+  color: var(--blue);
+}
+
+.rabattkarte-abo-explainer > p {
+  max-width: 760px;
+  margin: clamp(14px, 1.55vw, 22px) 0 0;
+  color: var(--navy);
+  font-size: clamp(17px, 1.2vw, 21px);
+  font-weight: 620;
+  line-height: 1.36;
+}
+
+.rabattkarte-abo-explainer > p strong {
+  color: var(--blue);
+  font-weight: 890;
+}
+
+.rabattkarte-abo-steps {
+  display: grid;
+  margin-top: clamp(24px, 2.6vw, 34px);
+}
+
+.rabattkarte-abo-steps article {
+  display: grid;
+  grid-template-columns: 46px 68px minmax(0, 1fr);
+  gap: 18px;
+  min-height: 104px;
+  align-items: center;
+  border-top: 1px solid rgba(210, 222, 240, 0.9);
+}
+
+.rabattkarte-abo-steps article:first-child {
+  border-top: 0;
+}
+
+.rabattkarte-step-number {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.rabattkarte-abo-steps .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f2f6fc;
+  color: var(--navy);
+  padding: 16px;
+}
+
+.rabattkarte-abo-steps h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(20px, 1.35vw, 27px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.rabattkarte-abo-steps p {
+  max-width: 640px;
+  margin: 7px 0 0;
+  color: #1d2b4a;
+  font-size: clamp(14px, 0.9vw, 17px);
+  font-weight: 560;
+  line-height: 1.36;
+}
+
+.rabattkarte-abo-cta {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 16px;
+  min-height: 72px;
+  margin-top: clamp(16px, 1.9vw, 24px);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2f76ff 0%, #1262ff 100%);
+  padding: 13px 24px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 18px 36px rgba(47, 118, 255, 0.22);
+}
+
+.rabattkarte-abo-cta .icon {
+  width: 46px;
+  height: 46px;
+  color: #fff;
+}
+
+.rabattkarte-abo-cta strong,
+.rabattkarte-abo-cta small {
+  display: block;
+  color: #fff;
+}
+
+.rabattkarte-abo-cta strong {
+  font-size: clamp(18px, 1.2vw, 24px);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.rabattkarte-abo-cta small {
+  margin-top: 4px;
+  font-size: clamp(14px, 0.9vw, 17px);
+  font-weight: 580;
+}
+
 .price-section {
   padding-top: 44px;
 }
@@ -1154,6 +1486,10 @@ input {
   font-weight: 500;
   line-height: 1.7;
   letter-spacing: -0.01em;
+}
+
+.home-price-stack {
+  margin-top: 30px;
 }
 
 .price-grid {
@@ -1272,27 +1608,6 @@ input {
   margin: 8px 0 0;
 }
 
-.price-value-was-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.price-value-was {
-  color: var(--muted);
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: line-through;
-  text-decoration-color: rgba(96, 112, 143, 0.6);
-}
-
-.price-value-off {
-  color: #0a8a4a;
-  font-size: 13px;
-  font-weight: 800;
-}
-
 .price-card strong {
   display: block;
   margin-top: 4px;
@@ -1328,6 +1643,215 @@ input {
   padding-top: 16px;
   color: var(--muted);
   font-size: 12px;
+}
+
+.subscription-campaign-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.48fr) minmax(360px, 0.92fr);
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 56px;
+  border: 1px solid rgba(183, 211, 255, 0.95);
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 22px 54px rgba(7, 27, 73, 0.08);
+  text-align: left;
+}
+
+.subscription-campaign-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(142deg, #0a4fff 0%, #176bff 58%, #1d73ff 100%);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  padding: 58px 76px 50px;
+}
+
+.subscription-campaign-offer::after {
+  content: "";
+  width: 44%;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  right: 8%;
+  bottom: -18%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.subscription-campaign-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border-radius: 999px;
+  background: #fff;
+  padding: 0 26px;
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.subscription-campaign-price {
+  display: grid;
+  gap: 8px;
+  margin-top: 34px;
+  color: #fff;
+  position: relative;
+  z-index: 4;
+}
+
+.subscription-campaign-price strong {
+  color: #fff;
+  font-size: clamp(96px, 9.2vw, 176px);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.78;
+  text-shadow: 0 10px 26px rgba(0, 29, 111, 0.12);
+  white-space: nowrap;
+}
+
+.subscription-campaign-price span {
+  padding-left: clamp(210px, 20vw, 360px);
+  color: #fff;
+  font-size: clamp(24px, 2vw, 39px);
+  font-weight: 900;
+  line-height: 1;
+  position: relative;
+  z-index: 5;
+}
+
+.subscription-campaign-price s {
+  text-decoration-thickness: 4px;
+  text-decoration-color: #061b4c;
+}
+
+.subscription-campaign-card {
+  width: min(405px, 28vw);
+  height: auto;
+  position: absolute;
+  left: 68px;
+  bottom: 26px;
+  z-index: 2;
+  filter: drop-shadow(0 22px 18px rgba(0, 20, 82, 0.24));
+  transform: rotate(-5deg);
+}
+
+.subscription-campaign-save {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  width: min(460px, 39vw);
+  min-height: 98px;
+  position: absolute;
+  right: 118px;
+  bottom: 42px;
+  z-index: 3;
+  border-radius: 9px;
+  background: #061b4c;
+  padding: 16px 28px;
+  color: #fff;
+  box-shadow: 0 18px 28px rgba(0, 15, 62, 0.22);
+  transform: skewX(-8deg);
+}
+
+.subscription-campaign-save > * {
+  transform: skewX(8deg);
+}
+
+.subscription-campaign-save > span {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blue);
+}
+
+.subscription-campaign-save .icon {
+  width: 33px;
+  height: 33px;
+}
+
+.subscription-campaign-save strong,
+.subscription-campaign-save small {
+  display: block;
+  color: #fff;
+}
+
+.subscription-campaign-save strong {
+  font-size: clamp(20px, 1.8vw, 31px);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.subscription-campaign-save small {
+  margin-top: 6px;
+  font-size: clamp(15px, 1.2vw, 21px);
+  font-weight: 760;
+  line-height: 1.1;
+}
+
+.subscription-campaign-included {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 54px clamp(38px, 4.2vw, 82px) 54px 18px;
+}
+
+.subscription-campaign-included-item {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.subscription-campaign-included-item .lottie-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #eef5ff;
+}
+
+.subscription-campaign-included-item .lottie-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.subscription-campaign-included strong {
+  display: block;
+  color: var(--navy);
+  font-size: clamp(28px, 2.35vw, 55px);
+  font-weight: 930;
+  letter-spacing: 0;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.subscription-campaign-included small {
+  display: block;
+  margin-top: 12px;
+  color: #51607b;
+  font-size: clamp(20px, 1.6vw, 30px);
+  font-weight: 640;
+  line-height: 1.2;
+}
+
+.subscription-campaign-divider {
+  height: 1px;
+  margin: 38px 0;
+  background: #dbe7f7;
 }
 
 .price-program-preview {
@@ -3501,6 +4025,29 @@ a.footer-credit img {
     grid-template-columns: 1fr;
   }
 
+  .subscription-campaign-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .subscription-campaign-offer {
+    min-height: 430px;
+    clip-path: none;
+    padding-right: 52px;
+  }
+
+  .subscription-campaign-included {
+    padding: 46px 52px;
+  }
+
+  .subscription-campaign-price span {
+    padding-left: clamp(180px, 29vw, 320px);
+  }
+
+  .subscription-campaign-save {
+    right: 52px;
+    width: min(460px, calc(100% - 430px));
+  }
+
   .price-program-preview {
     inset: auto auto 18px 50%;
     width: min(420px, calc(100% - 28px));
@@ -5655,25 +6202,28 @@ a.footer-credit img {
 
 .campaign-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 540px);
-  align-items: start;
-  gap: clamp(34px, 6vw, 90px);
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 520px);
+  align-items: center;
+  gap: clamp(34px, 5.4vw, 92px);
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: #eef4ff;
   min-height: calc(100svh - 122px);
-  padding: clamp(58px, 7vw, 96px) clamp(24px, 6vw, 128px);
+  padding: clamp(34px, 4.4vw, 64px) clamp(28px, 6vw, 116px);
 }
 
 .campaign-hero::after {
-  content: "";
+  content: none;
   position: absolute;
-  right: 0;
+  top: 0;
+  right: 42%;
   bottom: 0;
   left: 0;
   z-index: 0;
-  height: clamp(160px, 22vw, 300px);
-  background: #fff;
+  height: auto;
+  background:
+    linear-gradient(90deg, rgba(2, 14, 39, 0.72) 0%, rgba(2, 14, 39, 0.4) 47%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(2, 14, 39, 0.24) 100%);
   pointer-events: none;
 }
 
@@ -5682,7 +6232,7 @@ a.footer-credit img {
   top: 0;
   left: 0;
   right: 0;
-  bottom: clamp(160px, 22vw, 300px);
+  bottom: 0;
   z-index: 0;
   opacity: 1;
 }
@@ -5702,10 +6252,10 @@ a.footer-credit img {
 
 .campaign-hero-copy {
   position: relative;
-  z-index: 1;
-  max-width: 820px;
-  align-self: start;
-  margin-top: clamp(220px, 30vw, 340px);
+  z-index: 2;
+  max-width: 500px;
+  align-self: center;
+  margin-top: clamp(62px, 7.5vw, 118px);
 }
 
 .campaign-badge {
@@ -5750,69 +6300,151 @@ a.footer-credit img {
 
 .campaign-offer-band {
   display: grid;
-  gap: 18px;
-  width: min(720px, 100%);
-  border: 1px solid rgba(120, 170, 255, 0.28);
-  border-radius: 8px;
-  background: rgba(8, 32, 82, 0.82);
-  padding: clamp(24px, 3vw, 36px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  gap: 12px;
+  width: min(390px, 100%);
+  color: var(--navy);
 }
 
-.campaign-offer-band div {
-  display: grid;
-  gap: 6px;
-  min-width: 0;
-}
-
-.campaign-offer-band span {
-  color: #9dc0ff;
+.campaign-offer-pill {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid rgba(176, 207, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 7px 13px;
+  color: var(--navy);
   font-size: 11px;
-  font-weight: 860;
-  letter-spacing: 0.08em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
   line-height: 1;
   text-transform: uppercase;
+  backdrop-filter: blur(12px);
 }
 
-.campaign-offer-band .campaign-offer-amount {
+.campaign-offer-price {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 16px;
+  gap: 8px 14px;
   align-items: baseline;
+}
+
+.campaign-offer-price strong {
   color: #fff;
+  font-size: clamp(60px, 5.4vw, 82px);
+  font-weight: 950;
   letter-spacing: 0;
-  text-transform: none;
+  line-height: 0.86;
+  text-shadow: 0 12px 28px rgba(255, 255, 255, 0.65);
 }
 
-.campaign-offer-band strong {
-  color: #fff;
-  font-size: clamp(54px, 5vw, 80px);
-  font-weight: 900;
-  line-height: 0.9;
-}
-
-.campaign-offer-band em {
-  color: #78aaff;
-  font-size: clamp(24px, 2.2vw, 34px);
+.campaign-offer-price em {
+  color: var(--blue);
+  font-size: clamp(22px, 2vw, 30px);
   font-style: normal;
-  font-weight: 860;
+  font-weight: 900;
   line-height: 1;
 }
 
-.campaign-offer-band p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.78);
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: clamp(16px, 1.25vw, 19px);
-  line-height: 1.65;
+.campaign-offer-old-price {
+  margin: -6px 0 4px;
+  color: #fff;
+  font-size: clamp(21px, 1.8vw, 28px);
+  font-weight: 820;
+  line-height: 1;
+  text-decoration: line-through;
+  text-decoration-color: #fff;
+  text-decoration-thickness: 4px;
 }
 
-.campaign-offer-band p:first-of-type {
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: clamp(20px, 1.8vw, 28px);
-  font-weight: 820;
-  line-height: 1.18;
+.campaign-offer-chips {
+  display: grid;
+  gap: 8px;
+  width: min(320px, 100%);
+}
+
+.campaign-offer-chips > span {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  border: 1px solid rgba(176, 207, 255, 0.72);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.82);
+  min-height: 54px;
+  padding: 9px 14px;
+  color: var(--navy);
+  box-shadow: 0 14px 30px rgba(7, 27, 73, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.campaign-offer-chips .icon {
+  color: var(--blue);
+}
+
+.campaign-offer-animation {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.campaign-offer-animation .lottie-icon,
+.campaign-offer-saving-icon .lottie-icon {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.campaign-offer-chip-copy {
+  display: block;
+}
+
+.campaign-offer-chips strong,
+.campaign-offer-chips small {
+  display: block;
+}
+
+.campaign-offer-chips strong {
+  color: var(--navy);
+  font-size: clamp(17px, 1.15vw, 21px);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.campaign-offer-chips small {
+  grid-column: 2;
+  margin-top: 3px;
+  color: #52617d;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.campaign-offer-saving {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  width: min(320px, 100%);
+  margin-top: 8px;
+}
+
+.campaign-offer-saving > span {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  color: var(--blue);
+}
+
+.campaign-offer-saving strong {
+  max-width: 260px;
+  color: var(--navy);
+  font-size: clamp(17px, 1.15vw, 21px);
+  font-weight: 900;
+  line-height: 1.16;
 }
 
 .campaign-hero-cta {
@@ -5859,6 +6491,7 @@ a.footer-credit img {
   z-index: 2;
   width: 100%;
   justify-self: end;
+  align-self: center;
 }
 
 .campaign-hero-form::before {
@@ -5867,13 +6500,8 @@ a.footer-credit img {
   inset: -28px;
   z-index: -1;
   border-radius: 28px;
-  background: radial-gradient(
-    circle at 30% 20%,
-    rgba(120, 170, 255, 0.55) 0%,
-    rgba(47, 118, 255, 0.28) 42%,
-    transparent 72%
-  );
-  filter: blur(28px);
+  background: radial-gradient(circle at 36% 18%, rgba(120, 170, 255, 0.48), transparent 68%);
+  filter: blur(24px);
 }
 
 .campaign-hero-glow {
@@ -6068,12 +6696,12 @@ a.footer-credit img {
 .voucher-ticket-form {
   position: relative;
   width: 100%;
-  max-width: 540px;
+  max-width: 520px;
   border: 1px solid rgba(205, 219, 241, 0.92);
-  border-radius: 20px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.99);
-  padding: clamp(34px, 4.2vw, 52px);
-  box-shadow: 0 40px 90px rgba(0, 8, 30, 0.4), 0 12px 28px rgba(47, 118, 255, 0.18);
+  padding: clamp(28px, 3.4vw, 44px);
+  box-shadow: 0 32px 74px rgba(0, 8, 30, 0.34), 0 10px 24px rgba(47, 118, 255, 0.16);
   overflow: hidden;
 }
 
@@ -6086,17 +6714,18 @@ a.footer-credit img {
 }
 
 .voucher-ticket-form h2 {
-  margin: 0 0 26px;
+  margin: 0 0 22px;
   color: var(--navy);
-  font-size: clamp(28px, 2.4vw, 38px);
+  font-size: clamp(27px, 1.95vw, 34px);
   font-weight: 880;
   line-height: 1.1;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .voucher-field {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .voucher-field-row {
@@ -6106,7 +6735,7 @@ a.footer-credit img {
 }
 
 .voucher-field-row .voucher-field {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .voucher-field-row .voucher-field:only-child {
@@ -6115,7 +6744,7 @@ a.footer-credit img {
 
 .voucher-field span {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
   color: var(--navy);
   font-size: 14px;
   font-weight: 760;
@@ -6124,7 +6753,7 @@ a.footer-credit img {
 .voucher-field input,
 .voucher-field select {
   width: 100%;
-  min-height: 54px;
+  min-height: 50px;
   border: 1.5px solid var(--line);
   border-radius: 12px;
   background: #f8fbff;
@@ -6146,9 +6775,9 @@ a.footer-credit img {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 11px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -6162,8 +6791,8 @@ a.footer-credit img {
 
 .voucher-submit {
   width: 100%;
-  min-height: 58px;
-  margin-top: 12px;
+  min-height: 56px;
+  margin-top: 10px;
   font-size: 17px;
   box-shadow: none;
 }
@@ -6221,41 +6850,52 @@ a.footer-credit img {
 }
 
 .campaign-steps {
-  padding: clamp(52px, 7vw, 94px) clamp(24px, 6vw, 128px);
-  background: #fff;
+  padding: clamp(60px, 6vw, 86px) clamp(24px, 5.6vw, 76px) clamp(44px, 5vw, 68px);
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 72%);
 }
 
 .campaign-steps h2 {
-  margin: 8px 0 0;
+  margin: 20px auto 0;
+  max-width: 920px;
   color: var(--navy);
-  font-size: clamp(34px, 4vw, 58px);
+  font-size: clamp(34px, 4.2vw, 56px);
   font-weight: 860;
-  line-height: 1.06;
+  line-height: 1.04;
+  text-align: center;
+}
+
+.campaign-steps-intro {
+  margin: 8px auto 0;
+  max-width: 760px;
+  color: #6f7b92;
+  font-size: clamp(15px, 1.3vw, 19px);
+  font-weight: 760;
+  line-height: 1.45;
   text-align: center;
 }
 
 .campaign-timeline {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 56px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 42px);
+  margin-top: 68px;
   position: relative;
 }
 
 .campaign-timeline::before {
   content: "";
   position: absolute;
-  top: 15px;
-  left: calc(100% / 6);
-  right: calc(100% / 6);
+  top: -28px;
+  left: calc(10% - 2px);
+  right: calc(10% - 2px);
   z-index: 0;
-  height: 2px;
+  height: 1px;
   background: repeating-linear-gradient(
     90deg,
-    var(--line) 0,
-    var(--line) 8px,
-    transparent 8px,
-    transparent 16px
+    #c9d9f2 0,
+    #c9d9f2 9px,
+    transparent 9px,
+    transparent 19px
   );
 }
 
@@ -6265,55 +6905,275 @@ a.footer-credit img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 16px;
+  min-height: 252px;
+  padding: 26px 18px 22px;
+  border: 1px solid #dbe7fb;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 48px rgba(3, 25, 70, 0.08);
   text-align: center;
+}
+
+.campaign-timeline-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 2%, rgba(47, 116, 255, 0.1), transparent 42%);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.campaign-timeline-step > * {
+  position: relative;
+  z-index: 1;
 }
 
 .campaign-timeline-icon {
   display: inline-grid;
   place-items: center;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
   color: var(--blue);
 }
 
 .campaign-timeline-icon .icon {
-  width: 44px;
-  height: 44px;
+  width: 58px;
+  height: 58px;
   color: var(--blue);
 }
 
 .campaign-timeline-number {
-  position: relative;
-  top: auto;
-  left: auto;
+  position: absolute;
+  top: -43px;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
-  margin: 0 0 14px;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
-  background: var(--navy);
+  background: var(--blue);
+  box-shadow: 0 8px 20px rgba(47, 116, 255, 0.28);
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
-  order: -1;
+}
+
+.campaign-timeline-badge {
+  position: absolute;
+  top: -43px;
+  left: calc(50% + 26px);
+  min-width: 78px;
+  padding: 5px 10px;
+  border: 1px solid #bdd4ff;
+  border-radius: 999px;
+  background: #dbe9ff;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(47, 116, 255, 0.12);
+}
+
+.campaign-timeline-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 154px);
+  height: 118px;
+  margin: 0 auto 16px;
+}
+
+.campaign-timeline-visual::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f3f7ff 0%, #eef4ff 100%);
+  filter: drop-shadow(0 16px 18px rgba(47, 116, 255, 0.12));
+}
+
+.campaign-timeline-art {
+  object-fit: contain;
+  border-radius: 16px;
+  filter: drop-shadow(0 12px 18px rgba(3, 25, 70, 0.08));
+}
+
+.campaign-timeline-visual-form::after,
+.campaign-timeline-visual-contract::after {
+  content: "";
+  position: absolute;
+  width: 102px;
+  height: 78px;
+  border: 1px solid #d9e6fb;
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, var(--blue), var(--blue)) 18px 15px / 48px 6px no-repeat,
+    linear-gradient(90deg, #d8e3f2, #d8e3f2) 18px 34px / 62px 5px no-repeat,
+    linear-gradient(90deg, #d8e3f2, #d8e3f2) 18px 49px / 54px 5px no-repeat,
+    linear-gradient(90deg, var(--blue), var(--blue)) 18px 64px / 70px 9px no-repeat,
+    #fff;
+  box-shadow: 0 14px 24px rgba(3, 25, 70, 0.08);
+}
+
+.campaign-timeline-visual-form .campaign-timeline-icon,
+.campaign-timeline-visual-mail .campaign-timeline-icon,
+.campaign-timeline-visual-contract .campaign-timeline-icon,
+.campaign-timeline-visual-mailbox .campaign-timeline-icon,
+.campaign-timeline-visual-washer .campaign-timeline-icon {
+  z-index: 2;
+}
+
+.campaign-timeline-visual-form .campaign-timeline-icon {
+  position: absolute;
+  top: 7px;
+  right: 13px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(47, 116, 255, 0.24);
+}
+
+.campaign-timeline-visual-form .campaign-timeline-icon .icon,
+.campaign-timeline-visual-contract .campaign-timeline-icon .icon {
+  width: 21px;
+  height: 21px;
+  color: currentColor;
+}
+
+.campaign-timeline-visual-mail .campaign-timeline-icon {
+  width: 102px;
+  height: 76px;
+  color: #fff;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.5), transparent 46%),
+    linear-gradient(135deg, #8ebaff 0%, var(--blue) 72%);
+  clip-path: polygon(0 18%, 50% 56%, 100% 18%, 100% 100%, 0 100%);
+  filter: drop-shadow(0 18px 20px rgba(47, 116, 255, 0.22));
+}
+
+.campaign-timeline-visual-mail .campaign-timeline-icon .icon {
+  width: 88px;
+  height: 66px;
+  opacity: 0;
+}
+
+.campaign-timeline-visual-mail::after {
+  content: "@";
+  position: absolute;
+  top: 16px;
+  right: 13px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 10px 20px rgba(47, 116, 255, 0.24);
+}
+
+.campaign-timeline-visual-contract::after {
+  background:
+    linear-gradient(90deg, #d8e3f2, #d8e3f2) 18px 18px / 42px 6px no-repeat,
+    linear-gradient(90deg, #d8e3f2, #d8e3f2) 18px 35px / 62px 5px no-repeat,
+    linear-gradient(90deg, #d8e3f2, #d8e3f2) 18px 50px / 54px 5px no-repeat,
+    linear-gradient(120deg, transparent 58%, var(--blue) 59%, var(--blue) 63%, transparent 64%) 53px 61px / 40px 20px no-repeat,
+    #fff;
+}
+
+.campaign-timeline-visual-contract .campaign-timeline-icon {
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+}
+
+.campaign-timeline-visual-mailbox .campaign-timeline-icon {
+  width: 116px;
+  height: 76px;
+  border-radius: 38px 10px 10px 38px;
+  background:
+    linear-gradient(90deg, #cbd3df 0 66%, transparent 66%),
+    linear-gradient(180deg, #fbfdff 0%, #d8e0ea 100%);
+  color: transparent;
+  box-shadow: 0 16px 24px rgba(3, 25, 70, 0.11);
+}
+
+.campaign-timeline-visual-mailbox .campaign-timeline-icon::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  right: 17px;
+  width: 9px;
+  height: 78px;
+  border-radius: 8px;
+  background: var(--blue);
+}
+
+.campaign-step-card-mini {
+  position: absolute;
+  left: 17px;
+  bottom: 28px;
+  z-index: 3;
+  width: 74px;
+  height: auto;
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 10px 12px rgba(3, 25, 70, 0.16));
+}
+
+.campaign-timeline-visual-washer .campaign-timeline-icon {
+  width: 92px;
+  height: 92px;
+  border: 1px solid #d5e1f3;
+  border-radius: 6px;
+  background: #eef3fa;
+  color: #24334f;
+  box-shadow: 0 14px 24px rgba(3, 25, 70, 0.09);
+}
+
+.campaign-timeline-visual-washer .campaign-timeline-icon .icon {
+  width: 64px;
+  height: 64px;
+  color: #24334f;
+}
+
+.campaign-step-card-tag {
+  position: absolute;
+  right: 2px;
+  bottom: 25px;
+  z-index: 4;
+  width: 44px;
+  height: auto;
+  transform: rotate(10deg);
+  filter: drop-shadow(0 8px 10px rgba(3, 25, 70, 0.18));
 }
 
 .campaign-timeline-step h3 {
-  margin: 0 0 8px;
+  margin: auto 0 8px;
   color: var(--navy);
-  font-size: 22px;
+  font-size: clamp(17px, 1.45vw, 20px);
   font-weight: 840;
+  line-height: 1.15;
 }
 
 .campaign-timeline-step p {
   margin: 0;
-  max-width: 240px;
+  max-width: 220px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.52;
 }
 
 .campaign-why {
@@ -6786,10 +7646,10 @@ a.footer-credit img {
 
 .rabatt-bonus-ladder article {
   display: grid;
-  grid-template-columns: minmax(130px, 0.55fr) minmax(180px, 1fr) minmax(220px, 0.9fr) minmax(90px, 0.35fr);
-  gap: clamp(18px, 3vw, 42px);
+  grid-template-columns: minmax(260px, 0.8fr) minmax(220px, 0.9fr) minmax(360px, 1fr) minmax(160px, 0.38fr);
+  gap: clamp(22px, 3vw, 48px);
   align-items: center;
-  min-height: 118px;
+  min-height: 112px;
   border-bottom: 1px solid rgba(180, 198, 226, 0.85);
 }
 
@@ -6810,15 +7670,17 @@ a.footer-credit img {
 .rabatt-bonus-percent strong {
   display: block;
   color: var(--navy);
-  font-size: clamp(28px, 3vw, 48px);
+  font-size: clamp(28px, 2.5vw, 42px);
   font-weight: 870;
-  line-height: 1;
+  line-height: 1.04;
   letter-spacing: 0;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .rabatt-bonus-credit strong {
   color: var(--blue);
-  font-size: clamp(24px, 2.3vw, 38px);
+  font-size: clamp(22px, 2vw, 34px);
 }
 
 .rabatt-bonus-flow {
@@ -6853,7 +7715,8 @@ a.footer-credit img {
 
 .rabatt-bonus-percent strong {
   color: #087f45;
-  font-size: clamp(30px, 3.1vw, 52px);
+  font-size: clamp(26px, 2.35vw, 40px);
+  white-space: nowrap;
 }
 
 .rabatt-bonus-percent span {
@@ -7303,10 +8166,12 @@ a.footer-credit img {
 
   .rabatt-bonus-load strong {
     font-size: clamp(24px, 7vw, 30px);
+    white-space: normal;
   }
 
   .rabatt-bonus-credit strong {
     font-size: clamp(20px, 6vw, 26px);
+    white-space: normal;
   }
 
   .rabatt-bonus-flow {
@@ -7317,6 +8182,7 @@ a.footer-credit img {
 
   .rabatt-bonus-percent strong {
     font-size: clamp(28px, 8vw, 38px);
+    white-space: normal;
   }
 
   .rabatt-price-section {
@@ -7439,8 +8305,11 @@ a.footer-credit img {
   }
 
   .campaign-timeline {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 58px 22px;
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .campaign-timeline::before {
@@ -7506,12 +8375,12 @@ a.footer-credit img {
     text-align: center;
   }
 
-  .campaign-offer-band div {
+  .campaign-offer-price {
     justify-content: center;
     min-width: 0;
   }
 
-  .campaign-offer-band .campaign-offer-amount {
+  .campaign-offer-price {
     justify-content: center;
   }
 
@@ -7541,13 +8410,22 @@ a.footer-credit img {
 }
 
 @media (max-width: 640px) {
+  .campaign-hero {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+    background: #f7fbff;
+    padding: 0 18px 44px;
+    text-align: left;
+  }
+
   .campaign-proof {
     display: none;
   }
 
   .campaign-steps {
     padding: 46px 20px 52px;
-    text-align: left;
+    text-align: center;
   }
 
   .campaign-steps .section-kicker {
@@ -7559,7 +8437,8 @@ a.footer-credit img {
     width: 40px;
     height: 3px;
     margin-top: 12px;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .campaign-steps h2 {
@@ -7567,18 +8446,22 @@ a.footer-credit img {
     margin-top: 18px;
     font-size: clamp(27px, 7.6vw, 33px);
     line-height: 1.08;
-    text-align: left;
+    text-align: center;
   }
 
-  .campaign-steps-title-line {
-    display: block;
-    white-space: nowrap;
+  .campaign-steps-intro {
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .campaign-timeline {
     display: grid;
-    gap: 0;
-    margin-top: 24px;
+    grid-template-columns: 1fr;
+    gap: 46px;
+    max-width: 360px;
+    margin-top: 54px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .campaign-timeline::before {
@@ -7586,49 +8469,56 @@ a.footer-credit img {
   }
 
   .campaign-timeline-step {
-    display: grid;
-    grid-template-columns: 32px 48px minmax(0, 1fr);
-    gap: 0 12px;
-    align-items: start;
-    border-top: 1px solid var(--line);
-    padding: 16px 0;
-    text-align: left;
+    display: flex;
+    min-height: auto;
+    padding: 32px 18px 22px;
+    border-top: 1px solid #dbe7fb;
+    text-align: center;
   }
 
   .campaign-timeline-icon {
     display: grid;
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    place-items: start center;
-    width: 48px;
-    height: 48px;
+    place-items: center;
+    width: 100%;
+    height: 100%;
     margin: 0;
   }
 
   .campaign-timeline-icon .icon {
-    width: 38px;
-    height: 38px;
+    width: 46px;
+    height: 46px;
     color: var(--blue);
   }
 
   .campaign-timeline-number {
-    grid-column: 1;
-    grid-row: 1 / span 2;
+    top: -20px;
+    left: 50%;
     width: 30px;
     height: 30px;
     margin: 0;
     font-size: 12px;
   }
 
+  .campaign-timeline-badge {
+    top: -20px;
+    left: calc(50% + 24px);
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+
+  .campaign-timeline-visual {
+    width: 146px;
+    height: 112px;
+    margin-bottom: 14px;
+  }
+
   .campaign-timeline-step h3 {
-    grid-column: 3;
-    margin: 1px 0 4px;
+    margin: auto 0 6px;
     font-size: 19px;
     line-height: 1.2;
   }
 
   .campaign-timeline-step p {
-    grid-column: 3;
     max-width: none;
     font-size: 13px;
     line-height: 1.45;
@@ -7641,28 +8531,178 @@ a.footer-credit img {
   .campaign-hero-bg-mobile {
     display: block;
     width: 100%;
-    height: calc(100vw * 16 / 9);
+    height: 100%;
     max-height: none;
     object-position: center top;
   }
 
   .campaign-hero-bg {
-    right: 0;
+    position: relative;
+    right: auto;
     bottom: auto;
-    left: 0;
-    height: calc(100vw * 16 / 9);
-    aspect-ratio: 9 / 16;
+    left: auto;
+    width: calc(100% + 36px);
+    height: min(66svh, 500px);
+    min-height: 390px;
+    margin-left: -18px;
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 24px 44px rgba(7, 27, 73, 0.16);
+  }
+
+  .campaign-hero-bg img {
+    object-position: center top;
+  }
+
+  .campaign-hero-copy {
+    max-width: none;
+    margin: -72px auto 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .campaign-offer-band {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    border: 1px solid rgba(211, 224, 244, 0.95);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 22px 18px 20px;
+    box-shadow: 0 22px 46px rgba(7, 27, 73, 0.16);
+    text-align: center;
+    backdrop-filter: blur(14px);
+  }
+
+  .campaign-offer-pill {
+    justify-content: center;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: var(--navy);
+    font-size: clamp(18px, 5.3vw, 23px);
+    font-weight: 920;
+    letter-spacing: 0;
+    line-height: 1.12;
+    text-transform: none;
+    white-space: normal;
+    backdrop-filter: none;
+  }
+
+  .campaign-offer-price {
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .campaign-offer-price strong {
+    color: var(--blue);
+    font-size: clamp(55px, 17vw, 72px);
+    line-height: 0.9;
+    text-shadow: none;
+  }
+
+  .campaign-offer-price em {
+    color: var(--blue);
+    font-size: clamp(22px, 6.4vw, 28px);
+  }
+
+  .campaign-offer-old-price {
+    margin: -2px 0 12px;
+    color: #77839a;
+    font-size: 22px;
+    text-decoration-color: #77839a;
+    text-decoration-thickness: 3px;
+  }
+
+  .campaign-offer-chips {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    border-top: 1px solid #dbe7f7;
+    border-bottom: 1px solid #dbe7f7;
+    padding: 15px 0;
+  }
+
+  .campaign-offer-chips > span {
+    grid-template-columns: 34px minmax(0, 1fr);
+    justify-items: stretch;
+    gap: 7px;
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0 8px;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .campaign-offer-chips > span + span {
+    border-left: 1px solid #dbe7f7;
+  }
+
+  .campaign-offer-animation {
+    width: 32px;
+    height: 32px;
+    align-self: center;
+  }
+
+  .campaign-offer-chips strong {
+    font-size: 14px;
+    line-height: 1.15;
+    text-align: left;
+  }
+
+  .campaign-offer-chips small {
+    grid-column: auto;
+    margin-top: 1px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .campaign-offer-saving {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 18px;
+    background: #eef5ff;
+    padding: 13px 14px;
+  }
+
+  .campaign-offer-saving > span {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+  }
+
+  .campaign-offer-saving strong {
+    max-width: none;
+    color: var(--blue);
+    font-size: 17px;
+    line-height: 1.15;
   }
 
   .campaign-hero-form {
     max-width: 100%;
-    margin-top: 24px;
+    margin: 18px auto 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .campaign-hero-form::before {
+    content: none;
   }
 
   .voucher-ticket-form {
-    border-radius: 16px;
-    padding: 28px 16px 20px;
-    box-shadow: 0 22px 48px rgba(7, 27, 73, 0.2);
+    max-width: 430px;
+    margin: 0 auto;
+    border-radius: 24px 24px 0 0;
+    padding: 28px 18px 22px;
+    box-shadow: 0 18px 42px rgba(7, 27, 73, 0.12);
   }
 
   .voucher-ticket-form h2 {
@@ -7970,6 +9010,10 @@ a.footer-credit img {
     text-align: left;
   }
 
+  .home-price-stack {
+    margin-top: 24px;
+  }
+
   .price-grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -8067,19 +9111,6 @@ a.footer-credit img {
     background: rgba(255, 255, 255, 0.85);
   }
 
-  .price-value-was-row {
-    justify-content: flex-start;
-    gap: 6px;
-  }
-
-  .price-value-was {
-    font-size: 14px;
-  }
-
-  .price-value-off {
-    font-size: 11px;
-  }
-
   .price-card strong {
     margin-top: 3px;
     font-size: 32px;
@@ -8125,6 +9156,104 @@ a.footer-credit img {
 
   .price-program-preview {
     display: none;
+  }
+
+  .subscription-campaign-panel {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    margin-top: 28px;
+    border-radius: 18px;
+  }
+
+  .subscription-campaign-offer {
+    min-height: 430px;
+    clip-path: none;
+    padding: 28px 18px 198px;
+  }
+
+  .subscription-campaign-pill {
+    min-height: 32px;
+    max-width: 100%;
+    padding: 0 13px;
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .subscription-campaign-price {
+    margin-top: 26px;
+  }
+
+  .subscription-campaign-price strong {
+    font-size: clamp(58px, 19vw, 84px);
+  }
+
+  .subscription-campaign-price span {
+    padding-left: min(33vw, 132px);
+    font-size: 20px;
+  }
+
+  .subscription-campaign-card {
+    width: min(330px, 84vw);
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%) rotate(-5deg);
+  }
+
+  .subscription-campaign-save {
+    grid-template-columns: 45px minmax(0, 1fr);
+    gap: 10px;
+    width: min(260px, 68vw);
+    min-height: 66px;
+    right: 13px;
+    bottom: 22px;
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+  .subscription-campaign-save > span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .subscription-campaign-save .icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .subscription-campaign-save strong {
+    font-size: 16px;
+  }
+
+  .subscription-campaign-save small {
+    margin-top: 3px;
+    font-size: 12px;
+  }
+
+  .subscription-campaign-included {
+    padding: 30px 20px 32px;
+  }
+
+  .subscription-campaign-included-item {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .subscription-campaign-included-item .lottie-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .subscription-campaign-included strong {
+    font-size: 28px;
+  }
+
+  .subscription-campaign-included small {
+    margin-top: 6px;
+    font-size: 16px;
+  }
+
+  .subscription-campaign-divider {
+    margin: 24px 0;
   }
 
   .feature-stage .feature-panel-pet,
@@ -8205,5 +9334,243 @@ a.footer-credit img {
     margin: 0 auto;
     font-size: 17px;
     text-align: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .rabattkarte-abo-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .rabattkarte-abo-offer {
+    min-height: 720px;
+  }
+
+  .rabattkarte-abo-explainer {
+    padding: 58px clamp(28px, 7vw, 78px) 68px;
+  }
+
+  .rabattkarte-abo-explainer h2,
+  .rabattkarte-abo-explainer > p {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 700px) {
+  .kundenkarte {
+    padding: 0;
+    background: #fff;
+  }
+
+  .price-section + .kundenkarte {
+    margin-top: 0;
+  }
+
+  .rabattkarte-abo-showcase {
+    display: block;
+    min-height: 0;
+    height: auto;
+    overflow: visible;
+    background: #f6f9ff;
+  }
+
+  .rabattkarte-abo-offer {
+    min-height: 0;
+    border-radius: 0 0 28px 28px;
+    background:
+      radial-gradient(circle at 78% 66%, rgba(255, 255, 255, 0.12), transparent 34%),
+      linear-gradient(145deg, #0955ff 0%, #1468ff 58%, #2378ff 100%);
+    padding: 28px 18px 30px;
+  }
+
+  .rabattkarte-abo-kicker {
+    order: 1;
+    gap: 10px;
+    min-height: 36px;
+    max-width: min(100%, 330px);
+    padding: 0 14px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+  }
+
+  .rabattkarte-abo-kicker span {
+    width: 24px;
+  }
+
+  .rabattkarte-abo-offer h2 {
+    order: 2;
+    margin-top: 22px;
+    font-size: clamp(42px, 12.4vw, 54px);
+    line-height: 0.94;
+  }
+
+  .rabattkarte-abo-price {
+    order: 3;
+    margin-top: 18px;
+  }
+
+  .rabattkarte-abo-price strong {
+    font-size: clamp(68px, 20vw, 86px);
+    line-height: 0.8;
+  }
+
+  .rabattkarte-abo-price span {
+    font-size: 22px;
+  }
+
+  .rabattkarte-abo-includes {
+    order: 6;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: min(100%, 340px);
+    margin-top: 18px;
+  }
+
+  .rabattkarte-abo-includes::before {
+    display: none;
+  }
+
+  .rabattkarte-abo-includes span {
+    grid-template-columns: 40px minmax(0, 1fr);
+    justify-content: start;
+    width: 100%;
+    min-height: 54px;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 8px 14px;
+    backdrop-filter: blur(10px);
+  }
+
+  .rabattkarte-abo-includes .lottie-icon {
+    width: 38px;
+    height: 38px;
+    background: transparent;
+  }
+
+  .rabattkarte-abo-includes strong {
+    font-size: 19px;
+    text-align: left;
+  }
+
+  .rabattkarte-abo-card-image {
+    order: 4;
+    width: min(460px, 106vw);
+    max-width: none;
+    margin-top: 22px;
+    margin-left: -3vw;
+  }
+
+  .rabattkarte-abo-savings {
+    order: 5;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;
+    width: min(100%, 330px);
+    height: auto;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: -8px;
+    border-radius: 16px;
+    padding: 14px 18px;
+    box-shadow: 0 18px 34px rgba(0, 14, 60, 0.2);
+  }
+
+  .rabattkarte-abo-savings strong {
+    max-width: none;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .rabattkarte-abo-savings b {
+    margin-top: 0;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .rabattkarte-abo-savings span {
+    grid-column: 1 / -1;
+    margin-top: 2px;
+    font-size: 12px;
+  }
+
+  .rabattkarte-abo-explainer {
+    padding: 38px 20px 54px;
+  }
+
+  .rabattkarte-abo-explainer h2 {
+    max-width: 340px;
+    margin: 0 auto;
+    font-size: clamp(33px, 9vw, 39px);
+    line-height: 1.02;
+    text-align: center;
+  }
+
+  .rabattkarte-abo-explainer h2 span {
+    display: inline;
+  }
+
+  .rabattkarte-abo-explainer h2 span:first-child::after {
+    content: "\A";
+    white-space: pre;
+  }
+
+  .rabattkarte-abo-explainer > p {
+    margin-top: 22px;
+    font-size: 18px;
+  }
+
+  .rabattkarte-abo-steps {
+    margin-top: 28px;
+  }
+
+  .rabattkarte-abo-steps article {
+    grid-template-columns: 44px 58px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 112px;
+  }
+
+  .rabattkarte-step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+  }
+
+  .rabattkarte-abo-steps .icon {
+    width: 54px;
+    height: 54px;
+    padding: 14px;
+  }
+
+  .rabattkarte-abo-steps h3 {
+    font-size: 22px;
+  }
+
+  .rabattkarte-abo-steps p {
+    margin-top: 7px;
+    font-size: 14px;
+  }
+
+  .rabattkarte-abo-cta {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 78px;
+    margin-top: 24px;
+    padding: 14px 16px;
+  }
+
+  .rabattkarte-abo-cta .icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .rabattkarte-abo-cta strong {
+    font-size: 18px;
+  }
+
+  .rabattkarte-abo-cta small {
+    font-size: 14px;
   }
 }

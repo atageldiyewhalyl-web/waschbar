@@ -41,7 +41,7 @@ export function MobileNav() {
             Preise
           </Link>
           <Link href="/rabattkarte" onClick={close}>
-            Rabattkarte
+            Mitgliedskarte
           </Link>
           <Link href="/#bewertungen" onClick={close}>
             Bewertungen
@@ -53,7 +53,7 @@ export function MobileNav() {
 
         <div className="mobile-nav-footer">
           <Link className="button button-primary" href="/angebote/kundenkarte-guthaben" onClick={close}>
-            10 € Gratis sichern <Icon name="gift" />
+            Abo heute sichern <Icon name="card" />
           </Link>
           <a className="mobile-nav-phone" href={`tel:${contactInfo.phoneHref}`}>
             <Icon name="phone" />

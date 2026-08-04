@@ -18,9 +18,9 @@ type LeadPayload = {
 };
 
 const defaultFromEmail = "Waschbar Anfrage <anfrage@forms.xn--nll-hoa.com>";
-const consentFormVersion = "kundenkarte-guthaben-v1";
+const consentFormVersion = "sb-wasch-abo-v1";
 const voucherConsentText =
-  "Ich möchte den Gutschein per E-Mail erhalten und meine Rabattkarte per Post zugeschickt bekommen.";
+  "Ich möchte Informationen zum SB-Wasch-Abo erhalten und bin einverstanden, dass Waschbar mich dazu kontaktiert.";
 const campaignMeasurementConsentText =
   "Ich bin einverstanden, dass meine Daten zur Kampagnenmessung an Google/Meta übermittelt werden.";
 const emailMarketingConsentText =
@@ -79,7 +79,7 @@ function validatePayload(payload: LeadPayload) {
 
 function renderTextEmail(lead: ReturnType<typeof validatePayload>) {
   return [
-    "Neue Waschbar Gutschein-Anfrage",
+    "Neue Waschbar SB-Wasch-Abo Anfrage",
     "",
     `Name: ${lead.firstName} ${lead.lastName}`,
     `E-Mail: ${lead.email}`,
@@ -106,7 +106,7 @@ function renderHtmlEmail(lead: ReturnType<typeof validatePayload>) {
 
   return `
     <div style="font-family:Arial,sans-serif;color:#071b49;line-height:1.5">
-      <h1 style="font-size:22px;margin:0 0 16px">Neue Waschbar Gutschein-Anfrage</h1>
+      <h1 style="font-size:22px;margin:0 0 16px">Neue Waschbar SB-Wasch-Abo Anfrage</h1>
       <table style="border-collapse:collapse;width:100%;max-width:640px">
         ${rows
           .map(
@@ -143,6 +143,21 @@ function hashIpAddress(ipAddress: string) {
     .digest("hex");
 }
 
+function getErrorMessage(error: unknown) {
+  if (error instanceof Error) return error.message;
+  if (error && typeof error === "object" && "message" in error) {
+    const message = (error as { message?: unknown }).message;
+    if (typeof message === "string" && message.trim()) return message;
+  }
+  if (typeof error === "string" && error.trim()) return error;
+  return "Unknown error";
+}
+
+function isSchemaColumnError(error: unknown) {
+  const message = getErrorMessage(error).toLowerCase();
+  return message.includes("column") && message.includes("waschbar_leads");
+}
+
 export async function POST(request: Request) {
   try {
     const supabaseUrl = process.env.SUPABASE_URL;
@@ -163,39 +178,65 @@ export async function POST(request: Request) {
       auth: { persistSession: false },
     });
 
-    const { data, error } = await supabase
+    const fullLeadInsert = {
+      first_name: lead.firstName,
+      last_name: lead.lastName,
+      email: lead.email,
+      phone: lead.phone,
+      street: lead.street,
+      postal_code: lead.postalCode,
+      city: lead.city,
+      location: lead.location,
+      consent_voucher: lead.consentEmail,
+      consent_voucher_at: consentTimestamp,
+      consent_voucher_text: voucherConsentText,
+      consent_email_marketing: lead.consentEmailMarketing,
+      consent_email_marketing_at: lead.consentEmailMarketing
+        ? consentTimestamp
+        : null,
+      consent_email_marketing_text: lead.consentEmailMarketing
+        ? emailMarketingConsentText
+        : null,
+      consent_marketing: lead.consentMarketing,
+      consent_marketing_at: lead.consentMarketing ? consentTimestamp : null,
+      consent_marketing_text: lead.consentMarketing
+        ? campaignMeasurementConsentText
+        : null,
+      consent_form_version: consentFormVersion,
+      submitted_user_agent: submittedUserAgent,
+      submitted_ip_hash: submittedIpHash || null,
+      page_url: lead.pageUrl,
+    };
+
+    const legacyLeadInsert = {
+      first_name: lead.firstName,
+      last_name: lead.lastName,
+      email: lead.email,
+      phone: lead.phone,
+      street: lead.street,
+      postal_code: lead.postalCode,
+      city: lead.city,
+      location: lead.location,
+      consent_marketing: lead.consentMarketing,
+      page_url: lead.pageUrl,
+    };
+
+    let { data, error } = await supabase
       .from("waschbar_leads")
-      .insert({
-        first_name: lead.firstName,
-        last_name: lead.lastName,
-        email: lead.email,
-        phone: lead.phone,
-        street: lead.street,
-        postal_code: lead.postalCode,
-        city: lead.city,
-        location: lead.location,
-        consent_voucher: lead.consentEmail,
-        consent_voucher_at: consentTimestamp,
-        consent_voucher_text: voucherConsentText,
-        consent_email_marketing: lead.consentEmailMarketing,
-        consent_email_marketing_at: lead.consentEmailMarketing
-          ? consentTimestamp
-          : null,
-        consent_email_marketing_text: lead.consentEmailMarketing
-          ? emailMarketingConsentText
-          : null,
-        consent_marketing: lead.consentMarketing,
-        consent_marketing_at: lead.consentMarketing ? consentTimestamp : null,
-        consent_marketing_text: lead.consentMarketing
-          ? campaignMeasurementConsentText
-          : null,
-        consent_form_version: consentFormVersion,
-        submitted_user_agent: submittedUserAgent,
-        submitted_ip_hash: submittedIpHash || null,
-        page_url: lead.pageUrl,
-      })
+      .insert(fullLeadInsert)
       .select("id")
       .single();
+
+    if (error && isSchemaColumnError(error)) {
+      const legacyResult = await supabase
+        .from("waschbar_leads")
+        .insert(legacyLeadInsert)
+        .select("id")
+        .single();
+
+      data = legacyResult.data;
+      error = legacyResult.error;
+    }
 
     if (error) throw error;
 
@@ -207,7 +248,7 @@ export async function POST(request: Request) {
       throw new Error("No lead recipient configured.");
     }
 
-    const subject = `Neue Gutschein-Anfrage: ${lead.firstName} ${lead.lastName} (${lead.location})`;
+    const subject = `Neue SB-Wasch-Abo Anfrage: ${lead.firstName} ${lead.lastName} (${lead.location})`;
     const html = renderHtmlEmail(lead);
     const text = renderTextEmail(lead);
     const failedDeliveries: string[] = [];
@@ -254,7 +295,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unknown error";
+    const message = getErrorMessage(error);
     return NextResponse.json({ ok: false, error: message }, { status: 400 });
   }
 }
