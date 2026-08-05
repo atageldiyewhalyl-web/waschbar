@@ -165,7 +165,13 @@ export async function POST(request: Request) {
     const resendApiKey = process.env.RESEND_API_KEY;
 
     if (!supabaseUrl || !serviceRoleKey || !resendApiKey) {
-      throw new Error("Missing required server secrets.");
+      const missingSecrets = [
+        !supabaseUrl ? "SUPABASE_URL" : "",
+        !serviceRoleKey ? "SUPABASE_SERVICE_ROLE_KEY" : "",
+        !resendApiKey ? "RESEND_API_KEY" : "",
+      ].filter(Boolean);
+
+      throw new Error(`Missing required server secrets: ${missingSecrets.join(", ")}`);
     }
 
     const payload = (await request.json()) as LeadPayload;
@@ -299,6 +305,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     const message = getErrorMessage(error);
+    console.error("Voucher lead submission failed:", message);
     return NextResponse.json({ ok: false, error: message }, { status: 400 });
   }
 }

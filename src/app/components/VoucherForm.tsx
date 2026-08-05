@@ -38,10 +38,15 @@ export function VoucherForm() {
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result?.ok !== true) {
-        throw new Error("Anfrage fehlgeschlagen");
+        throw new Error(
+          typeof result?.error === "string" && result.error.trim()
+            ? result.error
+            : "Anfrage fehlgeschlagen",
+        );
       }
       setSubmitted(true);
-    } catch {
+    } catch (error) {
+      console.error("Voucher form submission failed", error);
       setSubmitError(
         "Deine Anfrage konnte nicht gesendet werden. Bitte versuche es erneut.",
       );
