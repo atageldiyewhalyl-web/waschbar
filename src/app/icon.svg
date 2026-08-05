@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Waschbar">
+  <defs>
+    <linearGradient id="drop" x1="126" x2="392" y1="79" y2="433" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6FAEFF" />
+      <stop offset="0.52" stop-color="#3478F6" />
+      <stop offset="1" stop-color="#0A58D8" />
+    </linearGradient>
+  </defs>
+  <path
+    fill="url(#drop)"
+    d="M256 32C168 145 96 229 96 326c0 102 68 166 160 166s160-64 160-166C416 229 344 145 256 32Z"
+  />
+  <path
+    fill="#FFFFFF"
+    d="M331 357c-31 39-88 42-124 9 24 65 112 79 163 19 37-44 38-94 5-151 7 45-3 84-44 123Z"
+    opacity="0.96"
+  />
+</svg>
