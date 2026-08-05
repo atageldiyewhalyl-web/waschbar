@@ -127,6 +127,44 @@ function renderHtmlEmail(lead: ReturnType<typeof validatePayload>) {
   `;
 }
 
+function renderCustomerConfirmationText(lead: ReturnType<typeof validatePayload>) {
+  return [
+    `Hallo ${lead.firstName} ${lead.lastName},`,
+    "",
+    "hiermit bestätigen wir den Eingang deiner Anfrage für das Abo in unserem Waschsalon in Heidelberg. Wir senden dir per Mail den Abovertrag sowie das SEPA-Lastschriftmandat. Wir bitten dich, diese zu unterzeichnen und per Mail an abo@waschbar.eu zurückzusenden. Anschließend erhältst du postalisch unsere Mitgliedskarte, womit du monatlich 10x waschen und 10x trocknen kannst.",
+    "",
+    "Für Fragen stehen wir dir jederzeit per Mail (abo@waschbar.eu) als auch unter 0176/20772290 zur Verfügung.",
+    "",
+    "Viele Grüße",
+    "",
+    "Waschbar Heidelberg GmbH",
+  ].join("\n");
+}
+
+function renderCustomerConfirmationHtml(lead: ReturnType<typeof validatePayload>) {
+  return `
+    <div style="font-family:Arial,sans-serif;color:#071b49;line-height:1.6;font-size:16px;max-width:680px">
+      <p>Hallo ${escapeHtml(`${lead.firstName} ${lead.lastName}`)},</p>
+      <p>
+        hiermit bestätigen wir den Eingang deiner Anfrage für das Abo in unserem Waschsalon in Heidelberg.
+        Wir senden dir per Mail den Abovertrag sowie das SEPA-Lastschriftmandat. Wir bitten dich, diese zu
+        unterzeichnen und per Mail an <a href="mailto:abo@waschbar.eu" style="color:#2f74ff;font-weight:700">abo@waschbar.eu</a>
+        zurückzusenden. Anschließend erhältst du postalisch unsere Mitgliedskarte, womit du monatlich
+        10x waschen und 10x trocknen kannst.
+      </p>
+      <p>
+        Für Fragen stehen wir dir jederzeit per Mail
+        (<a href="mailto:abo@waschbar.eu" style="color:#2f74ff;font-weight:700">abo@waschbar.eu</a>)
+        als auch unter <a href="tel:+4917620772290" style="color:#2f74ff;font-weight:700">0176/20772290</a> zur Verfügung.
+      </p>
+      <p>
+        Viele Grüße<br>
+        Waschbar Heidelberg GmbH
+      </p>
+    </div>
+  `;
+}
+
 function parseEmailList(value: string) {
   return value
     .split(",")
@@ -288,6 +326,27 @@ Deno.serve(async (request) => {
         const emailError = await emailResponse.text();
         failedDeliveries.push(`${recipient}: ${emailError.slice(0, 500)}`);
       }
+    }
+
+    const customerEmailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to: lead.email,
+        subject: "Bestätigung deiner SB-Wasch-Abo Anfrage",
+        html: renderCustomerConfirmationHtml(lead),
+        text: renderCustomerConfirmationText(lead),
+        reply_to: "abo@waschbar.eu",
+      }),
+    });
+
+    if (!customerEmailResponse.ok) {
+      const emailError = await customerEmailResponse.text();
+      failedDeliveries.push(`${lead.email}: ${emailError.slice(0, 500)}`);
     }
 
     if (failedDeliveries.length) {
