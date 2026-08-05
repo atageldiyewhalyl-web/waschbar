@@ -1,6 +1,4 @@
-import { createHash } from "crypto";
-import { createClient } from "@supabase/supabase-js";
-import { NextResponse } from "next/server";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.46.1";
 
 type LeadPayload = {
   firstName?: string;
@@ -15,6 +13,12 @@ type LeadPayload = {
   consentEmailMarketing?: boolean;
   consentMarketing?: boolean;
   pageUrl?: string;
+};
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
 const defaultFromEmail = "Waschbar Anfrage <anfrage@forms.xn--nll-hoa.com>";
@@ -136,11 +140,14 @@ function getClientIp(request: Request) {
   return request.headers.get("x-real-ip")?.trim() || "";
 }
 
-function hashIpAddress(ipAddress: string) {
+async function hashIpAddress(ipAddress: string) {
   if (!ipAddress) return "";
-  return createHash("sha256")
-    .update(`${ipAddress}:${process.env.CONSENT_IP_HASH_SALT || ""}`)
-    .digest("hex");
+  const salt = Deno.env.get("CONSENT_IP_HASH_SALT") || "";
+  const encoded = new TextEncoder().encode(`${ipAddress}:${salt}`);
+  const digest = await crypto.subtle.digest("SHA-256", encoded);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
 }
 
 function getErrorMessage(error: unknown) {
@@ -158,27 +165,32 @@ function isSchemaColumnError(error: unknown) {
   return message.includes("column") && message.includes("waschbar_leads");
 }
 
-export async function POST(request: Request) {
+Deno.serve(async (request) => {
+  if (request.method === "OPTIONS") {
+    return new Response("ok", { headers: corsHeaders });
+  }
+
+  if (request.method !== "POST") {
+    return Response.json(
+      { ok: false, error: "Method not allowed" },
+      { status: 405, headers: corsHeaders },
+    );
+  }
+
   try {
-    const supabaseUrl = process.env.SUPABASE_URL;
-    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    const resendApiKey = process.env.RESEND_API_KEY;
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
     if (!supabaseUrl || !serviceRoleKey || !resendApiKey) {
-      const missingSecrets = [
-        !supabaseUrl ? "SUPABASE_URL" : "",
-        !serviceRoleKey ? "SUPABASE_SERVICE_ROLE_KEY" : "",
-        !resendApiKey ? "RESEND_API_KEY" : "",
-      ].filter(Boolean);
-
-      throw new Error(`Missing required server secrets: ${missingSecrets.join(", ")}`);
+      throw new Error("Missing required server secrets.");
     }
 
     const payload = (await request.json()) as LeadPayload;
     const lead = validatePayload(payload);
     const consentTimestamp = new Date().toISOString();
     const submittedUserAgent = cleanText(request.headers.get("user-agent"), 500);
-    const submittedIpHash = hashIpAddress(getClientIp(request));
+    const submittedIpHash = await hashIpAddress(getClientIp(request));
 
     const supabase = createClient(supabaseUrl, serviceRoleKey, {
       auth: { persistSession: false },
@@ -250,8 +262,8 @@ export async function POST(request: Request) {
     }
 
     const leadId = data.id as string;
-    const from = process.env.LEAD_FROM_EMAIL || defaultFromEmail;
-    const to = parseEmailList(process.env.LEAD_TO_EMAIL || "");
+    const from = Deno.env.get("LEAD_FROM_EMAIL") || defaultFromEmail;
+    const to = parseEmailList(Deno.env.get("LEAD_TO_EMAIL") || "");
 
     if (!to.length) {
       throw new Error("No lead recipient configured.");
@@ -287,9 +299,9 @@ export async function POST(request: Request) {
         })
         .eq("id", leadId);
 
-      return NextResponse.json(
+      return Response.json(
         { ok: false, error: "Email delivery failed" },
-        { status: 502 },
+        { status: 502, headers: corsHeaders },
       );
     }
 
@@ -302,10 +314,10 @@ export async function POST(request: Request) {
       })
       .eq("id", leadId);
 
-    return NextResponse.json({ ok: true });
+    return Response.json({ ok: true }, { headers: corsHeaders });
   } catch (error) {
     const message = getErrorMessage(error);
     console.error("Voucher lead submission failed:", message);
-    return NextResponse.json({ ok: false, error: message }, { status: 400 });
+    return Response.json({ ok: false, error: message }, { status: 400, headers: corsHeaders });
   }
-}
+});

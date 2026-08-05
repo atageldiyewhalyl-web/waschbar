@@ -1,1 +1,4 @@
 project_id = "waschbar"
+
+[functions.voucher-lead]
+verify_jwt = false

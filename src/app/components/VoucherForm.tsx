@@ -4,6 +4,12 @@ import { useState, type FormEvent } from "react";
 import { Icon } from "./Icon";
 import { locations } from "../data/site-data";
 
+const defaultLeadEndpoint =
+  "https://srnynewvauzymnljqskj.supabase.co/functions/v1/voucher-lead";
+const leadEndpoint = (
+  process.env.NEXT_PUBLIC_LEAD_CAPTURE_ENDPOINT || defaultLeadEndpoint
+).replace(/\/$/, "");
+
 export function VoucherForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -31,7 +37,7 @@ export function VoucherForm() {
     };
 
     try {
-      const response = await fetch("/api/voucher-lead", {
+      const response = await fetch(leadEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(lead),
