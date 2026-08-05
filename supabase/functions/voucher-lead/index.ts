@@ -22,6 +22,7 @@ const corsHeaders = {
 };
 
 const defaultFromEmail = "Waschbar Anfrage <anfrage@forms.xn--nll-hoa.com>";
+const defaultLeadRecipients = "abo@waschbar.eu";
 const consentFormVersion = "sb-wasch-abo-v1";
 const voucherConsentText =
   "Ich möchte Informationen zum SB-Wasch-Abo erhalten und bin einverstanden, dass Waschbar mich dazu kontaktiert.";
@@ -172,6 +173,15 @@ function parseEmailList(value: string) {
     .filter((email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
 }
 
+function resolveLeadRecipients() {
+  return Array.from(
+    new Set([
+      ...parseEmailList(Deno.env.get("LEAD_TO_EMAIL") || ""),
+      ...parseEmailList(defaultLeadRecipients),
+    ]),
+  );
+}
+
 function getClientIp(request: Request) {
   const forwardedFor = request.headers.get("x-forwarded-for");
   if (forwardedFor) return forwardedFor.split(",")[0]?.trim() || "";
@@ -301,7 +311,7 @@ Deno.serve(async (request) => {
 
     const leadId = data.id as string;
     const from = Deno.env.get("LEAD_FROM_EMAIL") || defaultFromEmail;
-    const to = parseEmailList(Deno.env.get("LEAD_TO_EMAIL") || "");
+    const to = resolveLeadRecipients();
 
     if (!to.length) {
       throw new Error("No lead recipient configured.");
