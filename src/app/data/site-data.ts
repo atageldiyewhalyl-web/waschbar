@@ -327,18 +327,19 @@ export function reviewsForLocation(locationIndex: number): Review[] {
 }
 
 export function buildLocalBusinessJsonLd(location: Location) {
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://waschbar.eu").replace(/\/$/, "");
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.waschbar.eu").replace(/\/$/, "");
 
   return {
     "@context": "https://schema.org",
     "@type": ["SelfServiceLaundry", "LocalBusiness"],
     "@id": `${siteUrl}${location.href}#business`,
+    branchOf: { "@id": `${siteUrl}/#organization` },
     name: location.name,
     description: `Selbstbedienungs-Waschsalon in ${location.addressLocality}: waschen und trocknen direkt vor Ort an modernen Maschinen. ${location.angle}`,
     url: `${siteUrl}${location.href}`,
     telephone: contactInfo.phone,
     email: contactInfo.email,
-    image: location.image,
+    image: `${siteUrl}${location.image}`,
     address: {
       "@type": "PostalAddress",
       streetAddress: location.street,
@@ -459,6 +460,29 @@ export const mobileKundenkarteBenefits = [
     animation: "/animations/laundry-2.json",
     title: "10 Trocknergänge",
     text: "Je 20 Minuten trocknen und über 60% gegenüber Einzelpreisen sparen.",
+  },
+];
+
+export const rabattkarteFaqs = [
+  {
+    question: "Was ist im SB-Wasch-Abo mit Mitgliedskarte enthalten?",
+    answer:
+      "Das SB-Wasch-Abo kostet 29,99 € im Monat und enthält 10 Waschgänge sowie 10 Trocknergänge je 20 Minuten - statt regulär 85 € bei Einzelpreisen, also über 60% Ersparnis.",
+  },
+  {
+    question: "Gilt die Waschbar Mitgliedskarte an beiden Standorten?",
+    answer:
+      "Ja. Die Mitgliedskarte gilt sowohl bei Waschbar Heidelberg als auch bei Waschbar Ludwigshafen.",
+  },
+  {
+    question: "Wie melde ich mich für das SB-Wasch-Abo an?",
+    answer:
+      "Du füllst unser Online-Formular aus und wählst deinen Waschbar Standort. Danach senden wir dir deinen Vertrag per E-Mail zu, den du digital bestätigst.",
+  },
+  {
+    question: "Wie lange dauert es, bis ich meine Mitgliedskarte erhalte?",
+    answer:
+      "Nach der Vertragsbestätigung erhältst du deine Waschbar Mitgliedskarte innerhalb von ca. 4 Tagen bequem per Post.",
   },
 ];
 

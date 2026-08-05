@@ -5,7 +5,7 @@ import { Icon } from "../components/Icon";
 import { PriceCard } from "../components/PriceCard";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
-import { locations, priceItems } from "../data/site-data";
+import { locations, priceItems, rabattkarteFaqs } from "../data/site-data";
 import { absoluteUrl } from "../seo";
 
 export const dynamic = "force-static";
@@ -90,6 +90,60 @@ const processSteps = [
   },
 ];
 
+function RabattkarteJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        name: "Waschbar Mitgliedskarte – SB-Wasch-Abo",
+        description:
+          "Das SB-Wasch-Abo mit der Waschbar Mitgliedskarte: 10 Waschgänge und 10 Trocknergänge je 20 Minuten für 29,99 € im Monat, gültig in Heidelberg und Ludwigshafen.",
+        brand: { "@type": "Brand", name: "Waschbar" },
+        url: absoluteUrl("/rabattkarte"),
+        offers: {
+          "@type": "Offer",
+          price: "29.99",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          url: absoluteUrl("/rabattkarte"),
+          seller: { "@id": `${absoluteUrl("/")}#organization` },
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: rabattkarteFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Waschbar", item: absoluteUrl("/") },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Mitgliedskarte",
+            item: absoluteUrl("/rabattkarte"),
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 const getItItems = [
   {
     icon: "washer",
@@ -111,6 +165,7 @@ const getItItems = [
 export default function RabattkartePage() {
   return (
     <main className="site-shell rabatt-page">
+      <RabattkarteJsonLd />
       <SiteHeader />
 
       <section className="rabatt-hero">
@@ -290,6 +345,25 @@ export default function RabattkartePage() {
           <Link className="button button-primary" href="/angebote/kundenkarte-guthaben">
             SB-Wasch-Abo heute sichern! <Icon name="card" />
           </Link>
+        </div>
+      </section>
+
+      <section className="section faq-section" id="faq">
+        <div className="faq-copy">
+          <p className="section-kicker">FAQ</p>
+          <h2>Häufige Fragen zum SB-Wasch-Abo</h2>
+          <span className="section-rule" aria-hidden="true" />
+          <div className="faq-list">
+            {rabattkarteFaqs.map((faq) => (
+              <details className="faq-item" key={faq.question}>
+                <summary>
+                  <span className="faq-question">{faq.question}</span>
+                  <span className="faq-toggle" aria-hidden="true" />
+                </summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 

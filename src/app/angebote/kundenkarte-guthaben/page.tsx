@@ -7,6 +7,7 @@ import { FaqSection } from "../../components/FaqSection";
 import { ReviewMarqueeSection } from "../../components/ReviewMarqueeSection";
 import { VoucherForm } from "../../components/VoucherForm";
 import { reviews } from "../../data/site-data";
+import { absoluteUrl } from "../../seo";
 
 export const dynamic = "force-static";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   title: "SB-Wasch-Abo mit Mitgliedskarte | Waschbar Heidelberg",
   description:
     "Sichere dir das erste SB-Wasch-Abo in Heidelberg: 10 Waschgänge und 10 Trocknergänge für 29,99 € im Monat mit Waschbar Mitgliedskarte.",
+  alternates: { canonical: "/angebote/kundenkarte-guthaben" },
   robots: {
     index: false,
     follow: false,
@@ -67,9 +69,29 @@ const steps = [
   },
 ];
 
+function CampaignJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${absoluteUrl("/angebote/kundenkarte-guthaben")}#webpage`,
+    url: absoluteUrl("/angebote/kundenkarte-guthaben"),
+    name: "SB-Wasch-Abo mit Mitgliedskarte | Waschbar Heidelberg",
+    isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+    about: { "@id": `${absoluteUrl("/heidelberg")}#business` },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export default function KundenkarteGuthabenPage() {
   return (
     <main className="campaign-page">
+      <CampaignJsonLd />
       <CampaignHeader />
 
       <section className="campaign-hero">

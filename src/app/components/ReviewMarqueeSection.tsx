@@ -10,7 +10,7 @@ function splitReviews(reviews: Review[]) {
   return [firstRow, secondRow.length > 0 ? secondRow : firstRow];
 }
 
-function fillLoop(reviews: Review[], minimumItems = 10) {
+function fillLoop(reviews: Review[], minimumItems = 4) {
   if (reviews.length === 0) {
     return reviews;
   }
@@ -84,8 +84,8 @@ export function ReviewMarqueeSection({
   mapsUrl?: string;
 }) {
   const [firstRowSource, secondRowSource] = splitReviews(reviews);
-  const firstRow = fillLoop(firstRowSource, 12);
-  const secondRow = fillLoop(secondRowSource, 12);
+  const firstRow = fillLoop(firstRowSource);
+  const secondRow = fillLoop(secondRowSource);
   const summary = (
     <>
       <span className="rating-summary__logo">

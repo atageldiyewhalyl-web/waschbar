@@ -23,9 +23,33 @@ import {
   contactInfo,
   type Location,
 } from "../data/site-data";
+import { absoluteUrl } from "../seo";
 
 function LocationJsonLd({ location }: { location: Location }) {
   const schema = buildLocalBusinessJsonLd(location);
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+function LocationBreadcrumbJsonLd({ location }: { location: Location }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Waschbar", item: absoluteUrl("/") },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `Waschsalon ${location.city}`,
+        item: absoluteUrl(location.href),
+      },
+    ],
+  };
 
   return (
     <script
@@ -109,6 +133,7 @@ export function LocationPageBody({
     <>
       <LocationJsonLd location={location} />
       <LocationFaqJsonLd faqs={locationFaqs} />
+      <LocationBreadcrumbJsonLd location={location} />
       <main className="site-shell">
         <SiteHeader />
 

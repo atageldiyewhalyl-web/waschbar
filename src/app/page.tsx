@@ -56,6 +56,9 @@ function JsonLd() {
         areaServed: ["Heidelberg", "Ludwigshafen am Rhein"],
         url: absoluteUrl("/"),
         logo: absoluteUrl("/images/waschbar-logo-transparent.webp"),
+        department: locations.map((location) => ({
+          "@id": `${absoluteUrl(location.href)}#business`,
+        })),
         sameAs: locations.map((location) => location.mapsUrl),
       },
       {
