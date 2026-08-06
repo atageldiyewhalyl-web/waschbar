@@ -21,8 +21,8 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const defaultFromEmail = "Waschbar Anfrage <anfrage@forms.xn--nll-hoa.com>";
-const defaultLeadRecipients = "abo@waschbar.eu";
+const waschbarFromEmail = "Waschbar Anfrage <anfrage@forms.xn--nll-hoa.com>";
+const waschbarLeadRecipients = ["abo@waschbar.eu"];
 const consentFormVersion = "sb-wasch-abo-v1";
 const voucherConsentText =
   "Ich möchte Informationen zum SB-Wasch-Abo erhalten und bin einverstanden, dass Waschbar mich dazu kontaktiert.";
@@ -166,20 +166,8 @@ function renderCustomerConfirmationHtml(lead: ReturnType<typeof validatePayload>
   `;
 }
 
-function parseEmailList(value: string) {
-  return value
-    .split(",")
-    .map((email) => email.trim())
-    .filter((email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
-}
-
 function resolveLeadRecipients() {
-  return Array.from(
-    new Set([
-      ...parseEmailList(Deno.env.get("LEAD_TO_EMAIL") || ""),
-      ...parseEmailList(defaultLeadRecipients),
-    ]),
-  );
+  return Array.from(new Set(waschbarLeadRecipients));
 }
 
 function getClientIp(request: Request) {
@@ -310,7 +298,7 @@ Deno.serve(async (request) => {
     }
 
     const leadId = data.id as string;
-    const from = Deno.env.get("LEAD_FROM_EMAIL") || defaultFromEmail;
+    const from = waschbarFromEmail;
     const to = resolveLeadRecipients();
 
     if (!to.length) {
