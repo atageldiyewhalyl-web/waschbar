@@ -2,7 +2,11 @@ import Image from "next/image";
 import { Icon } from "./Icon";
 import { faqs, locations } from "../data/site-data";
 
-export function FaqSection() {
+type FaqSectionProps = {
+  campaignCta?: boolean;
+};
+
+export function FaqSection({ campaignCta = false }: FaqSectionProps) {
   return (
     <section className="section faq-section" id="faq">
       <div className="faq-showcase">
@@ -57,26 +61,40 @@ export function FaqSection() {
         </div>
       </div>
 
-      <aside className="faq-location-strip" aria-label="Standort finden">
+      <aside
+        className={`faq-location-strip${campaignCta ? " faq-location-strip-campaign" : ""}`}
+        aria-label={campaignCta ? "SB-Wasch-Abo anfragen" : "Standort finden"}
+      >
         <div className="faq-location-intro">
-          <Icon name="pin" />
+          <Icon name={campaignCta ? "card" : "pin"} />
           <div>
-            <strong>Standort finden</strong>
-            <p>Finde deinen nächsten Waschbar SB-Waschsalon in deiner Nähe.</p>
+            <strong>{campaignCta ? "Abo sichern" : "Standort finden"}</strong>
+            <p>
+              {campaignCta
+                ? "10 Waschgänge und 10 Trocknergänge für 29,99 € im Monat anfragen."
+                : "Finde deinen nächsten Waschbar SB-Waschsalon in deiner Nähe."}
+            </p>
           </div>
         </div>
         <div className="faq-location-actions">
-          {locations.map((location) => (
-            <a
-              href={location.mapsUrl}
-              key={`${location.city}-faq`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name={location.city.toLowerCase()} />
-              <span>{location.city}</span>
+          {campaignCta ? (
+            <a href="#formular">
+              <Icon name="card" />
+              <span>Get your subscription now!</span>
             </a>
-          ))}
+          ) : (
+            locations.map((location) => (
+              <a
+                href={location.mapsUrl}
+                key={`${location.city}-faq`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name={location.city.toLowerCase()} />
+                <span>{location.city}</span>
+              </a>
+            ))
+          )}
         </div>
       </aside>
     </section>

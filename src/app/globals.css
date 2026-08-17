@@ -2807,6 +2807,18 @@ input {
   height: 30px;
 }
 
+.faq-location-strip-campaign .faq-location-actions {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.faq-location-strip-campaign .faq-location-actions a {
+  min-height: 72px;
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 18px 38px rgba(47, 118, 255, 0.26);
+}
+
 .location-page {
   background: #fff;
 }
@@ -6175,6 +6187,7 @@ a.footer-credit img {
 
 .campaign-page {
   background: #f6f9ff;
+  overflow-x: clip;
 }
 
 .campaign-header {
@@ -6253,6 +6266,8 @@ a.footer-credit img {
 .campaign-hero-copy {
   position: relative;
   z-index: 2;
+  grid-column: 1;
+  grid-row: 1;
   max-width: 500px;
   align-self: center;
   margin-top: clamp(62px, 7.5vw, 118px);
@@ -6398,6 +6413,7 @@ a.footer-credit img {
 }
 
 .campaign-offer-chip-copy {
+  min-width: 0;
   display: block;
 }
 
@@ -6428,6 +6444,7 @@ a.footer-credit img {
   gap: 13px;
   align-items: center;
   width: min(320px, 100%);
+  min-width: 0;
   margin-top: 8px;
 }
 
@@ -6440,11 +6457,121 @@ a.footer-credit img {
 }
 
 .campaign-offer-saving strong {
+  min-width: 0;
   max-width: 260px;
   color: var(--navy);
   font-size: clamp(17px, 1.15vw, 21px);
   font-weight: 900;
   line-height: 1.16;
+  overflow-wrap: anywhere;
+}
+
+.campaign-salon-proof {
+  position: relative;
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  max-width: 560px;
+  margin-top: 18px;
+  border: 1px solid rgba(205, 219, 241, 0.92);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 14px;
+  box-shadow: 0 18px 42px rgba(7, 27, 73, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+.campaign-salon-photos {
+  position: relative;
+  min-height: 158px;
+}
+
+.campaign-salon-photo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 42%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  background: #eef4ff;
+  box-shadow: 0 14px 28px rgba(7, 27, 73, 0.16);
+}
+
+.campaign-salon-photo-main {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  width: 78%;
+  aspect-ratio: 4 / 3;
+}
+
+.campaign-salon-photo img {
+  object-fit: cover;
+}
+
+.campaign-salon-copy p {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.campaign-salon-perks {
+  display: grid;
+  gap: 8px;
+}
+
+.campaign-salon-perks article {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.campaign-salon-perks article > div {
+  min-width: 0;
+}
+
+.campaign-salon-perks article > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--blue);
+}
+
+.campaign-salon-perks .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.campaign-salon-perks strong,
+.campaign-salon-perks small {
+  display: block;
+}
+
+.campaign-salon-perks strong {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 860;
+  line-height: 1.15;
+}
+
+.campaign-salon-perks small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.3;
 }
 
 .campaign-hero-cta {
@@ -6489,10 +6616,73 @@ a.footer-credit img {
 .campaign-hero-form {
   position: relative;
   z-index: 2;
+  grid-column: 2;
+  grid-row: 1 / span 2;
   width: 100%;
   justify-self: end;
   align-self: center;
 }
+
+.campaign-form-reassurance {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 0 16px auto;
+  border: 1.5px solid rgba(47, 118, 255, 0.36);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #eaf3ff 0%, #f7fbff 100%);
+  padding: 16px 18px;
+  color: var(--navy);
+  box-shadow: 0 18px 36px rgba(47, 118, 255, 0.13);
+  overflow: hidden;
+}
+
+.campaign-form-reassurance .icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--blue);
+  padding: 10px;
+  color: #fff;
+}
+
+.campaign-form-reassurance .icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.campaign-form-reassurance div {
+  min-width: 0;
+}
+
+.campaign-form-reassurance strong,
+.campaign-form-reassurance span {
+  display: block;
+}
+
+.campaign-form-reassurance strong {
+  margin-bottom: 3px;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 950;
+  line-height: 1.05;
+  white-space: normal;
+}
+
+.campaign-form-reassurance span {
+  min-width: 0;
+  color: #405273;
+  font-size: 14px;
+  font-weight: 760;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
 
 .campaign-hero-form::before {
   content: "";
@@ -6706,7 +6896,7 @@ a.footer-credit img {
 }
 
 .voucher-ticket-form::before {
-  content: "";
+  content: none;
   position: absolute;
   inset: 0 0 auto 0;
   height: 6px;
@@ -6714,13 +6904,121 @@ a.footer-credit img {
 }
 
 .voucher-ticket-form h2 {
-  margin: 0 0 22px;
+  margin: 0 0 16px;
   color: var(--navy);
   font-size: clamp(27px, 1.95vw, 34px);
   font-weight: 880;
   line-height: 1.1;
   letter-spacing: -0.01em;
-  white-space: nowrap;
+}
+
+.voucher-stepper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.voucher-stepper span {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 32px;
+  border-radius: 999px;
+  background: #e8eef8;
+  color: #74819a;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.voucher-stepper span::after {
+  content: "";
+  position: absolute;
+  right: calc(-50% - 4px);
+  width: 100%;
+  height: 3px;
+  background: #e8eef8;
+}
+
+.voucher-stepper span:last-child::after {
+  content: none;
+}
+
+.voucher-stepper span.is-active {
+  background: var(--blue);
+  color: #fff;
+}
+
+.voucher-stepper span.is-active::after {
+  background: var(--blue);
+}
+
+.voucher-step-copy {
+  margin: 0 0 18px;
+  border-radius: 12px;
+  background: #eef5ff;
+  padding: 12px 14px;
+  color: #43526d;
+  font-size: 13px;
+  font-weight: 740;
+  line-height: 1.42;
+}
+
+.voucher-location-choice {
+  margin: 0 0 18px;
+  border: 0;
+  padding: 0;
+}
+
+.voucher-location-choice legend {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 820;
+}
+
+.voucher-location-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.voucher-location-options button {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  min-height: 66px;
+  border: 1.5px solid #dce6f4;
+  border-radius: 14px;
+  background: #f8fbff;
+  padding: 12px;
+  color: var(--navy);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.voucher-location-options button.is-selected {
+  border-color: var(--blue);
+  background: #eef5ff;
+  box-shadow: 0 0 0 3px rgba(47, 118, 255, 0.12);
+}
+
+.voucher-location-options .icon {
+  width: 22px;
+  height: 22px;
+  color: var(--blue);
+}
+
+@media (min-width: 1025px) {
+  .voucher-location-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .voucher-field {
@@ -6789,10 +7087,53 @@ a.footer-credit img {
   accent-color: var(--blue);
 }
 
+.voucher-mini-proof {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.voucher-mini-proof span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 12px;
+  background: #f4f8ff;
+  padding: 11px 12px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 830;
+}
+
+.voucher-mini-proof .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--blue);
+}
+
+.voucher-form-actions {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.voucher-form-actions .voucher-submit:only-child {
+  grid-column: 1 / -1;
+}
+
+.voucher-back {
+  min-height: 56px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--navy);
+  box-shadow: none;
+}
+
 .voucher-submit {
   width: 100%;
   min-height: 56px;
-  margin-top: 10px;
   font-size: 17px;
   box-shadow: none;
 }
@@ -8279,6 +8620,8 @@ a.footer-credit img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .campaign-hero-trust {
@@ -8292,10 +8635,21 @@ a.footer-credit img {
   }
 
   .campaign-hero-form {
+    grid-column: auto;
+    grid-row: auto;
     width: 100%;
     max-width: 520px;
     margin: 32px auto 0;
     justify-self: center;
+  }
+
+  .campaign-salon-proof {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    max-width: 520px;
+    margin: 20px auto 0;
+    text-align: left;
   }
 
   .campaign-proof {
@@ -8391,6 +8745,10 @@ a.footer-credit img {
   .voucher-field-row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .voucher-location-options {
+    grid-template-columns: 1fr;
   }
 
   .campaign-why-grid {
@@ -8555,6 +8913,7 @@ a.footer-credit img {
   }
 
   .campaign-hero-copy {
+    width: 100%;
     max-width: none;
     margin: -72px auto 0;
     position: relative;
@@ -8563,7 +8922,7 @@ a.footer-credit img {
 
   .campaign-offer-band {
     width: 100%;
-    max-width: 430px;
+    max-width: 100%;
     margin: 0 auto;
     border: 1px solid rgba(211, 224, 244, 0.95);
     border-radius: 24px;
@@ -8598,14 +8957,16 @@ a.footer-credit img {
 
   .campaign-offer-price strong {
     color: var(--blue);
-    font-size: clamp(55px, 17vw, 72px);
+    font-size: clamp(46px, 14.8vw, 58px);
     line-height: 0.9;
     text-shadow: none;
   }
 
   .campaign-offer-price em {
+    width: 100%;
     color: var(--blue);
-    font-size: clamp(22px, 6.4vw, 28px);
+    font-size: clamp(20px, 5.8vw, 24px);
+    text-align: center;
   }
 
   .campaign-offer-old-price {
@@ -8617,8 +8978,8 @@ a.footer-credit img {
   }
 
   .campaign-offer-chips {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
+    grid-template-columns: 1fr;
+    gap: 8px;
     width: 100%;
     border-top: 1px solid #dbe7f7;
     border-bottom: 1px solid #dbe7f7;
@@ -8627,19 +8988,22 @@ a.footer-credit img {
 
   .campaign-offer-chips > span {
     grid-template-columns: 34px minmax(0, 1fr);
+    min-width: 0;
     justify-items: stretch;
     gap: 7px;
     min-height: 0;
     border: 0;
     border-radius: 0;
     background: transparent;
-    padding: 0 8px;
+    border-radius: 14px;
+    background: #f7fbff;
+    padding: 9px 12px;
     box-shadow: none;
     backdrop-filter: none;
   }
 
   .campaign-offer-chips > span + span {
-    border-left: 1px solid #dbe7f7;
+    border-left: 0;
   }
 
   .campaign-offer-animation {
@@ -8649,7 +9013,7 @@ a.footer-credit img {
   }
 
   .campaign-offer-chips strong {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.15;
     text-align: left;
   }
@@ -8667,6 +9031,7 @@ a.footer-credit img {
     justify-content: center;
     gap: 8px;
     width: 100%;
+    min-width: 0;
     margin-top: 16px;
     border-radius: 18px;
     background: #eef5ff;
@@ -8680,17 +9045,118 @@ a.footer-credit img {
   }
 
   .campaign-offer-saving strong {
+    min-width: 0;
     max-width: none;
     color: var(--blue);
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.15;
   }
 
   .campaign-hero-form {
+    width: 100%;
     max-width: 100%;
-    margin: 18px auto 0;
+    margin: 22px auto 0;
     position: relative;
     z-index: 2;
+  }
+
+  .campaign-form-reassurance {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 11px;
+    width: calc(100% - 16px);
+    max-width: none;
+    margin: 0 auto 14px;
+    border-radius: 18px;
+    padding: 15px 14px;
+  }
+
+  .campaign-form-reassurance .icon {
+    grid-row: auto;
+    width: 40px;
+    height: 40px;
+    padding: 9px;
+  }
+
+  .campaign-form-reassurance strong {
+    margin-bottom: 3px;
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .campaign-form-reassurance span {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .campaign-salon-proof {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 0;
+    border-radius: 22px;
+    padding: 12px 12px 20px;
+  }
+
+  .campaign-salon-photos {
+    display: block;
+    position: relative;
+    min-height: 0;
+    aspect-ratio: 16 / 10.5;
+  }
+
+  .campaign-salon-photo-main {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    aspect-ratio: auto;
+    border-width: 0;
+    border-radius: 14px;
+    box-shadow: 0 16px 30px rgba(7, 27, 73, 0.14);
+  }
+
+  .campaign-salon-photo:not(.campaign-salon-photo-main) {
+    position: absolute;
+    right: 10px;
+    bottom: -16px;
+    width: 36%;
+    aspect-ratio: 4 / 3;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 14px 26px rgba(7, 27, 73, 0.18);
+  }
+
+  .campaign-salon-photo-main img {
+    object-position: 42% 50%;
+  }
+
+  .campaign-salon-copy p {
+    margin-bottom: 14px;
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .campaign-salon-perks {
+    gap: 15px;
+    padding: 0 6px;
+  }
+
+  .campaign-salon-perks article {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .campaign-salon-perks article > span {
+    width: 28px;
+    height: 28px;
+  }
+
+  .campaign-salon-perks strong {
+    font-size: 15px;
+  }
+
+  .campaign-salon-perks small {
+    display: none;
   }
 
   .campaign-hero-form::before {
@@ -8698,28 +9164,43 @@ a.footer-credit img {
   }
 
   .voucher-ticket-form {
-    max-width: 430px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    border-radius: 24px 24px 0 0;
-    padding: 28px 18px 22px;
-    box-shadow: 0 18px 42px rgba(7, 27, 73, 0.12);
+    border-radius: 22px;
+    padding: 24px 18px 22px;
+    box-shadow: 0 16px 34px rgba(7, 27, 73, 0.1);
   }
 
   .voucher-ticket-form h2 {
     max-width: none;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
     color: var(--navy);
     font-size: clamp(20px, 5.8vw, 24px);
     font-weight: 900;
-    line-height: 1;
+    line-height: 1.08;
     letter-spacing: 0;
     text-align: left;
-    white-space: nowrap;
   }
 
   .voucher-field-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .voucher-stepper {
+    overflow: hidden;
+    gap: 7px;
+    margin-bottom: 18px;
+  }
+
+  .voucher-stepper span {
+    height: 34px;
+    border-radius: 12px;
+  }
+
+  .voucher-stepper span::after {
+    content: none;
   }
 
   .voucher-field,
@@ -8741,6 +9222,31 @@ a.footer-credit img {
     font-size: 16px;
   }
 
+  .voucher-location-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .voucher-location-options button {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+    min-height: 92px;
+    border-radius: 16px;
+    background: #fff;
+    padding: 14px 10px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .voucher-location-options .icon {
+    width: 26px;
+    height: 26px;
+  }
+
   .voucher-checkbox {
     gap: 8px;
     margin-bottom: 12px;
@@ -8756,10 +9262,20 @@ a.footer-credit img {
 
   .voucher-submit {
     min-height: 54px;
-    margin-top: 8px;
     border-radius: 11px;
     padding: 0 12px;
     font-size: 15px;
+  }
+
+  .voucher-back {
+    min-height: 54px;
+    border-radius: 11px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .voucher-step-copy {
+    font-size: 12.5px;
   }
 
   .voucher-note {

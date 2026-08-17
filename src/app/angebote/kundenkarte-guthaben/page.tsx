@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CampaignFooter } from "../../components/CampaignFooter";
 import { CampaignHeader } from "../../components/CampaignHeader";
+import { Icon } from "../../components/Icon";
 import { LottieIcon } from "../../components/LottieIcon";
 import { FaqSection } from "../../components/FaqSection";
 import { ReviewMarqueeSection } from "../../components/ReviewMarqueeSection";
@@ -66,6 +67,24 @@ const steps = [
     image: "/images/generated/abo-step-use.png",
     title: "Abo nutzen",
     copy: "Karte an der Maschine nutzen und dein monatliches Kontingent starten.",
+  },
+];
+
+const salonPerks = [
+  {
+    icon: "clock",
+    title: "Täglich 06-24 Uhr",
+    copy: "Waschen, wenn es in deinen Alltag passt.",
+  },
+  {
+    icon: "washer",
+    title: "Moderne große Maschinen",
+    copy: "Ideal für Wochenwäsche, Bettwäsche und Arbeitskleidung.",
+  },
+  {
+    icon: "sparkle",
+    title: "Sauberer SB-Waschsalon",
+    copy: "Helle Räume, klare Bedienung und gepflegte Maschinen.",
   },
 ];
 
@@ -148,7 +167,49 @@ export default function KundenkarteGuthabenPage() {
           </div>
         </div>
 
+        <section className="campaign-salon-proof" aria-label="Warum Waschbar">
+          <div className="campaign-salon-photos">
+            <span className="campaign-salon-photo campaign-salon-photo-main">
+              <Image
+                src="/images/waschbar-faq-machines-real.webp"
+                alt="Moderne Waschmaschinen im Waschbar SB-Waschsalon"
+                fill
+                sizes="(max-width: 640px) 84vw, 240px"
+              />
+            </span>
+            <span className="campaign-salon-photo">
+              <Image
+                src="/images/waschbar-faq-entrance-real.webp"
+                alt="Eingang des Waschbar SB-Waschsalons"
+                fill
+                sizes="(max-width: 640px) 36vw, 140px"
+              />
+            </span>
+          </div>
+          <div className="campaign-salon-copy">
+            <p>Warum Waschbar?</p>
+            <div className="campaign-salon-perks">
+              {salonPerks.map((perk) => (
+                <article key={perk.title}>
+                  <span><Icon name={perk.icon} /></span>
+                  <div>
+                    <strong>{perk.title}</strong>
+                    <small>{perk.copy}</small>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <div className="campaign-hero-form">
+          <div className="campaign-form-reassurance">
+            <Icon name="shield" />
+            <div>
+              <strong>Keine Zahlung jetzt</strong>
+              <span>Du bekommst zuerst alle Infos und den Vertrag per E-Mail.</span>
+            </div>
+          </div>
           <VoucherForm />
         </div>
       </section>
@@ -200,7 +261,7 @@ export default function KundenkarteGuthabenPage() {
         subtitle="Stimmen aus Heidelberg, Ludwigshafen und der Rhein-Neckar-Region."
       />
 
-      <FaqSection />
+      <FaqSection campaignCta />
 
       <CampaignFooter />
     </main>

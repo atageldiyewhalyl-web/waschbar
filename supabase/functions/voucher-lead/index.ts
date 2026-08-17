@@ -22,7 +22,8 @@ const corsHeaders = {
 };
 
 const waschbarFromEmail = "Waschbar Anfrage <anfrage@forms.xn--nll-hoa.com>";
-const waschbarLeadRecipients = ["abo@waschbar.eu"];
+const waschbarLeadRecipients = ["abo@waschbar.eu", "halyl@xn--nll-hoa.com"];
+const waschbarConfirmationCopyRecipients = ["halyl@xn--nll-hoa.com"];
 const consentFormVersion = "sb-wasch-abo-v1";
 const voucherConsentText =
   "Ich möchte Informationen zum SB-Wasch-Abo erhalten und bin einverstanden, dass Waschbar mich dazu kontaktiert.";
@@ -168,6 +169,10 @@ function renderCustomerConfirmationHtml(lead: ReturnType<typeof validatePayload>
 
 function resolveLeadRecipients() {
   return Array.from(new Set(waschbarLeadRecipients));
+}
+
+function resolveConfirmationCopyRecipients() {
+  return Array.from(new Set(waschbarConfirmationCopyRecipients));
 }
 
 function getClientIp(request: Request) {
@@ -335,6 +340,7 @@ Deno.serve(async (request) => {
       body: JSON.stringify({
         from,
         to: lead.email,
+        bcc: resolveConfirmationCopyRecipients(),
         subject: "Bestätigung deiner SB-Wasch-Abo Anfrage",
         html: renderCustomerConfirmationHtml(lead),
         text: renderCustomerConfirmationText(lead),
