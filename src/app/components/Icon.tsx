@@ -182,6 +182,12 @@ export function Icon({ name }: { name: string }) {
           <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
         </svg>
       )}
+      {name === "book" && (
+        <svg viewBox="0 0 24 24">
+          <path d="M4 5.5c0-1 .8-1.5 1.8-1.5H11v15H5.8c-1 0-1.8.5-1.8 1.5V5.5Z" />
+          <path d="M20 5.5c0-1-.8-1.5-1.8-1.5H13v15h5.2c1 0 1.8.5 1.8 1.5V5.5Z" />
+        </svg>
+      )}
       {name === "facebook" && (
         <svg viewBox="0 0 24 24">
           <path d="M14.5 21v-7.2h2.4l.4-2.8h-2.8V9.2c0-.8.2-1.4 1.4-1.4h1.5V5.3c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v2.1H9.3v2.8h2.5V21" />

@@ -43,6 +43,9 @@ export function MobileNav() {
           <Link href="/rabattkarte" onClick={close}>
             Mitgliedskarte
           </Link>
+          <Link href="/ratgeber" onClick={close}>
+            Ratgeber
+          </Link>
           <Link href="/#bewertungen" onClick={close}>
             Bewertungen
           </Link>

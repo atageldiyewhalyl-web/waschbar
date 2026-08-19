@@ -23,6 +23,7 @@ export function SiteHeader() {
         </div>
         <Link href="/#preise">Preise</Link>
         <Link href="/rabattkarte">Mitgliedskarte</Link>
+        <Link href="/ratgeber">Ratgeber</Link>
         <Link href="/#bewertungen">Bewertungen</Link>
         <Link href="/#faq">FAQ</Link>
       </nav>

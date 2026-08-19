@@ -42,6 +42,7 @@ export function SiteFooter() {
         <Link href="/#ausstattung">Ausstattung</Link>
         <Link href="/#bewertungen">Bewertungen</Link>
         <Link href="/#faq">FAQ</Link>
+        <Link href="/ratgeber">Ratgeber</Link>
       </div>
       <div>
         <h2>Service</h2>
