@@ -6,4 +6,20 @@ User-agent: Googlebot
 Allow: /
 Disallow: /api/
 
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
 Sitemap: https://www.waschbar.eu/sitemap.xml

@@ -367,6 +367,28 @@ export default function RabattkartePage() {
         </div>
       </section>
 
+      <section className="section">
+        <aside className="faq-location-strip" aria-label="Ratgeber">
+          <div className="faq-location-intro">
+            <Icon name="book" />
+            <div>
+              <strong>Lohnt sich das Abo für dich?</strong>
+              <p>Kostenvergleich und Tipps aus dem Waschbar Ratgeber.</p>
+            </div>
+          </div>
+          <div className="faq-location-actions">
+            <Link href="/ratgeber/waschsalon-oder-eigene-waschmaschine-kosten">
+              <Icon name="book" />
+              <span>Waschsalon oder eigene Waschmaschine: Kostenvergleich</span>
+            </Link>
+            <Link href="/ratgeber/sb-waschsalon-erster-besuch-ablauf">
+              <Icon name="book" />
+              <span>SB-Waschsalon: Der erste Besuch Schritt für Schritt</span>
+            </Link>
+          </div>
+        </aside>
+      </section>
+
       <SiteFooter />
     </main>
   );

@@ -98,6 +98,17 @@ export function LocationPageBody({
     .filter(Boolean)
     .join(" sowie ");
 
+  const ratgeberLinks =
+    slug === "heidelberg"
+      ? [
+          { href: "/ratgeber/waschsalon-heidelberg-studierende-wg", label: "Guide für Studierende & WGs in Heidelberg" },
+          { href: "/ratgeber/wg-waesche-organisieren-waschplan", label: "WG-Wäsche organisieren" },
+        ]
+      : [
+          { href: "/ratgeber/waschsalon-ludwigshafen-familien-pendler", label: "Guide für Familien & Pendler in Ludwigshafen" },
+          { href: "/ratgeber/waschsalon-oder-eigene-waschmaschine-kosten", label: "Waschsalon oder eigene Waschmaschine: Kostenvergleich" },
+        ];
+
   const locationFaqs = [
     {
       question: `Ist Waschbar ${location.city} ein SB Waschsalon?`,
@@ -780,6 +791,26 @@ export function LocationPageBody({
                 <Icon name="pin" />
                 <span>Alle Standorte</span>
               </Link>
+            </div>
+          </aside>
+        </section>
+
+        <section className="section">
+          <aside className="faq-location-strip" aria-label="Ratgeber">
+            <div className="faq-location-intro">
+              <Icon name="book" />
+              <div>
+                <strong>Ratgeber</strong>
+                <p>Praktische Wäsche-Tipps rund um Waschbar {location.city}.</p>
+              </div>
+            </div>
+            <div className="faq-location-actions">
+              {ratgeberLinks.map((link) => (
+                <Link href={link.href} key={link.href}>
+                  <Icon name="book" />
+                  <span>{link.label}</span>
+                </Link>
+              ))}
             </div>
           </aside>
         </section>
