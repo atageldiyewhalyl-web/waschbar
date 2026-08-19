@@ -10157,6 +10157,8 @@ a.footer-credit img {
 }
 
 .blog-grid-related {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
   margin-top: 32px;
 }
 
@@ -10252,7 +10254,7 @@ a.footer-credit img {
   align-items: center;
   gap: 8px;
   padding: 28px clamp(24px, 6vw, 128px) 0;
-  max-width: 900px;
+  max-width: 1180px;
   margin: 0 auto;
   color: var(--muted);
   font-size: 13.5px;
@@ -10278,9 +10280,9 @@ a.footer-credit img {
 }
 
 .ratgeber-article {
-  max-width: 800px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 20px clamp(24px, 6vw, 128px) clamp(56px, 8vw, 88px);
+  padding: 20px clamp(24px, 4vw, 72px) clamp(56px, 8vw, 88px);
 }
 
 .ratgeber-article-header {
@@ -10480,13 +10482,20 @@ a.footer-credit img {
 }
 
 .ratgeber-related-section {
-  max-width: 1080px;
+  max-width: 1320px;
   margin: 0 auto;
+  padding-inline: clamp(28px, 4vw, 72px);
   text-align: center;
 }
 
 .ratgeber-related-section h2 {
   margin-bottom: 8px;
+}
+
+@media (max-width: 1080px) {
+  .blog-grid-related {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {

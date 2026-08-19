@@ -111,7 +111,7 @@ export default async function BlogPostPage({
         alt={post.bodyImageAlt}
         width={1200}
         height={800}
-        sizes="(max-width: 900px) 100vw, 760px"
+        sizes="(max-width: 900px) 100vw, 1040px"
       />
     </figure>,
     ...blocks.slice(insertAt),
@@ -153,7 +153,7 @@ export default async function BlogPostPage({
               alt={post.heroImageAlt}
               fill
               priority
-              sizes="(max-width: 900px) 100vw, 900px"
+              sizes="(max-width: 900px) 100vw, 1040px"
             />
           </div>
 

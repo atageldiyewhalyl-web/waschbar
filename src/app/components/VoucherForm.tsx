@@ -164,13 +164,14 @@ export function VoucherForm() {
             <div className="voucher-location-options">
               {locations.map((location) => (
                 <button
+                  aria-pressed={lead.location === location.slug}
                   className={lead.location === location.slug ? "is-selected" : ""}
                   key={location.slug}
-                  type="button"
                   onClick={() => {
                     updateLead("location", location.slug);
                     setSubmitError("");
                   }}
+                  type="button"
                 >
                   <Icon name={location.slug === "heidelberg" ? "heidelberg" : "ludwigshafen"} />
                   <span>{location.city}</span>

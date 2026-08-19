@@ -44,18 +44,12 @@ export const blogPosts: BlogPost[] = [
       "@type": "BlogPosting",
       "headline": "Waschsalon Heidelberg für Studierende & WGs: Der praktische Guide",
       "description": "Waschsalon Heidelberg für Studierende & WGs: bis Mitternacht geöffnet, große Trommeln für WG-Wäsche, keine Reservierung. Rohrbacher Str. 83-85.",
+      "image": ["https://www.waschbar.eu/images/waschbar-location-heidelberg-premium.webp"],
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
-      "inLanguage": "de",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu"
-      },
+      "inLanguage": "de-DE",
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/waschsalon-heidelberg-studierende-wg"
@@ -140,22 +134,16 @@ export const blogPosts: BlogPost[] = [
       "@type": "BlogPosting",
       "headline": "Waschsalon Ludwigshafen: Der praktische Guide für Familien & Pendler",
       "description": "Waschsalon Ludwigshafen an der Prinzregentenstraße: feste Preise, große Trommeln für Bettwäsche, täglich 06-24 Uhr. Der Guide für Familien & Pendler.",
+      "image": ["https://www.waschbar.eu/images/waschbar-location-ludwigshafen-premium.webp"],
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu"
-      },
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/waschsalon-ludwigshafen-familien-pendler"
       },
-      "inLanguage": "de"
+      "inLanguage": "de-DE"
     },
     {
       "@type": "FAQPage",
@@ -237,72 +225,16 @@ export const blogPosts: BlogPost[] = [
       "@id": "https://www.waschbar.eu/ratgeber/sb-waschsalon-erster-besuch-ablauf#article",
       "headline": "SB-Waschsalon: Der erste Besuch Schritt für Schritt",
       "description": "Zum ersten Mal im SB-Waschsalon? So läuft's ab: Trommel wählen, waschen, bezahlen, trocknen. Alle Schritte einfach erklärt für Heidelberg & Ludwigshafen.",
+      "image": ["https://www.waschbar.eu/images/waschbar-faq-entrance-real.webp"],
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team",
-        "url": "https://www.waschbar.eu"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.waschbar.eu/logo.png"
-        }
-      },
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/sb-waschsalon-erster-besuch-ablauf"
       },
       "inLanguage": "de-DE"
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://www.waschbar.eu/ratgeber/sb-waschsalon-erster-besuch-ablauf#howto",
-      "name": "SB-Waschsalon: Der erste Besuch Schritt für Schritt",
-      "description": "So läuft ein Waschgang im SB-Waschsalon von Waschbar ab, vom Standort bis zum fertig getrockneten Wäschekorb.",
-      "totalTime": "PT65M",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Standort auswählen und Wäsche mitbringen",
-          "text": "Fahr zu Waschbar Heidelberg (Rohrbacher Str. 83-85) oder Waschbar Ludwigshafen (Prinzregentenstraße 60). Beide sind täglich 06:00-24:00 Uhr geöffnet, eine Reservierung ist nicht nötig."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Trommelgröße wählen",
-          "text": "Für normale Wäschemengen reicht die 7kg Trommel. Für Bettwäsche, Decken oder größere Mengen die 15kg XXL Trommel wählen."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Wäsche einladen und Programm einstellen",
-          "text": "Nach Farbe und Temperaturempfehlung sortieren, Waschmittel und ggf. Weichspüler dazugeben und das passende Waschprogramm an der Maschine wählen."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "Am Automaten bezahlen",
-          "text": "Die 7kg Trommel kostet 4,50€ pro Waschgang (ca. 35 Minuten), die 15kg XXL Trommel 9,00€ pro Waschgang. Bezahlung erfolgt direkt am Terminal vor Ort."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 5,
-          "name": "Warten oder erledigen",
-          "text": "Während die Maschine läuft, im Salon bleiben oder kurz etwas erledigen."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 6,
-          "name": "Trocknen",
-          "text": "Wäsche nach dem Waschgang in den Trockner umladen. Trocknerzeit kostet 2,00€ pro 10 Minuten, meist sind 20-30 Minuten ausreichend."
-        }
-      ]
     },
     {
       "@type": "FAQPage",
@@ -392,22 +324,16 @@ export const blogPosts: BlogPost[] = [
       "@type": "BlogPosting",
       "headline": "Waschsalon oder eigene Waschmaschine: Was kostet weniger?",
       "description": "Waschsalon oder eigene Waschmaschine kaufen? Wir vergleichen die Kosten pro Waschgang und zeigen, wann sich das SB-Wasch-Abo ab 29,99€/Monat lohnt.",
+      "image": ["https://www.waschbar.eu/images/waschbar-kundenkarte-real-product.webp"],
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu"
-      },
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/waschsalon-oder-eigene-waschmaschine-kosten"
       },
-      "inLanguage": "de"
+      "inLanguage": "de-DE"
     },
     {
       "@type": "FAQPage",
@@ -488,22 +414,16 @@ export const blogPosts: BlogPost[] = [
       "@type": "BlogPosting",
       "headline": "Bettdecke & Kissen waschen: Wann reicht die eigene Maschine nicht mehr?",
       "description": "Bettdecke waschen leicht gemacht: wie oft, welches Programm, welche Temperatur – und warum die eigene Maschine oft zu klein ist. Jetzt lesen.",
+      "image": ["https://www.waschbar.eu/images/waschbar-use-bedding-generated.webp"],
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu"
-      },
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/bettdecke-kissen-waschen-grosse-waschmaschine"
       },
-      "inLanguage": "de"
+      "inLanguage": "de-DE"
     },
     {
       "@type": "FAQPage",
@@ -584,18 +504,12 @@ export const blogPosts: BlogPost[] = [
       "@type": "BlogPosting",
       "headline": "Waschtemperatur-Guide: 30, 40 oder 60 Grad — was wirklich nötig ist",
       "description": "Bei welcher Temperatur waschen? Unser Guide zeigt, wann 30, 40 oder 60 Grad wirklich nötig sind – mit Tabelle, Beispielen und Spartipps.",
+      "image": ["https://www.waschbar.eu/images/waschbar-program-7kg.webp"],
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
-      "inLanguage": "de",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu"
-      },
+      "inLanguage": "de-DE",
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/waschtemperatur-30-40-60-grad-guide"
@@ -661,7 +575,7 @@ export const blogPosts: BlogPost[] = [
     slug: "flecken-entfernen-hausmittel-vor-waschgang",
     title: "Flecken entfernen vor dem Waschgang: Die besten Hausmittel",
     titleTag: "Flecken entfernen: Die besten Hausmittel vor dem Waschgang",
-    metaDescription: "Fett, Blut, Kaffee oder Rotwein auf der Kleidung? So entfernen Sie Flecken mit einfachen Hausmitteln – schnell, gründlich und schonend vor jedem Waschgang.",
+    metaDescription: "Fett, Blut, Kaffee oder Rotwein auf der Kleidung? So entfernst du Flecken mit einfachen Hausmitteln – schnell, gründlich und schonend vor jedem Waschgang.",
     category: "Waschsalon-Ratgeber",
     author: "Waschbar Team",
     date: "2026-08-19",
@@ -672,26 +586,20 @@ export const blogPosts: BlogPost[] = [
     bodyImage: "/images/waschbar-cleaning-station.webp",
     bodyImageAlt: "Cleaning Station bei Waschbar für Putzutensilien und stark verschmutzte Textilien",
     secondaryKeywords: ["fettflecken entfernen", "blutflecken entfernen", "gallseife flecken", "flecken vorbehandeln waschgang"],
-    bodyMarkdown: "Ein Fleck auf dem Lieblingsshirt ist ärgerlich, aber meistens kein Grund zur Panik. Die wichtigste Regel vorab: Je schneller Sie reagieren, desto leichter geht ein frischer Fleck wieder raus. Ist er erst einmal eingetrocknet, brauchen Sie mehr Geduld und die richtige Methode. Bei Blut, Milch oder Ei gilt zusätzlich: immer kaltes Wasser verwenden, nie heißes – sonst setzt sich der Fleck erst richtig fest. Mit ein paar einfachen Hausmitteln aus der Küche bekommen Sie die meisten Alltagsflecken selbst in den Griff, bevor die Wäsche in die Maschine kommt.\n\nIn diesem Ratgeber zeigen wir Ihnen, welches Hausmittel bei welchem Fleck hilft – sortiert nach Fleckenart, mit genauer Anleitung zu Menge, Einwirkzeit und Vorgehen.\n\n## Die wichtigste Grundregel: Schnelligkeit zählt\n\nEin frischer Fleck lässt sich fast immer leichter entfernen als ein alter. Sobald etwas danebengeht, gilt:\n\n- **Sofort handeln.** Nicht erst warten, bis die Wäsche gesammelt wird.\n- **Nicht reiben, sondern tupfen.** Reiben verteilt den Fleck nur in den Fasern.\n- **Von außen nach innen arbeiten**, damit sich der Fleck nicht vergrößert.\n- **Pflegeetikett prüfen**, bevor Sie ein Hausmittel einsetzen. Nicht jedes Material verträgt Essig, Backpulver oder Gallseife – bei Wolle, Seide oder Leder lieber vorsichtig testen oder auf eine Reinigung verzichten.\n\nErst nach der Vorbehandlung sollte das Kleidungsstück gewaschen werden. Welche Temperatur für den jeweiligen Stoff sinnvoll ist, erklären wir im [Waschtemperatur-Guide: 30, 40 oder 60 Grad](/ratgeber/waschtemperatur-30-40-60-grad-guide).\n\n## Fett- und Eiweißflecken: Gallseife als Alleskönner\n\nFettspritzer beim Kochen, Motoröl an der Arbeitshose oder Soßenflecken vom Essen – das sind klassische Fettflecken. Auch Eiweißflecken wie Schweiß oder Speisereste reagieren gut auf dieselbe Methode.\n\n**So geht's:**\n\n1. Gallseife direkt auf den feuchten Fleck auftragen.\n2. Mit den Fingern leicht einreiben, damit die Seife in die Fasern zieht.\n3. Mindestens 30 Minuten einwirken lassen – bei hartnäckigen oder älteren Flecken ruhig länger.\n4. Anschließend normal waschen.\n\nGallseife ist besonders wirksam gegen Fett- und Eiweißflecken, weil sie Fette löst und gleichzeitig milde Reinigungskraft hat. Ein Stück Gallseife im Haushalt lohnt sich also, wenn regelmäßig Arbeits- oder Sportkleidung gewaschen wird.\n\n**Praxistipp:** Stark verschmutzte Arbeitskleidung, Werkstattklamotten oder Sportgear mit hartnäckigem Fett brauchen nach der Vorbehandlung oft eine kräftige Maschine. In den Waschbar-Standorten in Heidelberg und Ludwigshafen stehen dafür große 15-kg-XXL-Trommeln bereit, in denen auch mehrere stark verschmutzte Teile auf einmal sauber werden.\n\n## Blut- und Milchflecken: Nur kaltes Wasser\n\nBlut, Milch, Joghurt oder Ei sind proteinbasierte Flecken. Der größte Fehler dabei: heißes Wasser. Hitze lässt das Eiweiß gerinnen und der Fleck setzt sich fest in den Fasern fest – dann wird es fast unmöglich, ihn wieder herauszubekommen.\n\n**So geht's richtig:**\n\n1. Das Kleidungsstück sofort unter kaltes, fließendes Wasser halten.\n2. Von der Rückseite des Stoffs ausspülen, damit der Fleck nach außen gedrückt wird statt tiefer einzudringen.\n3. Bei hartnäckigen Resten Gallseife auf den feuchten Fleck geben, einreiben und mindestens 30 Minuten einwirken lassen.\n4. Erst danach waschen – auch hier gilt: kein heißes Programm, solange noch Reste des Flecks sichtbar sind.\n\n### Warum kaltes Wasser so wichtig ist\n\nProteine in Blut, Milch und Ei reagieren empfindlich auf Wärme. Kaltes Wasser hält die Eiweißstruktur locker, sodass sie sich aus dem Gewebe herauslösen lässt. Wurde bereits mit warmem Wasser gearbeitet oder ist der Fleck schon getrocknet, braucht es meist mehrere Anläufe mit Gallseife und Einweichen.\n\n## Kaffee, Rotwein und organische Flecken: Backpulver-Paste\n\nKaffee, Rotwein, Tee oder auch Deo- und Schweißflecken lassen sich gut mit Backpulver behandeln. Backpulver wirkt leicht bleichend und gleichzeitig saugfähig – es zieht die Flüssigkeit aus den Fasern und hellt den Fleck auf.\n\n**So geht's:**\n\n1. Backpulver mit etwas Wasser zu einer dickflüssigen Paste anrühren.\n2. Die Paste großzügig auf den Fleck auftragen.\n3. Mehrere Stunden einwirken lassen (am besten über Nacht, wenn möglich).\n4. Getrocknete Paste abbürsten oder ausklopfen, dann normal waschen.\n\nDiese Methode eignet sich besonders gut für:\n\n- Rotweinflecken auf Tischdecken oder Kleidung\n- Kaffee- und Teeflecken\n- Deo- und Schweißränder an Achseln\n- Andere organische, farbige Flecken\n\n**Alternative bei eingetrockneten Flecken: Essig-Einweichbad.** Für ältere oder bereits eingetrocknete organische Flecken hilft ein Einweichbad aus einer Tasse Essigessenz auf einen Liter lauwarmes Wasser. Essig löst Flecken und weicht die Fasern auf, sodass sich auch hartnäckige Rückstände besser lösen. Das Kleidungsstück vor dem Waschen 30 bis 60 Minuten darin einweichen lassen.\n\n## Wenn der Fleck bereits eingetrocknet ist\n\nNicht jeder Fleck wird sofort entdeckt. Ist er schon trocken, braucht es etwas mehr Geduld:\n\n- **Fett-/Eiweißflecken:** Gallseife satter auftragen, länger einwirken lassen (ruhig über Nacht), bei Bedarf wiederholen.\n- **Blut/Milch:** Erst in kaltem Wasser einweichen, dann Gallseife anwenden.\n- **Kaffee/Rotwein/organisch:** Essig-Einweichbad ansetzen, danach Backpulver-Paste nachlegen.\n\nGrundsätzlich gilt: Ein zweiter Behandlungsdurchgang ist normal. Nicht jeder alte Fleck verschwindet beim ersten Versuch komplett.\n\n## Reinigungsutensilien nicht vergessen\n\nAuch Wischmopps, Putztücher und andere Reinigungsutensilien tragen oft Fett- oder Schmutzflecken, die sich in der normalen Haushaltswäsche nicht immer ganz herauslösen lassen. Genau dafür gibt es an beiden Waschbar-Standorten eine eigene Cleaning Station, an der diese Utensilien hygienisch sauber werden – getrennt von der übrigen Wäsche.\n\n## Vom Hausmittel zur richtigen Maschine\n\nDie Vorbehandlung zu Hause ist der erste und wichtigste Schritt. Danach kommt es auf das passende Waschprogramm und eine ausreichend große Maschine an – vor allem bei stark verschmutzter Arbeitskleidung, Sportkleidung oder wenn mehrere fleckige Teile auf einmal gewaschen werden sollen. In den SB-Waschsalons Waschbar Heidelberg und Waschbar Ludwigshafen stehen 7-kg- und 15-kg-XXL-Trommeln zur Verfügung, täglich von 6 bis 24 Uhr, ganz ohne Terminvereinbarung.\n\nWer den Waschsalon zum ersten Mal nutzt, findet im Beitrag [SB-Waschsalon: Der erste Besuch Schritt für Schritt](/ratgeber/sb-waschsalon-erster-besuch-ablauf) eine einfache Anleitung für den Ablauf vor Ort.\n\n## FAQ: Häufige Fragen zum Fleckenentfernen\n\n**Wie bekomme ich einen frischen Fettfleck am schnellsten raus?**\nGallseife direkt auf den feuchten Fleck auftragen, leicht einreiben und mindestens 30 Minuten einwirken lassen. Danach normal waschen. Je frischer der Fleck, desto zuverlässiger klappt es beim ersten Versuch.\n\n**Warum darf ich Blutflecken nicht mit heißem Wasser behandeln?**\nBlut enthält Eiweiß, das bei Hitze gerinnt und sich fest in die Fasern setzt. Immer kaltes Wasser verwenden, am besten sofort nach dem Fleck. Erst danach mit Gallseife nachbehandeln, falls nötig.\n\n**Hilft Backpulver wirklich gegen Rotweinflecken?**\nJa. Backpulver wirkt leicht bleichend und saugfähig. Als Paste mit Wasser angerührt, auf den Fleck aufgetragen und mehrere Stunden einwirken lassen, zieht es Farbe und Flüssigkeit aus dem Stoff.\n\n**Kann ich Essig für alle Textilien verwenden?**\nNicht immer. Essig eignet sich gut zum Einweichen bei organischen Flecken, ist aber für manche empfindlichen Materialien wie Seide oder bestimmte Wollarten ungeeignet. Vor der Anwendung immer das Pflegeetikett prüfen.\n\n**Was mache ich, wenn der Fleck schon eingetrocknet ist?**\nEingetrocknete Flecken brauchen mehr Zeit und oft einen zweiten Behandlungsdurchgang. Fett- und Eiweißflecken länger mit Gallseife einwirken lassen, organische Flecken zusätzlich in Essigwasser einweichen, bevor die Backpulver-Paste angewendet wird.\n\n**Wo kann ich stark verschmutzte Arbeits- oder Sportkleidung waschen?**\nNach der Vorbehandlung zu Hause eignet sich eine große Maschine, die auch mehrere Teile auf einmal aufnimmt. In den Waschbar-Standorten in Heidelberg und Ludwigshafen stehen 15-kg-XXL-Trommeln zur Verfügung, täglich von 6 bis 24 Uhr ohne Termin.\n\nEgal ob Fett, Blut, Kaffee oder Rotwein: Mit der richtigen Vorbehandlung zu Hause und einer passenden Maschine danach werden auch hartnäckige Flecken sauber. Schauen Sie einfach in einem der beiden Waschbar-Standorte vorbei – ganz ohne Voranmeldung.",
+    bodyMarkdown: "Ein Fleck auf dem Lieblingsshirt ist ärgerlich, aber meistens kein Grund zur Panik. Die wichtigste Regel vorab: Je schneller du reagierst, desto leichter geht ein frischer Fleck wieder raus. Ist er erst einmal eingetrocknet, brauchst du mehr Geduld und die richtige Methode. Bei Blut, Milch oder Ei gilt zusätzlich: immer kaltes Wasser verwenden, nie heißes – sonst setzt sich der Fleck erst richtig fest. Mit ein paar einfachen Hausmitteln aus der Küche bekommst du die meisten Alltagsflecken selbst in den Griff, bevor die Wäsche in die Maschine kommt.\n\nIn diesem Ratgeber zeigen wir dir, welches Hausmittel bei welchem Fleck hilft – sortiert nach Fleckenart, mit genauer Anleitung zu Menge, Einwirkzeit und Vorgehen.\n\n## Die wichtigste Grundregel: Schnelligkeit zählt\n\nEin frischer Fleck lässt sich fast immer leichter entfernen als ein alter. Sobald etwas danebengeht, gilt:\n\n- **Sofort handeln.** Nicht erst warten, bis die Wäsche gesammelt wird.\n- **Nicht reiben, sondern tupfen.** Reiben verteilt den Fleck nur in den Fasern.\n- **Von außen nach innen arbeiten**, damit sich der Fleck nicht vergrößert.\n- **Pflegeetikett prüfen**, bevor du ein Hausmittel einsetzt. Nicht jedes Material verträgt Essig, Backpulver oder Gallseife – bei Wolle, Seide oder Leder lieber vorsichtig testen oder auf eine Reinigung verzichten.\n\nErst nach der Vorbehandlung sollte das Kleidungsstück gewaschen werden. Welche Temperatur für den jeweiligen Stoff sinnvoll ist, erklären wir im [Waschtemperatur-Guide: 30, 40 oder 60 Grad](/ratgeber/waschtemperatur-30-40-60-grad-guide).\n\n## Fett- und Eiweißflecken: Gallseife als Alleskönner\n\nFettspritzer beim Kochen, Motoröl an der Arbeitshose oder Soßenflecken vom Essen – das sind klassische Fettflecken. Auch Eiweißflecken wie Schweiß oder Speisereste reagieren gut auf dieselbe Methode.\n\n**So geht's:**\n\n1. Gallseife direkt auf den feuchten Fleck auftragen.\n2. Mit den Fingern leicht einreiben, damit die Seife in die Fasern zieht.\n3. Mindestens 30 Minuten einwirken lassen – bei hartnäckigen oder älteren Flecken ruhig länger.\n4. Anschließend normal waschen.\n\nGallseife ist besonders wirksam gegen Fett- und Eiweißflecken, weil sie Fette löst und gleichzeitig milde Reinigungskraft hat. Ein Stück Gallseife im Haushalt lohnt sich also, wenn regelmäßig Arbeits- oder Sportkleidung gewaschen wird.\n\n**Praxistipp:** Stark verschmutzte Arbeitskleidung, Werkstattklamotten oder Sportgear mit hartnäckigem Fett brauchen nach der Vorbehandlung oft eine kräftige Maschine. In den Waschbar-Standorten in Heidelberg und Ludwigshafen stehen dafür große 15-kg-XXL-Trommeln bereit, in denen auch mehrere stark verschmutzte Teile auf einmal sauber werden.\n\n## Blut- und Milchflecken: Nur kaltes Wasser\n\nBlut, Milch, Joghurt oder Ei sind proteinbasierte Flecken. Der größte Fehler dabei: heißes Wasser. Hitze lässt das Eiweiß gerinnen und der Fleck setzt sich fest in den Fasern fest – dann wird es fast unmöglich, ihn wieder herauszubekommen.\n\n**So geht's richtig:**\n\n1. Das Kleidungsstück sofort unter kaltes, fließendes Wasser halten.\n2. Von der Rückseite des Stoffs ausspülen, damit der Fleck nach außen gedrückt wird statt tiefer einzudringen.\n3. Bei hartnäckigen Resten Gallseife auf den feuchten Fleck geben, einreiben und mindestens 30 Minuten einwirken lassen.\n4. Erst danach waschen – auch hier gilt: kein heißes Programm, solange noch Reste des Flecks sichtbar sind.\n\n### Warum kaltes Wasser so wichtig ist\n\nProteine in Blut, Milch und Ei reagieren empfindlich auf Wärme. Kaltes Wasser hält die Eiweißstruktur locker, sodass sie sich aus dem Gewebe herauslösen lässt. Wurde bereits mit warmem Wasser gearbeitet oder ist der Fleck schon getrocknet, braucht es meist mehrere Anläufe mit Gallseife und Einweichen.\n\n## Kaffee, Rotwein und organische Flecken: Backpulver-Paste\n\nKaffee, Rotwein, Tee oder auch Deo- und Schweißflecken lassen sich gut mit Backpulver behandeln. Backpulver wirkt leicht bleichend und gleichzeitig saugfähig – es zieht die Flüssigkeit aus den Fasern und hellt den Fleck auf.\n\n**So geht's:**\n\n1. Backpulver mit etwas Wasser zu einer dickflüssigen Paste anrühren.\n2. Die Paste großzügig auf den Fleck auftragen.\n3. Mehrere Stunden einwirken lassen (am besten über Nacht, wenn möglich).\n4. Getrocknete Paste abbürsten oder ausklopfen, dann normal waschen.\n\nDiese Methode eignet sich besonders gut für:\n\n- Rotweinflecken auf Tischdecken oder Kleidung\n- Kaffee- und Teeflecken\n- Deo- und Schweißränder an Achseln\n- Andere organische, farbige Flecken\n\n**Alternative bei eingetrockneten Flecken: Essig-Einweichbad.** Für ältere oder bereits eingetrocknete organische Flecken hilft ein Einweichbad aus einer Tasse Essigessenz auf einen Liter lauwarmes Wasser. Essig löst Flecken und weicht die Fasern auf, sodass sich auch hartnäckige Rückstände besser lösen. Das Kleidungsstück vor dem Waschen 30 bis 60 Minuten darin einweichen lassen.\n\n## Wenn der Fleck bereits eingetrocknet ist\n\nNicht jeder Fleck wird sofort entdeckt. Ist er schon trocken, braucht es etwas mehr Geduld:\n\n- **Fett-/Eiweißflecken:** Gallseife satter auftragen, länger einwirken lassen (ruhig über Nacht), bei Bedarf wiederholen.\n- **Blut/Milch:** Erst in kaltem Wasser einweichen, dann Gallseife anwenden.\n- **Kaffee/Rotwein/organisch:** Essig-Einweichbad ansetzen, danach Backpulver-Paste nachlegen.\n\nGrundsätzlich gilt: Ein zweiter Behandlungsdurchgang ist normal. Nicht jeder alte Fleck verschwindet beim ersten Versuch komplett.\n\n## Reinigungsutensilien nicht vergessen\n\nAuch Wischmopps, Putztücher und andere Reinigungsutensilien tragen oft Fett- oder Schmutzflecken, die sich in der normalen Haushaltswäsche nicht immer ganz herauslösen lassen. Genau dafür gibt es an beiden Waschbar-Standorten eine eigene Cleaning Station, an der diese Utensilien hygienisch sauber werden – getrennt von der übrigen Wäsche.\n\n## Vom Hausmittel zur richtigen Maschine\n\nDie Vorbehandlung zu Hause ist der erste und wichtigste Schritt. Danach kommt es auf das passende Waschprogramm und eine ausreichend große Maschine an – vor allem bei stark verschmutzter Arbeitskleidung, Sportkleidung oder wenn mehrere fleckige Teile auf einmal gewaschen werden sollen. In den SB-Waschsalons Waschbar Heidelberg und Waschbar Ludwigshafen stehen 7-kg- und 15-kg-XXL-Trommeln zur Verfügung, täglich von 6 bis 24 Uhr, ganz ohne Terminvereinbarung.\n\nWer den Waschsalon zum ersten Mal nutzt, findet im Beitrag [SB-Waschsalon: Der erste Besuch Schritt für Schritt](/ratgeber/sb-waschsalon-erster-besuch-ablauf) eine einfache Anleitung für den Ablauf vor Ort.\n\n## FAQ: Häufige Fragen zum Fleckenentfernen\n\n**Wie bekomme ich einen frischen Fettfleck am schnellsten raus?**\nGallseife direkt auf den feuchten Fleck auftragen, leicht einreiben und mindestens 30 Minuten einwirken lassen. Danach normal waschen. Je frischer der Fleck, desto zuverlässiger klappt es beim ersten Versuch.\n\n**Warum darf ich Blutflecken nicht mit heißem Wasser behandeln?**\nBlut enthält Eiweiß, das bei Hitze gerinnt und sich fest in die Fasern setzt. Immer kaltes Wasser verwenden, am besten sofort nach dem Fleck. Erst danach mit Gallseife nachbehandeln, falls nötig.\n\n**Hilft Backpulver wirklich gegen Rotweinflecken?**\nJa. Backpulver wirkt leicht bleichend und saugfähig. Als Paste mit Wasser angerührt, auf den Fleck aufgetragen und mehrere Stunden einwirken lassen, zieht es Farbe und Flüssigkeit aus dem Stoff.\n\n**Kann ich Essig für alle Textilien verwenden?**\nNicht immer. Essig eignet sich gut zum Einweichen bei organischen Flecken, ist aber für manche empfindlichen Materialien wie Seide oder bestimmte Wollarten ungeeignet. Vor der Anwendung immer das Pflegeetikett prüfen.\n\n**Was mache ich, wenn der Fleck schon eingetrocknet ist?**\nEingetrocknete Flecken brauchen mehr Zeit und oft einen zweiten Behandlungsdurchgang. Fett- und Eiweißflecken länger mit Gallseife einwirken lassen, organische Flecken zusätzlich in Essigwasser einweichen, bevor die Backpulver-Paste angewendet wird.\n\n**Wo kann ich stark verschmutzte Arbeits- oder Sportkleidung waschen?**\nNach der Vorbehandlung zu Hause eignet sich eine große Maschine, die auch mehrere Teile auf einmal aufnimmt. In den Waschbar-Standorten in Heidelberg und Ludwigshafen stehen 15-kg-XXL-Trommeln zur Verfügung, täglich von 6 bis 24 Uhr ohne Termin.\n\nEgal ob Fett, Blut, Kaffee oder Rotwein: Mit der richtigen Vorbehandlung zu Hause und einer passenden Maschine danach werden auch hartnäckige Flecken sauber. Schau einfach in einem der beiden Waschbar-Standorte vorbei – ganz ohne Voranmeldung.",
     schema: {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BlogPosting",
       "headline": "Flecken entfernen vor dem Waschgang: Die besten Hausmittel",
-      "description": "Fett, Blut, Kaffee oder Rotwein auf der Kleidung? So entfernen Sie Flecken mit einfachen Hausmitteln – schnell, gründlich und schonend vor jedem Waschgang.",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu"
-      },
+      "description": "Fett, Blut, Kaffee oder Rotwein auf der Kleidung? So entfernst du Flecken mit einfachen Hausmitteln – schnell, gründlich und schonend vor jedem Waschgang.",
+      "image": ["https://www.waschbar.eu/images/waschbar-use-sports-generated.webp"],
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
-      "inLanguage": "de",
+      "inLanguage": "de-DE",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/flecken-entfernen-hausmittel-vor-waschgang"
@@ -778,27 +686,16 @@ export const blogPosts: BlogPost[] = [
       "@id": "https://www.waschbar.eu/ratgeber/wg-waesche-organisieren-waschplan#article",
       "headline": "WG-Wäsche organisieren: Waschtag ohne Streit in der Wohngemeinschaft",
       "description": "WG-Wäsche organisieren ohne Streit: Waschplan-Tipps, faire Kostenaufteilung und wie ein SB-Waschsalon den Kampf um die Maschine ganz vermeidet.",
-      "author": {
-        "@type": "Organization",
-        "name": "Waschbar Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Waschbar",
-        "url": "https://www.waschbar.eu",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.waschbar.eu/logo.png"
-        }
-      },
+      "image": ["https://www.waschbar.eu/images/waschbar-use-students-generated.webp"],
+      "author": { "@id": "https://www.waschbar.eu/#organization" },
+      "publisher": { "@id": "https://www.waschbar.eu/#organization" },
       "datePublished": "2026-08-19",
       "dateModified": "2026-08-19",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.waschbar.eu/ratgeber/wg-waesche-organisieren-waschplan"
       },
-      "inLanguage": "de",
-      "image": "https://www.waschbar.eu/images/wg-waesche-organisieren-hero.webp"
+      "inLanguage": "de-DE"
     },
     {
       "@type": "FAQPage",
