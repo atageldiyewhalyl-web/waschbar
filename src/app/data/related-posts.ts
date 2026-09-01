@@ -1,4 +1,9 @@
 export const relatedPostSlugs: Record<string, string[]> = {
+  "hundedecke-tierdecke-waschen": [
+    "bettdecke-kissen-waschen-grosse-waschmaschine",
+    "waschtemperatur-30-40-60-grad-guide",
+    "flecken-entfernen-hausmittel-vor-waschgang",
+  ],
   "waschsalon-heidelberg-studierende-wg": [
     "wg-waesche-organisieren-waschplan",
     "sb-waschsalon-erster-besuch-ablauf",
@@ -20,6 +25,7 @@ export const relatedPostSlugs: Record<string, string[]> = {
     "waschsalon-heidelberg-studierende-wg",
   ],
   "bettdecke-kissen-waschen-grosse-waschmaschine": [
+    "hundedecke-tierdecke-waschen",
     "waschtemperatur-30-40-60-grad-guide",
     "waschsalon-oder-eigene-waschmaschine-kosten",
     "waschsalon-heidelberg-studierende-wg",

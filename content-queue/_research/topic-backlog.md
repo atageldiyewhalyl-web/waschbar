@@ -65,6 +65,15 @@ _Last updated: 2026-08-19_
 - score: 5
 - status: written:2026-08-19
 
+## Hundedecke & Tierdecke waschen: wie oft, wie viel Grad, wohin damit
+- primary_kw: hundedecke waschen
+- secondary_kws: hundedecke waschen wie oft, hundedecke waschen wieviel grad, tierdecke waschen waschsalon, hundebett waschen, hundedecke waschen ohne haare
+- intent: informational (differentiated-feature tie-in)
+- serp_evidence: not re-inspected this run — generic care SERP owned by publishers (Fressnapf, Zooplus, Haustierratgeber). Winnable slice = "im Waschsalon / Pet Station" long-tail, same model as the bettdecke post vs. archies-waschsalon.
+- angle: ties directly to the on-site Pet Station (site-data: hasPetStation true both locations) + 15 kg XXL Trommel — the literal answer to "won't fit / don't want it in my machine". Links to /heidelberg, /ludwigshafen, /rabattkarte.
+- score: 8
+- status: written:2026-09-02
+
 ## WG-Wäsche organisieren: Waschtag ohne Streit in der Wohngemeinschaft
 - primary_kw: wg wäsche organisieren
 - secondary_kws: waschplan wg, wäsche wg regeln, waschmaschine wg streit, waschtag wg tipps

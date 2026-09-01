@@ -8,11 +8,7 @@ import { locations, contactInfo } from "../data/site-data";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const portalRoot = typeof document === "undefined" ? null : document.body;
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -82,7 +78,7 @@ export function MobileNav() {
         </span>
       </button>
 
-      {mounted ? createPortal(panel, document.body) : null}
+      {portalRoot ? createPortal(panel, portalRoot) : null}
     </>
   );
 }

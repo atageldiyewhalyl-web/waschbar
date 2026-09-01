@@ -385,6 +385,10 @@ export default function RabattkartePage() {
               <Icon name="book" />
               <span>SB-Waschsalon: Der erste Besuch Schritt für Schritt</span>
             </Link>
+            <Link href="/ratgeber/hundedecke-tierdecke-waschen">
+              <Icon name="book" />
+              <span>Tierdecken wöchentlich waschen? So rechnet sich das Abo</span>
+            </Link>
           </div>
         </aside>
       </section>

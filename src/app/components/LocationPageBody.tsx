@@ -564,7 +564,9 @@ export function LocationPageBody({
                 <p className="section-kicker">Spezialwäsche</p>
                 <h2>Pet Station</h2>
                 <p>{location.petStationCopy}</p>
-                <a href="#preise">Mehr erfahren</a>
+                <Link href="/ratgeber/hundedecke-tierdecke-waschen">
+                  So wäschst du Hundedecken richtig
+                </Link>
               </article>
             )}
             {location.hasCleaningStation && (
