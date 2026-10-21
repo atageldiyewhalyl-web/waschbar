@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 import { GoogleLogo } from "./GoogleLogo";
 import { SocialComingSoon } from "./SocialComingSoon";
 import { contactInfo, locations } from "../data/site-data";
+import { ConsentSettingsButton } from "./ConsentSettingsButton";
 
 export function SiteFooter() {
   return (
@@ -95,6 +96,7 @@ export function SiteFooter() {
         <nav aria-label="Rechtliches">
           <Link href="/impressum">Impressum</Link>
           <Link href="/datenschutz">Datenschutz</Link>
+          <ConsentSettingsButton />
         </nav>
       </div>
     </footer>

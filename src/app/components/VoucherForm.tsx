@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import { Icon } from "./Icon";
 import { locations } from "../data/site-data";
+import { trackLeadConversion } from "./ConsentProvider";
 
 const defaultLeadEndpoint =
   "https://srnynewvauzymnljqskj.supabase.co/functions/v1/voucher-lead";
@@ -27,7 +28,6 @@ export function VoucherForm() {
     location: "",
     consentEmail: false,
     consentEmailMarketing: false,
-    consentMarketing: false,
   });
 
   const steps = [
@@ -90,7 +90,6 @@ export function VoucherForm() {
       location: lead.location.trim(),
       consentEmail: lead.consentEmail,
       consentEmailMarketing: lead.consentEmailMarketing,
-      consentMarketing: lead.consentMarketing,
       pageUrl: window.location.href,
     };
 
@@ -108,6 +107,7 @@ export function VoucherForm() {
             : "Anfrage fehlgeschlagen",
         );
       }
+      trackLeadConversion();
       setSubmitted(true);
     } catch (error) {
       console.error("Voucher form submission failed", error);
@@ -280,20 +280,8 @@ export function VoucherForm() {
               onChange={(event) => updateLead("consentEmail", event.target.checked)}
             />
             <span>
-              Ich möchte Informationen zum SB-Wasch-Abo erhalten und bin
-              einverstanden, dass Waschbar mich dazu kontaktiert. <strong>*</strong>
-            </span>
-          </label>
-          <label className="voucher-checkbox">
-            <input
-              type="checkbox"
-              name="consentMarketing"
-              checked={lead.consentMarketing}
-              onChange={(event) => updateLead("consentMarketing", event.target.checked)}
-            />
-            <span>
-              Ich bin einverstanden, dass meine Daten zur Kampagnenmessung an
-              Google/Meta übermittelt werden.
+              Ich bitte Waschbar, meine Abo-Anfrage zu bearbeiten und mich dafür
+              per E-Mail oder Telefon zu kontaktieren. <strong>*</strong>
             </span>
           </label>
           <label className="voucher-checkbox">
@@ -341,8 +329,9 @@ export function VoucherForm() {
         )}
       </div>
       <p className="voucher-note">
-        <strong>*</strong> Pflichtfeld. Ohne diese Einwilligung können wir dir
-        keine Informationen zum SB-Wasch-Abo zusenden.
+        <strong>*</strong> Pflichtfeld. Ohne diese Bestätigung können wir deine
+        Abo-Anfrage nicht bearbeiten. Hinweise zur Verarbeitung
+        deiner Angaben findest du in unserer <a href="/datenschutz">Datenschutzerklärung</a>.
       </p>
     </form>
   );

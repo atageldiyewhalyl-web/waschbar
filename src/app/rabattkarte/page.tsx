@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Icon } from "../components/Icon";
 import { PriceCard } from "../components/PriceCard";
 import { SiteFooter } from "../components/SiteFooter";
+import { ConsentMap } from "../components/ConsentMap";
 import { SiteHeader } from "../components/SiteHeader";
 import { locations, priceItems, rabattkarteFaqs } from "../data/site-data";
 import { absoluteUrl } from "../seo";
@@ -316,12 +317,9 @@ export default function RabattkartePage() {
         <div className="maps-proof-grid rabatt-location-maps" aria-label="Waschbar Standorte auf Google Maps">
           {locations.map((location) => (
             <article className="maps-card" key={location.slug}>
-              <iframe
+              <ConsentMap
                 src={location.mapEmbedUrl}
                 title={`${location.name} auf Google Maps`}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
               />
               <div className="maps-card-footer">
                 <Icon name="pin" />

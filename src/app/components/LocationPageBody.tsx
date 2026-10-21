@@ -7,6 +7,7 @@ import { OpeningStatus } from "./OpeningStatus";
 import { ReviewMarqueeSection } from "./ReviewMarqueeSection";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
+import { ConsentMap } from "./ConsentMap";
 import { MobileStickyActions } from "./MobileStickyActions";
 import { MobileUseCarousel } from "./MobileUseCarousel";
 import { PriceCard } from "./PriceCard";
@@ -298,12 +299,9 @@ export function LocationPageBody({
 
           <div className="mobile-overview">
             <div className="mobile-overview-map">
-              <iframe
+              <ConsentMap
                 src={location.mapEmbedUrl}
                 title={`${location.name} Google Maps Standort`}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
               />
               <div className="mobile-overview-map-footer">
                 <div>
@@ -391,12 +389,9 @@ export function LocationPageBody({
 
           <div className="overview-layout">
             <div className="overview-map">
-              <iframe
+              <ConsentMap
                 src={location.mapEmbedUrl}
                 title={`${location.name} Google Maps Standort`}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
               />
               <a
                 className="button button-primary overview-map-cta"

@@ -11,6 +11,7 @@ import { FaqSection } from "./components/FaqSection";
 import { HomePriceToggle } from "./components/HomePriceToggle";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
+import { ConsentMap } from "./components/ConsentMap";
 import { MobileStickyActions } from "./components/MobileStickyActions";
 import { absoluteUrl } from "./seo";
 import {
@@ -542,12 +543,9 @@ export default function Home() {
                 className="maps-card"
                 key={`${location.name}-maps`}
               >
-                <iframe
+                <ConsentMap
                   src={location.mapEmbedUrl}
                   title={`${location.name} Google Maps Standort`}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
                 />
                 <div className="maps-card-footer">
                   <Icon name="pin" />

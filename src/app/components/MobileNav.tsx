@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Icon } from "./Icon";
@@ -8,7 +8,12 @@ import { locations, contactInfo } from "../data/site-data";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const portalRoot = typeof document === "undefined" ? null : document.body;
+  const isClient = useSyncExternalStore(
+    () => () => undefined,
+    () => true,
+    () => false,
+  );
+  const portalRoot = isClient ? document.body : null;
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { ConsentSettingsButton } from "./ConsentSettingsButton";
 
 export function CampaignFooter() {
   return (
@@ -25,6 +26,7 @@ export function CampaignFooter() {
         <nav aria-label="Rechtliches">
           <Link href="/impressum">Impressum</Link>
           <Link href="/datenschutz">Datenschutz</Link>
+          <ConsentSettingsButton />
         </nav>
       </div>
     </footer>

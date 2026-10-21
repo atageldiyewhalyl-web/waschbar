@@ -11,7 +11,6 @@ type LeadPayload = {
   location?: string;
   consentEmail?: boolean;
   consentEmailMarketing?: boolean;
-  consentMarketing?: boolean;
   pageUrl?: string;
 };
 
@@ -25,10 +24,8 @@ const waschbarFromEmail = "Waschbar Anfrage <anfrage@forms.xn--nll-hoa.com>";
 const waschbarLeadRecipients = ["abo@waschbar.eu", "halyl@xn--nll-hoa.com"];
 const waschbarConfirmationCopyRecipients = ["halyl@xn--nll-hoa.com"];
 const consentFormVersion = "sb-wasch-abo-v1";
-const voucherConsentText =
-  "Ich möchte Informationen zum SB-Wasch-Abo erhalten und bin einverstanden, dass Waschbar mich dazu kontaktiert.";
-const campaignMeasurementConsentText =
-  "Ich bin einverstanden, dass meine Daten zur Kampagnenmessung an Google/Meta übermittelt werden.";
+const voucherRequestText =
+  "Ich bitte Waschbar, meine Abo-Anfrage zu bearbeiten und mich dafür per E-Mail oder Telefon zu kontaktieren.";
 const emailMarketingConsentText =
   "Ich möchte regelmäßig per E-Mail Angebote, Erinnerungen und Aktionen von Waschbar erhalten. Ich kann mich jederzeit über den Abmeldelink in jeder E-Mail abmelden.";
 
@@ -58,7 +55,6 @@ function validatePayload(payload: LeadPayload) {
     location: cleanText(payload.location, 50),
     consentEmail: payload.consentEmail === true,
     consentEmailMarketing: payload.consentEmailMarketing === true,
-    consentMarketing: payload.consentMarketing === true,
     pageUrl: cleanText(payload.pageUrl, 500),
   };
 
@@ -93,7 +89,6 @@ function renderTextEmail(lead: ReturnType<typeof validatePayload>) {
     `Adresse: ${lead.street}, ${lead.postalCode} ${lead.city}`,
     `Standort: ${lead.location}`,
     `E-Mail-Marketing-Einwilligung: ${lead.consentEmailMarketing ? "Ja" : "Nein"}`,
-    `Kampagnenmessung-Einwilligung: ${lead.consentMarketing ? "Ja" : "Nein"}`,
     `Seite: ${lead.pageUrl || "-"}`,
   ].join("\n");
 }
@@ -106,7 +101,6 @@ function renderHtmlEmail(lead: ReturnType<typeof validatePayload>) {
     ["Adresse", `${lead.street}, ${lead.postalCode} ${lead.city}`],
     ["Standort", lead.location],
     ["E-Mail-Marketing-Einwilligung", lead.consentEmailMarketing ? "Ja" : "Nein"],
-    ["Kampagnenmessung-Einwilligung", lead.consentMarketing ? "Ja" : "Nein"],
     ["Seite", lead.pageUrl || "-"],
   ];
 
@@ -248,18 +242,13 @@ Deno.serve(async (request) => {
       location: lead.location,
       consent_voucher: lead.consentEmail,
       consent_voucher_at: consentTimestamp,
-      consent_voucher_text: voucherConsentText,
+      consent_voucher_text: voucherRequestText,
       consent_email_marketing: lead.consentEmailMarketing,
       consent_email_marketing_at: lead.consentEmailMarketing
         ? consentTimestamp
         : null,
       consent_email_marketing_text: lead.consentEmailMarketing
         ? emailMarketingConsentText
-        : null,
-      consent_marketing: lead.consentMarketing,
-      consent_marketing_at: lead.consentMarketing ? consentTimestamp : null,
-      consent_marketing_text: lead.consentMarketing
-        ? campaignMeasurementConsentText
         : null,
       consent_form_version: consentFormVersion,
       submitted_user_agent: submittedUserAgent,
@@ -276,7 +265,6 @@ Deno.serve(async (request) => {
       postal_code: lead.postalCode,
       city: lead.city,
       location: lead.location,
-      consent_marketing: lead.consentMarketing,
       page_url: lead.pageUrl,
     };
 
