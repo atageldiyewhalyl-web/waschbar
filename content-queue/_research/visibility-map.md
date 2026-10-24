@@ -1,6 +1,6 @@
 # Waschbar — Visibility Map
 
-_Last updated: 2026-08-19_
+_Last updated: 2026-10-24_
 
 ## 1. What Waschbar offers
 
@@ -93,3 +93,16 @@ confirmation. `local pack: unknown (needs DataForSEO/seo-maps)`.
    as missing.
 3. SB-Wasch-Abo (the highest-margin, most differentiated offer) is only on
    `/rabattkarte` — no content funnel drives cost-comparison searchers there.
+
+
+## Update 2026-10-24
+- Ratgeber now has 30 posts (9 from Aug/Sep + 21 on 2026-10-24); all in sitemap.xml and llms.txt.
+- Rankings/impressions for the first 9 posts are still unmeasured (no GSC/DataForSEO connected). Rule from the playbook:
+  after 10+ posts, check positions before writing much more. Next step = connect Search Console and review queries.
+- Clusters now covered: Standort/Preis (Heidelberg, Ludwigshafen, Kosten, erster Besuch, Checkliste, kaputte Maschine),
+  Große Teile (Bettdecke, Daunenjacke, Schlafsack, Gardinen, Kuscheldecke, Hundedecke), Textilpflege (Temperatur, Flecken,
+  Handtücher, Bettwäsche, Weiß, Wolle, Funktionskleidung, Arbeitskleidung, Baby, Kuscheltiere, Wischmopp), Trocknen
+  (Trockner-Regeln, Winter ohne Schimmel), Alltag (Sonntag, WG, Wasserhärte, Sortieren, Trommelgrößen).
+- Local facts verified 2026-10-24: Stadtwerke Heidelberg: 4 Trinkwasserzonen, weich ca. 3 °dH bis hart 21 °dH;
+  Neuenheim/Handschuhsheim seit 26.06.2026 härteres Wasser (SWH-Seite). TWL: Wasserwerke Parkinsel und Maudach/Oggersheim,
+  Härte mittel bis knapp hart (aktuelle Analyse bei TWL).

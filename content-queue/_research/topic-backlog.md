@@ -1,6 +1,6 @@
 # Waschbar — Topic Backlog
 
-_Last updated: 2026-08-19_
+_Last updated: 2026-10-24_
 
 ## SB-Waschsalon Heidelberg für Studierende & WGs
 - primary_kw: waschsalon heidelberg (vol: n/a — see visibility-map, difficulty: n/a)
@@ -82,3 +82,151 @@ _Last updated: 2026-08-19_
 - angle: directly matches the audience Waschbar already names for Heidelberg (`audienceLabel: "Studierende, WGs & Alltagswäsche"`) — practical WG-specific tips (splitting costs, coordinating big loads, avoiding the one-machine bottleneck) with the self-service laundromat as the natural solution to the shared-machine conflict. Links to `/heidelberg`.
 - score: 7
 - status: written:2026-08-19
+
+## Waschmaschine kaputt: Was tun und wo weiter waschen
+- primary_kw: waschmaschine kaputt was tun (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/waschmaschine-kaputt-was-tun-waschsalon
+- status: written:2026-10-24
+
+## Wäsche trocknen im Winter ohne Schimmel
+- primary_kw: wäsche trocknen im winter (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/waesche-trocknen-wohnung-schimmel-winter
+- status: written:2026-10-24
+
+## Daunenjacke waschen
+- primary_kw: daunenjacke waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/daunenjacke-waschen-waschmaschine
+- status: written:2026-10-24
+
+## Guten Waschsalon finden: Checkliste
+- primary_kw: guten waschsalon finden (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/waschsalon-finden-checkliste
+- status: written:2026-10-24
+
+## Sonntags Wäsche waschen: Ruhezeiten
+- primary_kw: sonntags wäsche waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/sonntags-waesche-waschen-ruhezeiten
+- status: written:2026-10-24
+
+## Waschmittel dosieren: Wasserhärte Heidelberg & Ludwigshafen
+- primary_kw: waschmittel dosieren wasserhärte (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/waschmittel-dosieren-wasserhaerte-heidelberg-ludwigshafen
+- status: written:2026-10-24
+
+## Arbeitskleidung waschen
+- primary_kw: arbeitskleidung waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/arbeitskleidung-waschen-monteure-handwerker
+- status: written:2026-10-24
+
+## Was darf in den Trockner
+- primary_kw: was darf in den trockner (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/trockner-was-darf-rein-pflegesymbole
+- status: written:2026-10-24
+
+## Schlafsack waschen
+- primary_kw: schlafsack waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/schlafsack-waschen-daune-kunstfaser
+- status: written:2026-10-24
+
+## Gardinen waschen
+- primary_kw: gardinen waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/gardinen-vorhaenge-waschen
+- status: written:2026-10-24
+
+## Funktionskleidung waschen
+- primary_kw: funktionskleidung waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/funktionskleidung-sportkleidung-waschen
+- status: written:2026-10-24
+
+## Handtücher waschen
+- primary_kw: handtücher waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/handtuecher-waschen-wie-oft-temperatur
+- status: written:2026-10-24
+
+## Wäsche sortieren
+- primary_kw: wäsche sortieren (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/waesche-sortieren-farbe-temperatur
+- status: written:2026-10-24
+
+## Wie viel Wäsche passt in 7 kg / 15 kg
+- primary_kw: wie viel wäsche passt in eine waschmaschine (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/wie-viel-waesche-passt-in-7-kg-15-kg-trommel
+- status: written:2026-10-24
+
+## Weiße Wäsche wird grau
+- primary_kw: weiße wäsche grau (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/weisse-waesche-grauschleier-vermeiden
+- status: written:2026-10-24
+
+## Babykleidung waschen
+- primary_kw: babykleidung waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/babywaesche-kinderkleidung-waschen
+- status: written:2026-10-24
+
+## Kuscheltiere waschen
+- primary_kw: kuscheltiere waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/kuscheltiere-waschen
+- status: written:2026-10-24
+
+## Wischmopp & Putzlappen waschen
+- primary_kw: wischmopp waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/wischmopp-putzlappen-waschen
+- status: written:2026-10-24
+
+## Kuscheldecke & Plaid waschen
+- primary_kw: kuscheldecke waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/kuscheldecke-plaid-waschen
+- status: written:2026-10-24
+
+## Bettwäsche wechseln
+- primary_kw: bettwäsche wechseln (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/bettwaesche-wechseln-wie-oft-waschen
+- status: written:2026-10-24
+
+## Wollpullover waschen
+- primary_kw: wollpullover waschen (vol: n/a, difficulty: n/a)
+- intent: informational / commercial hybrid
+- slug: /ratgeber/wollpullover-wolle-waschen-waschmaschine
+- status: written:2026-10-24
+
+# Pending — next run (not yet inspected, verify SERP before writing)
+
+## Jeans waschen: Wie oft, bei wie viel Grad, ohne Ausbleichen
+- primary_kw: jeans waschen (vol: n/a)
+- angle: Verbindung zu Wäsche sortieren / Farbfänger; Jeans sind schwer (Gewichtstabelle im 7/15-kg-Post)
+- score: 5 — status: pending
+
+## Matratzenschoner & Topper waschen
+- primary_kw: matratzenschoner waschen — angle: große Teile, 15-kg-Trommel — score: 5 — status: pending
+
+## Waschsalon + Stadtteil-Seiten (Rohrbach, Weststadt, Bergheim / Friesenheim, Mitte, Hemshof)
+- intent: local — Nur schreiben, wenn echte Anfahrts-/Parkdetails vom Betreiber geliefert werden (nichts erfinden) — score: 7 — status: needs-client-input
+
+## Handwäsche vs. Maschine: Welche Teile wirklich von Hand? (Seide, Wolle, BH)
+- primary_kw: handwäsche symbol — score: 5 — status: pending
+
+## Waschkosten pro Waschgang berechnen: Strom, Wasser, Waschmittel zu Hause
+- intent: commercial — Ergänzung zum Kostenvergleich; nur mit belegbaren Zahlen — score: 6 — status: pending
+
+## Winterkleidung einlagern: Mützen, Schals, Pullover vor dem Sommer waschen (Saison: Frühjahr)
+- score: 4 — status: pending (seasonal, ab März)

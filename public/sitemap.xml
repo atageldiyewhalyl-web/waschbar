@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://www.waschbar.eu/ratgeber</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -81,6 +81,132 @@
   <url>
     <loc>https://www.waschbar.eu/ratgeber/hundedecke-tierdecke-waschen</loc>
     <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/waschmaschine-kaputt-was-tun-waschsalon</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/waesche-trocknen-wohnung-schimmel-winter</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/daunenjacke-waschen-waschmaschine</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/waschsalon-finden-checkliste</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/sonntags-waesche-waschen-ruhezeiten</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/waschmittel-dosieren-wasserhaerte-heidelberg-ludwigshafen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/arbeitskleidung-waschen-monteure-handwerker</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/trockner-was-darf-rein-pflegesymbole</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/schlafsack-waschen-daune-kunstfaser</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/gardinen-vorhaenge-waschen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/funktionskleidung-sportkleidung-waschen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/handtuecher-waschen-wie-oft-temperatur</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/waesche-sortieren-farbe-temperatur</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/wie-viel-waesche-passt-in-7-kg-15-kg-trommel</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/weisse-waesche-grauschleier-vermeiden</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/babywaesche-kinderkleidung-waschen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/kuscheltiere-waschen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/wischmopp-putzlappen-waschen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/kuscheldecke-plaid-waschen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/bettwaesche-wechseln-wie-oft-waschen</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.waschbar.eu/ratgeber/wollpullover-wolle-waschen-waschmaschine</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
