@@ -161,18 +161,14 @@ export default async function BlogPostPage({
 
           <div className="ratgeber-cta-band">
             <div>
-              <p className="section-kicker">SB-Wasch-Abo</p>
-              <h2>Regelmäßig waschen? Jetzt sparen.</h2>
+              <p className="section-kicker">Waschbar</p>
+              <h2>Wäsche waschen ohne Termin.</h2>
               <p>
-                10 Waschgänge und 10 Trocknergänge für 29,99 € im Monat, gültig
-                in Heidelberg und Ludwigshafen.
+                Täglich von 06:00 bis 24:00 Uhr in Heidelberg und Ludwigshafen.
               </p>
             </div>
             <div className="ratgeber-cta-actions">
-              <Link className="button button-primary" href="/rabattkarte">
-                Mitgliedskarte ansehen <Icon name="card" />
-              </Link>
-              <Link className="button button-outline" href="/heidelberg">
+              <Link className="button button-primary" href="/heidelberg">
                 Standorte finden <Icon name="pin" />
               </Link>
             </div>

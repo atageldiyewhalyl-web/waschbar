@@ -8,7 +8,7 @@ import { Icon } from "./components/Icon";
 import { MobileUseCarousel } from "./components/MobileUseCarousel";
 import { ReviewMarqueeSection } from "./components/ReviewMarqueeSection";
 import { FaqSection } from "./components/FaqSection";
-import { HomePriceToggle } from "./components/HomePriceToggle";
+import { PriceCard } from "./components/PriceCard";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 import { ConsentMap } from "./components/ConsentMap";
@@ -111,11 +111,8 @@ export default function Home() {
               <span>Täglich 06-24 Uhr</span>
             </div>
             <div className="hero-actions">
-              <a className="button button-primary" href="/angebote/kundenkarte-guthaben">
-                Abo heute sichern <Icon name="card" />
-              </a>
-              <a className="hero-secondary-link" href="#preise">
-                Preise ansehen
+              <a className="button button-primary" href="#preise">
+                Preise ansehen <Icon name="card" />
               </a>
             </div>
             <div className="hero-stats" aria-label="Waschbar Kennzahlen">
@@ -225,8 +222,8 @@ export default function Home() {
         </section>
 
         <MobileStickyActions
-          primaryLabel="Abo heute sichern"
-          primaryHref="/angebote/kundenkarte-guthaben"
+          primaryLabel="Preise ansehen"
+          primaryHref="#preise"
           primaryIcon="card"
           phoneHref={`tel:${contactInfo.phoneHref}`}
           mapsHref={locations[0].mapsUrl}
@@ -430,94 +427,13 @@ export default function Home() {
             <span className="price-heading-line">Klare Preise für</span>{" "}
             <span className="price-heading-line">Waschen und Trocknen</span>
           </h2>
-          <HomePriceToggle items={priceItems} />
-        </section>
-
-        <section className="section kundenkarte" id="kundenkarte">
-          <div className="rabattkarte-abo-showcase">
-            <div className="rabattkarte-abo-offer">
-              <div className="rabattkarte-abo-kicker">
-                <span aria-hidden="true" />
-                Mitgliedskarte
-                <span aria-hidden="true" />
-              </div>
-              <h2>SB-Wasch-Abo</h2>
-              <div className="rabattkarte-abo-price">
-                <strong>29,99 €</strong>
-                <span>
-                  statt <s>85 €</s>
-                </span>
-              </div>
-              <div className="rabattkarte-abo-includes" aria-label="Enthalten im SB-Wasch-Abo">
-                <span>
-                  <LottieIcon src="/animations/washing-machine.json" label="Waschgang Animation" />
-                  <strong>10 Waschgänge</strong>
-                </span>
-                <span>
-                  <LottieIcon src="/animations/laundry-2.json" label="Trockner Animation" />
-                  <strong>10 Trocknergänge</strong>
-                </span>
-              </div>
-              <Image
-                className="rabattkarte-abo-card-image"
-                src="/images/generated/waschbar-rabattkarte-product-cutout.png"
-                alt="Waschbar Mitgliedskarte"
-                width={1535}
-                height={1024}
-                sizes="(max-width: 700px) 82vw, 560px"
-              />
-              <div className="rabattkarte-abo-savings" aria-label="Spare über 60 Prozent mit Mitgliedskarte">
-                <strong>Spare über</strong>
-                <b>60%</b>
-                <span>mit Mitgliedskarte</span>
-              </div>
-            </div>
-            <div className="rabattkarte-abo-explainer">
-              <h2>
-                <span>Mehr waschen.</span>
-                <span>Weniger zahlen.</span>
-              </h2>
-              <p>
-                Unser neues SB-Wasch-Abo mit Mitgliedskarte gibt dir jeden Monat
-                ein festes Kontingent - zum fairen Fixpreis und mit{" "}
-                <strong>über 60% Ersparnis.</strong>
-              </p>
-              <div className="rabattkarte-abo-steps" aria-label="So funktioniert das SB-Wasch-Abo">
-                <article>
-                  <span className="rabattkarte-step-number">1</span>
-                  <Icon name="card" />
-                  <div>
-                    <h3>Mitgliedskarte nutzen</h3>
-                    <p>Mit deiner Mitgliedskarte meldest du dich an der Maschine an.</p>
-                  </div>
-                </article>
-                <article>
-                  <span className="rabattkarte-step-number">2</span>
-                  <Icon name="washer" />
-                  <div>
-                    <h3>Wasch/Trockner starten</h3>
-                    <p>Starte Wasch- oder Trocknergänge wie gewohnt an unseren modernen Maschinen.</p>
-                  </div>
-                </article>
-                <article>
-                  <span className="rabattkarte-step-number">3</span>
-                  <Icon name="wallet-plus" />
-                  <div>
-                    <h3>monatliches Kontingent sparen</h3>
-                    <p>Du nutzt dein monatliches Kontingent und sparst über 60% gegenüber Einzelpreisen.</p>
-                  </div>
-                </article>
-              </div>
-              <Link className="rabattkarte-abo-cta" href="/angebote/kundenkarte-guthaben">
-                <Icon name="card" />
-                <span>
-                  <strong>SB-Wasch-Abo heute sichern!</strong>
-                  <small>Mehr waschen. Weniger zahlen.</small>
-                </span>
-              </Link>
-            </div>
+          <div className="price-grid">
+            {priceItems.map((item) => (
+              <PriceCard item={item} key={item.title} />
+            ))}
           </div>
         </section>
+
 
         <ReviewMarqueeSection
           reviews={reviews}

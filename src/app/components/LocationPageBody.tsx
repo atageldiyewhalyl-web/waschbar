@@ -11,7 +11,6 @@ import { ConsentMap } from "./ConsentMap";
 import { MobileStickyActions } from "./MobileStickyActions";
 import { MobileUseCarousel } from "./MobileUseCarousel";
 import { PriceCard } from "./PriceCard";
-import { HomePriceToggle } from "./HomePriceToggle";
 import {
   locations,
   priceItems,
@@ -135,10 +134,6 @@ export function LocationPageBody({
           },
         ]
       : []),
-    {
-      question: `Gilt die Waschbar Mitgliedskarte auch in ${location.city}?`,
-      answer: `Ja. Mit der Waschbar Mitgliedskarte kannst du das SB-Wasch-Abo nutzen: 10 Waschgänge und 10 Trocknergänge für 29,99 € im Monat.`,
-    },
   ];
 
   return (
@@ -236,8 +231,8 @@ export function LocationPageBody({
         </section>
 
         <MobileStickyActions
-          primaryLabel="Abo heute sichern"
-          primaryHref="/angebote/kundenkarte-guthaben"
+          primaryLabel="Preise ansehen"
+          primaryHref="#preise"
           primaryIcon="card"
           phoneHref={`tel:${contactInfo.phoneHref}`}
           mapsHref={location.mapsUrl}
@@ -483,19 +478,13 @@ export function LocationPageBody({
           <h2>Klare Preise in {location.city}</h2>
           <p className="section-copy">
             Am Terminal wählst du die passende Maschine aus und siehst sofort,
-            ob sie frei ist. Für regelmäßige Waschtage kannst du mit der
-            Waschbar Mitgliedskarte auf das SB-Wasch-Abo wechseln: 10 Waschgänge
-            und 10 Trocknergänge für 29,99 € im Monat.
+            ob sie frei ist.
           </p>
-          {location.slug === "heidelberg" ? (
-            <HomePriceToggle items={priceItems} />
-          ) : (
-            <div className="price-grid">
-              {priceItems.map((item) => (
-                <PriceCard item={item} key={item.title} />
-              ))}
-            </div>
-          )}
+          <div className="price-grid">
+            {priceItems.map((item) => (
+              <PriceCard item={item} key={item.title} />
+            ))}
+          </div>
         </section>
 
         <section className="section use-case-section" id="waesche">
@@ -606,91 +595,6 @@ export function LocationPageBody({
           </div>
         </section>
 
-        <section className="section kundenkarte" id="kundenkarte">
-          <div className="rabattkarte-abo-showcase">
-            <div className="rabattkarte-abo-offer">
-              <div className="rabattkarte-abo-kicker">
-                <span aria-hidden="true" />
-                Mitgliedskarte
-                <span aria-hidden="true" />
-              </div>
-              <h2>SB-Wasch-Abo</h2>
-              <div className="rabattkarte-abo-price">
-                <strong>29,99 €</strong>
-                <span>
-                  statt <s>85 €</s>
-                </span>
-              </div>
-              <div className="rabattkarte-abo-includes" aria-label="Enthalten im SB-Wasch-Abo">
-                <span>
-                  <LottieIcon src="/animations/washing-machine.json" label="Waschgang Animation" />
-                  <strong>10 Waschgänge</strong>
-                </span>
-                <span>
-                  <LottieIcon src="/animations/laundry-2.json" label="Trockner Animation" />
-                  <strong>10 Trocknergänge</strong>
-                </span>
-              </div>
-              <Image
-                className="rabattkarte-abo-card-image"
-                src="/images/generated/waschbar-rabattkarte-product-cutout.png"
-                alt={`Waschbar Mitgliedskarte für das SB-Wasch-Abo in ${location.city}`}
-                width={1535}
-                height={1024}
-                sizes="(max-width: 700px) 96vw, 720px"
-              />
-              <div className="rabattkarte-abo-savings" aria-label="Spare über 60 Prozent mit Mitgliedskarte">
-                <strong>Spare über</strong>
-                <b>60%</b>
-                <span>mit Mitgliedskarte</span>
-              </div>
-            </div>
-            <div className="rabattkarte-abo-explainer">
-              <h2>
-                <span>Mehr waschen.</span>
-                <span>Weniger zahlen.</span>
-              </h2>
-              <p>
-                Unser neues SB-Wasch-Abo mit Mitgliedskarte gibt dir jeden Monat
-                ein festes Kontingent - zum fairen Fixpreis und mit{" "}
-                <strong>über 60% Ersparnis.</strong>
-              </p>
-              <div className="rabattkarte-abo-steps" aria-label="So funktioniert das SB-Wasch-Abo">
-                <article>
-                  <span className="rabattkarte-step-number">1</span>
-                  <Icon name="card" />
-                  <div>
-                    <h3>Mitgliedskarte nutzen</h3>
-                    <p>Mit deiner Mitgliedskarte meldest du dich an der Maschine an.</p>
-                  </div>
-                </article>
-                <article>
-                  <span className="rabattkarte-step-number">2</span>
-                  <Icon name="washer" />
-                  <div>
-                    <h3>Wasch/Trockner starten</h3>
-                    <p>Starte Wasch- oder Trocknergänge wie gewohnt an unseren modernen Maschinen.</p>
-                  </div>
-                </article>
-                <article>
-                  <span className="rabattkarte-step-number">3</span>
-                  <Icon name="wallet-plus" />
-                  <div>
-                    <h3>monatliches Kontingent sparen</h3>
-                    <p>Du nutzt dein monatliches Kontingent und sparst über 60% gegenüber Einzelpreisen.</p>
-                  </div>
-                </article>
-              </div>
-              <Link className="rabattkarte-abo-cta" href="/angebote/kundenkarte-guthaben">
-                <Icon name="card" />
-                <span>
-                  <strong>SB-Wasch-Abo heute sichern!</strong>
-                  <small>Mehr waschen. Weniger zahlen.</small>
-                </span>
-              </Link>
-            </div>
-          </div>
-        </section>
 
         <ReviewMarqueeSection
           reviews={cityReviews}

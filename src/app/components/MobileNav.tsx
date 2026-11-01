@@ -41,9 +41,6 @@ export function MobileNav() {
           <Link href="/#preise" onClick={close}>
             Preise
           </Link>
-          <Link href="/rabattkarte" onClick={close}>
-            Mitgliedskarte
-          </Link>
           <Link href="/ratgeber" onClick={close}>
             Ratgeber
           </Link>
@@ -56,8 +53,8 @@ export function MobileNav() {
         </nav>
 
         <div className="mobile-nav-footer">
-          <Link className="button button-primary" href="/angebote/kundenkarte-guthaben" onClick={close}>
-            Abo heute sichern <Icon name="card" />
+          <Link className="button button-primary" href="/#preise" onClick={close}>
+            Preise ansehen <Icon name="card" />
           </Link>
           <a className="mobile-nav-phone" href={`tel:${contactInfo.phoneHref}`}>
             <Icon name="phone" />

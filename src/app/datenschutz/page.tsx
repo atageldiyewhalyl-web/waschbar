@@ -145,9 +145,7 @@ export default function DatenschutzPage() {
                 Wenn Sie „Marketing“ erlauben, setzen wir Google Ads Conversion Tracking von
                 Google Ireland Limited und das Meta Pixel von Meta Platforms Ireland Limited,
                 Merrion Road, Dublin 4, D04 X2K5, Irland, ein. Die Dienste helfen uns festzustellen,
-                ob ein Anzeigenkontakt zu einem Websitebesuch oder zu einer abgeschlossenen
-                Abo-Anfrage geführt hat. Dabei werden keine Inhalte Ihrer Formularfelder an Google
-                oder Meta übermittelt.
+                ob ein Anzeigenkontakt zu einem Websitebesuch geführt hat.
               </p>
               <p>
                 Verarbeitet werden können insbesondere Seitenaufrufe, Interaktionen, Zeitstempel,
@@ -188,42 +186,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2>7. SB-Wasch-Abo-Anfrage</h2>
-              <p>
-                Wenn Sie das Anfrageformular nutzen, verarbeiten wir Vor- und Nachname,
-                E-Mail-Adresse, Telefonnummer, Anschrift, gewünschten Standort, Ihre Bestätigung
-                der Anfrage, optionale Einwilligungen, Zeitpunkt, Formularversion, gehashte technische
-                Nachweisdaten und die aufgerufene Seite. Pflichtangaben sind erforderlich, um Ihre
-                Anfrage zu bearbeiten, Ihnen Vertragsunterlagen zu senden und die Mitgliedskarte
-                vorzubereiten. Ohne diese Angaben ist eine Bearbeitung nicht möglich.
-              </p>
-              <p>
-                Rechtsgrundlage für die Bearbeitung der Abo-Anfrage ist Art. 6 Abs. 1 lit. b DSGVO
-                (vorvertragliche Maßnahmen und gegebenenfalls Vertragserfüllung). Soweit Sie
-                zusätzlich E-Mail-Marketing auswählen, ist Art. 6 Abs. 1 lit. a DSGVO die
-                Rechtsgrundlage; diese Einwilligung ist freiwillig und jederzeit widerrufbar.
-              </p>
-              <p>
-                Zur Speicherung und technischen Verarbeitung nutzen wir Supabase Pte. Ltd., 970 Toa
-                Payoh North #07-04, Singapore 318992. Für den E-Mail-Versand nutzen wir Resend,
-                einen Dienst der Plus Five Five, Inc., 2261 Market Street #5039, San Francisco,
-                CA 94114, USA. Außerdem erhalten die für
-                Vertrieb und technische Betreuung zuständigen internen bzw. beauftragten Empfänger
-                Zugriff, soweit dies für die Bearbeitung erforderlich ist. Informationen:{" "}
-                <a href="https://supabase.com/privacy" target="_blank" rel="noreferrer noopener">Supabase Privacy Policy</a>
-                {" und "}<a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noreferrer noopener">Resend Privacy Policy</a>.
-              </p>
-              <p>
-                Erfolgt kein Vertragsschluss, löschen wir die Anfrage, sobald sie abschließend
-                bearbeitet ist und keine gesetzlichen oder rechtlichen Gründe für eine weitere
-                Aufbewahrung bestehen. Bei einem Vertrag gelten zusätzlich die handels- und
-                steuerrechtlichen Aufbewahrungsfristen. Einwilligungsnachweise bewahren wir so lange
-                auf, wie dies zum Nachweis der rechtmäßigen Verarbeitung erforderlich ist.
-              </p>
-            </section>
-
-            <section>
-              <h2>8. Kontaktaufnahme und Newsletter-Feld</h2>
+              <h2>7. Kontaktaufnahme und Newsletter-Feld</h2>
               <p>
                 Bei einer Kontaktaufnahme per E-Mail oder Telefon verarbeiten wir Ihre Angaben zur
                 Bearbeitung des Anliegens. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es
@@ -241,7 +204,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2>9. Schriftarten</h2>
+              <h2>8. Schriftarten</h2>
               <p>
                 Wir verwenden die Schriftart Geist über <code>next/font</code>. Die Dateien werden
                 beim Erstellen der Website lokal eingebunden und über unser Hosting ausgeliefert.
@@ -250,7 +213,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2>10. Empfänger, Drittlandübermittlungen und Schutzmaßnahmen</h2>
+              <h2>9. Empfänger, Drittlandübermittlungen und Schutzmaßnahmen</h2>
               <p>
                 Zusätzlich zu den jeweils genannten Anbietern können IT-, Hosting-, Versand- und
                 Beratungsdienstleister Daten erhalten, soweit dies für ihre Aufgabe erforderlich
@@ -268,7 +231,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2>11. Ihre Rechte</h2>
+              <h2>10. Ihre Rechte</h2>
               <LegalList items={rights} />
               <p>
                 Zur Ausübung Ihrer Rechte genügt eine Nachricht an{" "}
@@ -285,7 +248,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2>12. Automatisierte Entscheidungen</h2>
+              <h2>11. Automatisierte Entscheidungen</h2>
               <p>
                 Eine ausschließlich automatisierte Entscheidungsfindung einschließlich Profiling
                 im Sinne von Art. 22 DSGVO findet nicht statt.
@@ -293,7 +256,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2>13. Aktualität</h2>
+              <h2>12. Aktualität</h2>
               <p>
                 Wir passen diese Erklärung an, wenn sich Dienste, Verarbeitungen oder rechtliche
                 Anforderungen ändern.

@@ -455,19 +455,3 @@ export function useConsent() {
   if (!context) throw new Error("useConsent must be used inside ConsentProvider");
   return context;
 }
-
-export function trackLeadConversion() {
-  const storedConsent = parseStoredConsent();
-  if (!storedConsent?.marketing) return;
-
-  window.gtag?.("event", "conversion", {
-    send_to: `${GOOGLE_ADS_ID}/CZNbCPSSwdwcEP6c_rNE`,
-    value: 1,
-    currency: "EUR",
-  });
-  window.fbq?.("track", "Lead", {
-    content_name: "SB-Wasch-Abo Form Success",
-    content_category: "Website Lead",
-    lead_type: "Kundenkarte Guthaben",
-  });
-}

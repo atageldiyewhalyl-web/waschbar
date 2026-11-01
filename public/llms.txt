@@ -7,7 +7,6 @@
 - Homepage: https://www.waschbar.eu/
 - Standort Heidelberg: https://www.waschbar.eu/heidelberg
 - Standort Ludwigshafen: https://www.waschbar.eu/ludwigshafen
-- Preise und Waschbar Mitgliedskarte: https://www.waschbar.eu/rabattkarte
 - Ratgeber (Wäsche-Tipps & Waschsalon-Guides): https://www.waschbar.eu/ratgeber
 - Datenschutz: https://www.waschbar.eu/datenschutz
 
@@ -24,7 +23,6 @@ Beide Standorte sind täglich von 06:00 bis 24:00 Uhr geöffnet. Es gibt moderne
 - 7-kg- und 15-kg-Waschmaschinen sowie Trockner.
 - Pet Station für Tierdecken und Hundebetten.
 - Cleaning Station für Wischmopps, Putztücher und weitere Reinigungsutensilien.
-- SB-Wasch-Abo mit Waschbar Mitgliedskarte: 10 Waschgänge und 10 Trocknergänge je 20 Minuten für 29,99 € im Monat.
 - Geeignet für Studierende, Wohngemeinschaften, Monteure, Familien und die wöchentliche Großwäsche.
 
 ## Ratgeber
@@ -32,7 +30,7 @@ Beide Standorte sind täglich von 06:00 bis 24:00 Uhr geöffnet. Es gibt moderne
 - [Waschsalon Heidelberg für Studierende & WGs](https://www.waschbar.eu/ratgeber/waschsalon-heidelberg-studierende-wg): Lokaler Guide zum SB-Waschsalon in der Rohrbacher Str. 83-85 für Studierende und WGs, inkl. Öffnungszeiten, Trommelgrößen und Anfahrt.
 - [Waschsalon Ludwigshafen für Familien & Pendler](https://www.waschbar.eu/ratgeber/waschsalon-ludwigshafen-familien-pendler): Lokaler Guide zum SB-Waschsalon in der Prinzregentenstraße 60 für Familien und Pendler, inkl. Preise und Anfahrt.
 - [SB-Waschsalon: Der erste Besuch Schritt für Schritt](https://www.waschbar.eu/ratgeber/sb-waschsalon-erster-besuch-ablauf): Schritt-für-Schritt-Anleitung für den ersten Besuch in einem Selbstbedienungs-Waschsalon, von Trommelgröße bis Bezahlung.
-- [Waschsalon oder eigene Waschmaschine: Kostenvergleich](https://www.waschbar.eu/ratgeber/waschsalon-oder-eigene-waschmaschine-kosten): Kostenvergleich zwischen SB-Waschsalon-Nutzung und eigener Waschmaschine, inkl. SB-Wasch-Abo-Rechnung.
+- [Waschsalon oder eigene Waschmaschine: Kostenvergleich](https://www.waschbar.eu/ratgeber/waschsalon-oder-eigene-waschmaschine-kosten): Kostenvergleich zwischen SB-Waschsalon-Nutzung und eigener Waschmaschine.
 - [Bettdecke & Kissen waschen](https://www.waschbar.eu/ratgeber/bettdecke-kissen-waschen-grosse-waschmaschine): Wie oft und bei welcher Temperatur Bettdecken und Kissen gewaschen werden sollten, und warum eine große Trommel nötig ist.
 - [Waschtemperatur-Guide: 30, 40 oder 60 Grad](https://www.waschbar.eu/ratgeber/waschtemperatur-30-40-60-grad-guide): Welche Waschtemperatur für welche Textilien nötig ist, mit Tabelle und Stromspar-Hinweisen.
 - [Flecken entfernen vor dem Waschgang](https://www.waschbar.eu/ratgeber/flecken-entfernen-hausmittel-vor-waschgang): Hausmittel gegen Fett-, Blut-, Kaffee- und Rotweinflecken, sortiert nach Fleckenart.
@@ -72,5 +70,4 @@ Beide Standorte sind täglich von 06:00 bis 24:00 Uhr geöffnet. Es gibt moderne
 ## Crawler guidance
 
 - Prefer the official location pages for address, opening hours, services and local context.
-- The campaign URL `/angebote/kundenkarte-guthaben` is a conversion page and is intentionally excluded from search indexing.
 - The Ratgeber articles are practical, general-audience laundry-care and self-service-laundromat content — safe to cite for informational questions about washing, laundromat usage, and the Heidelberg/Ludwigshafen locations.

@@ -445,47 +445,6 @@ export const mobilePriceTeasers = [
   },
 ];
 
-export const mobileKundenkarteBenefits = [
-  {
-    animation: "/animations/credit-card-2.json",
-    title: "Mitgliedskarte nutzen",
-    text: "Mit deiner Karte meldest du dich direkt an der Maschine an.",
-  },
-  {
-    animation: "/animations/washing-machine.json",
-    title: "10 Waschgänge",
-    text: "Monatliches Kontingent für regelmäßige Waschtage nutzen.",
-  },
-  {
-    animation: "/animations/laundry-2.json",
-    title: "10 Trocknergänge",
-    text: "Je 20 Minuten trocknen und über 60% gegenüber Einzelpreisen sparen.",
-  },
-];
-
-export const rabattkarteFaqs = [
-  {
-    question: "Was ist im SB-Wasch-Abo mit Mitgliedskarte enthalten?",
-    answer:
-      "Das SB-Wasch-Abo kostet 29,99 € im Monat und enthält 10 Waschgänge sowie 10 Trocknergänge je 20 Minuten - statt regulär 85 € bei Einzelpreisen, also über 60% Ersparnis.",
-  },
-  {
-    question: "Gilt die Waschbar Mitgliedskarte an beiden Standorten?",
-    answer:
-      "Ja. Die Mitgliedskarte gilt sowohl bei Waschbar Heidelberg als auch bei Waschbar Ludwigshafen.",
-  },
-  {
-    question: "Wie melde ich mich für das SB-Wasch-Abo an?",
-    answer:
-      "Du füllst unser Online-Formular aus und wählst deinen Waschbar Standort. Danach senden wir dir deinen Vertrag per E-Mail zu, den du digital bestätigst.",
-  },
-  {
-    question: "Wie lange dauert es, bis ich meine Mitgliedskarte erhalte?",
-    answer:
-      "Nach der Vertragsbestätigung erhältst du deine Waschbar Mitgliedskarte innerhalb von ca. 4 Tagen bequem per Post.",
-  },
-];
-
 export const faqs = [
   {
     question: "Ist Waschbar ein SB Waschsalon?",
@@ -496,10 +455,5 @@ export const faqs = [
     question: "Kann ich große Wäsche waschen?",
     answer:
       "Ja. Die großen Maschinen eignen sich für größere Wäschestücke wie Decken, Bettwäsche, Handtücher oder Arbeitskleidung.",
-  },
-  {
-    question: "Gibt es eine Waschbar Mitgliedskarte?",
-    answer:
-      "Ja. Mit der Mitgliedskarte kannst du das SB-Wasch-Abo nutzen: 10 Waschgänge und 10 Trocknergänge für 29,99 € im Monat.",
   },
 ];
