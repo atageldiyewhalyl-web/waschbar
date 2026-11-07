@@ -8,7 +8,7 @@ import { Icon } from "./components/Icon";
 import { MobileUseCarousel } from "./components/MobileUseCarousel";
 import { ReviewMarqueeSection } from "./components/ReviewMarqueeSection";
 import { FaqSection } from "./components/FaqSection";
-import { PriceCard } from "./components/PriceCard";
+import { HomePriceToggle } from "./components/HomePriceToggle";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 import { ConsentMap } from "./components/ConsentMap";
@@ -111,8 +111,11 @@ export default function Home() {
               <span>Täglich 06-24 Uhr</span>
             </div>
             <div className="hero-actions">
-              <a className="button button-primary" href="#preise">
-                Preise ansehen <Icon name="card" />
+              <a className="button button-primary" href="/rabattkarte">
+                Mitgliedskarte ansehen <Icon name="card" />
+              </a>
+              <a className="hero-secondary-link" href="#preise">
+                Preise ansehen
               </a>
             </div>
             <div className="hero-stats" aria-label="Waschbar Kennzahlen">
@@ -222,8 +225,8 @@ export default function Home() {
         </section>
 
         <MobileStickyActions
-          primaryLabel="Preise ansehen"
-          primaryHref="#preise"
+          primaryLabel="Mitgliedskarte ansehen"
+          primaryHref="/rabattkarte"
           primaryIcon="card"
           phoneHref={`tel:${contactInfo.phoneHref}`}
           mapsHref={locations[0].mapsUrl}
@@ -427,13 +430,93 @@ export default function Home() {
             <span className="price-heading-line">Klare Preise für</span>{" "}
             <span className="price-heading-line">Waschen und Trocknen</span>
           </h2>
-          <div className="price-grid">
-            {priceItems.map((item) => (
-              <PriceCard item={item} key={item.title} />
-            ))}
-          </div>
+          <HomePriceToggle items={priceItems} />
         </section>
 
+        <section className="section kundenkarte" id="kundenkarte">
+          <div className="rabattkarte-abo-showcase">
+            <div className="rabattkarte-abo-offer">
+              <div className="rabattkarte-abo-kicker">
+                <span aria-hidden="true" />
+                Mitgliedskarte
+                <span aria-hidden="true" />
+              </div>
+              <h2>Mitgliedskarte</h2>
+              <div className="rabattkarte-abo-price">
+                <strong>10 %</strong>
+                <span>Rabatt auf jeden Einkauf</span>
+              </div>
+              <div className="rabattkarte-abo-includes" aria-label="Startguthaben beim Kauf der Mitgliedskarte">
+                <span>
+                  <LottieIcon src="/animations/washing-machine.json" label="Waschgang Animation" />
+                  <strong>1 Waschgang gratis</strong>
+                </span>
+                <span>
+                  <LottieIcon src="/animations/laundry-2.json" label="Trockner Animation" />
+                  <strong>10 Min. Trocknen gratis</strong>
+                </span>
+              </div>
+              <Image
+                className="rabattkarte-abo-card-image"
+                src="/images/generated/waschbar-rabattkarte-product-cutout.png"
+                alt="Waschbar Mitgliedskarte"
+                width={1535}
+                height={1024}
+                sizes="(max-width: 700px) 82vw, 560px"
+              />
+              <div className="rabattkarte-abo-savings" aria-label="6,50 Euro Startguthaben zeitlich begrenzt">
+                <strong>Zeitlich begrenzt</strong>
+                <b>6,50 €</b>
+                <span>Startguthaben geschenkt</span>
+              </div>
+            </div>
+            <div className="rabattkarte-abo-explainer">
+              <h2>
+                <span>Mehr waschen.</span>
+                <span>Weniger zahlen.</span>
+              </h2>
+              <p>
+                Mit der Waschbar Mitgliedskarte sparst du bei jedem Waschgang und
+                jedem Trockner <strong>10 % Rabatt.</strong> Zeitlich begrenzt
+                schenken wir dir beim Kauf der Karte 6,50 € Startguthaben: ein
+                Waschgang und 10 Minuten Trocknen gratis.
+              </p>
+              <div className="rabattkarte-abo-steps" aria-label="So funktioniert die Mitgliedskarte">
+                <article>
+                  <span className="rabattkarte-step-number">1</span>
+                  <Icon name="card" />
+                  <div>
+                    <h3>Karte im Waschsalon kaufen</h3>
+                    <p>Mitgliedskarte vor Ort kaufen und 6,50 € Startguthaben erhalten.</p>
+                  </div>
+                </article>
+                <article>
+                  <span className="rabattkarte-step-number">2</span>
+                  <Icon name="washer" />
+                  <div>
+                    <h3>Waschen und trocknen</h3>
+                    <p>Mit der Karte an der Maschine bezahlen, wie gewohnt an unseren modernen Maschinen.</p>
+                  </div>
+                </article>
+                <article>
+                  <span className="rabattkarte-step-number">3</span>
+                  <Icon name="wallet-plus" />
+                  <div>
+                    <h3>Bei jedem Einkauf sparen</h3>
+                    <p>Du bekommst 10 % Rabatt auf jeden Waschgang und jeden Trockner.</p>
+                  </div>
+                </article>
+              </div>
+              <Link className="rabattkarte-abo-cta" href="/rabattkarte">
+                <Icon name="card" />
+                <span>
+                  <strong>Mitgliedskarte ansehen!</strong>
+                  <small>Mehr waschen. Weniger zahlen.</small>
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         <ReviewMarqueeSection
           reviews={reviews}

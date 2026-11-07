@@ -445,6 +445,34 @@ export const mobilePriceTeasers = [
   },
 ];
 
+export const rabattkarteFaqs = [
+  {
+    question: "Was bringt mir die Waschbar Mitgliedskarte?",
+    answer:
+      "Mit der Mitgliedskarte bekommst du 10 % Rabatt auf jeden Waschgang und jeden Trockner, bei jedem Einkauf.",
+  },
+  {
+    question: "Was ist das Startguthaben von 6,50 €?",
+    answer:
+      "Zeitlich begrenzt erhältst du beim Kauf der Mitgliedskarte 6,50 € Guthaben geschenkt. Das entspricht einem Waschgang (7 kg) und 10 Minuten Trocknen gratis.",
+  },
+  {
+    question: "Wo kaufe ich die Mitgliedskarte?",
+    answer:
+      "Die Mitgliedskarte kaufst du direkt im Waschsalon. Eine Anmeldung oder ein Vertrag ist nicht nötig.",
+  },
+  {
+    question: "Gilt die Waschbar Mitgliedskarte an beiden Standorten?",
+    answer:
+      "Ja. Die Mitgliedskarte gilt sowohl bei Waschbar Heidelberg als auch bei Waschbar Ludwigshafen.",
+  },
+  {
+    question: "Wie lange gibt es das Startguthaben?",
+    answer:
+      "Das Startguthaben von 6,50 € ist ein zeitlich begrenztes Angebot. Der 10-%-Rabatt gilt für jeden Einkauf mit der Karte.",
+  },
+];
+
 export const faqs = [
   {
     question: "Ist Waschbar ein SB Waschsalon?",
@@ -455,5 +483,10 @@ export const faqs = [
     question: "Kann ich große Wäsche waschen?",
     answer:
       "Ja. Die großen Maschinen eignen sich für größere Wäschestücke wie Decken, Bettwäsche, Handtücher oder Arbeitskleidung.",
+  },
+  {
+    question: "Gibt es eine Waschbar Mitgliedskarte?",
+    answer:
+      "Ja. Mit der Mitgliedskarte sparst du 10 % auf jeden Einkauf, und zeitlich begrenzt gibt es 6,50 € Startguthaben beim Kauf der Karte.",
   },
 ];

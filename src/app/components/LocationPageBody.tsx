@@ -11,6 +11,7 @@ import { ConsentMap } from "./ConsentMap";
 import { MobileStickyActions } from "./MobileStickyActions";
 import { MobileUseCarousel } from "./MobileUseCarousel";
 import { PriceCard } from "./PriceCard";
+import { HomePriceToggle } from "./HomePriceToggle";
 import {
   locations,
   priceItems,
@@ -134,6 +135,10 @@ export function LocationPageBody({
           },
         ]
       : []),
+    {
+      question: `Gilt die Waschbar Mitgliedskarte auch in ${location.city}?`,
+      answer: `Ja. Mit der Waschbar Mitgliedskarte sparst du 10 % auf jeden Einkauf. Zeitlich begrenzt gibt es beim Kauf der Karte 6,50 € Startguthaben: ein Waschgang und 10 Minuten Trocknen gratis.`,
+    },
   ];
 
   return (
@@ -231,8 +236,8 @@ export function LocationPageBody({
         </section>
 
         <MobileStickyActions
-          primaryLabel="Preise ansehen"
-          primaryHref="#preise"
+          primaryLabel="Mitgliedskarte ansehen"
+          primaryHref="/rabattkarte"
           primaryIcon="card"
           phoneHref={`tel:${contactInfo.phoneHref}`}
           mapsHref={location.mapsUrl}
@@ -478,13 +483,18 @@ export function LocationPageBody({
           <h2>Klare Preise in {location.city}</h2>
           <p className="section-copy">
             Am Terminal wählst du die passende Maschine aus und siehst sofort,
-            ob sie frei ist.
+            ob sie frei ist. Für regelmäßige Waschtage kannst du mit der
+            Waschbar Mitgliedskarte kaufen und 10 % auf jeden Einkauf sparen.
           </p>
-          <div className="price-grid">
-            {priceItems.map((item) => (
-              <PriceCard item={item} key={item.title} />
-            ))}
-          </div>
+          {location.slug === "heidelberg" ? (
+            <HomePriceToggle items={priceItems} />
+          ) : (
+            <div className="price-grid">
+              {priceItems.map((item) => (
+                <PriceCard item={item} key={item.title} />
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="section use-case-section" id="waesche">
@@ -595,6 +605,90 @@ export function LocationPageBody({
           </div>
         </section>
 
+        <section className="section kundenkarte" id="kundenkarte">
+          <div className="rabattkarte-abo-showcase">
+            <div className="rabattkarte-abo-offer">
+              <div className="rabattkarte-abo-kicker">
+                <span aria-hidden="true" />
+                Mitgliedskarte
+                <span aria-hidden="true" />
+              </div>
+              <h2>Mitgliedskarte</h2>
+              <div className="rabattkarte-abo-price">
+                <strong>10 %</strong>
+                <span>Rabatt auf jeden Einkauf</span>
+              </div>
+              <div className="rabattkarte-abo-includes" aria-label="Startguthaben beim Kauf der Mitgliedskarte">
+                <span>
+                  <LottieIcon src="/animations/washing-machine.json" label="Waschgang Animation" />
+                  <strong>1 Waschgang gratis</strong>
+                </span>
+                <span>
+                  <LottieIcon src="/animations/laundry-2.json" label="Trockner Animation" />
+                  <strong>10 Min. Trocknen gratis</strong>
+                </span>
+              </div>
+              <Image
+                className="rabattkarte-abo-card-image"
+                src="/images/generated/waschbar-rabattkarte-product-cutout.png"
+                alt={`Waschbar Mitgliedskarte in ${location.city}`}
+                width={1535}
+                height={1024}
+                sizes="(max-width: 700px) 96vw, 720px"
+              />
+              <div className="rabattkarte-abo-savings" aria-label="6,50 Euro Startguthaben zeitlich begrenzt">
+                <strong>Zeitlich begrenzt</strong>
+                <b>6,50 €</b>
+                <span>Startguthaben geschenkt</span>
+              </div>
+            </div>
+            <div className="rabattkarte-abo-explainer">
+              <h2>
+                <span>Mehr waschen.</span>
+                <span>Weniger zahlen.</span>
+              </h2>
+              <p>
+                Mit der Waschbar Mitgliedskarte sparst du bei jedem Waschgang und
+                jedem Trockner <strong>10 % Rabatt.</strong> Zeitlich begrenzt
+                schenken wir dir beim Kauf der Karte 6,50 € Startguthaben: ein
+                Waschgang und 10 Minuten Trocknen gratis.
+              </p>
+              <div className="rabattkarte-abo-steps" aria-label="So funktioniert die Mitgliedskarte">
+                <article>
+                  <span className="rabattkarte-step-number">1</span>
+                  <Icon name="card" />
+                  <div>
+                    <h3>Karte im Waschsalon kaufen</h3>
+                    <p>Mitgliedskarte vor Ort kaufen und 6,50 € Startguthaben erhalten.</p>
+                  </div>
+                </article>
+                <article>
+                  <span className="rabattkarte-step-number">2</span>
+                  <Icon name="washer" />
+                  <div>
+                    <h3>Waschen und trocknen</h3>
+                    <p>Mit der Karte an der Maschine bezahlen, wie gewohnt an unseren modernen Maschinen.</p>
+                  </div>
+                </article>
+                <article>
+                  <span className="rabattkarte-step-number">3</span>
+                  <Icon name="wallet-plus" />
+                  <div>
+                    <h3>Bei jedem Einkauf sparen</h3>
+                    <p>Du bekommst 10 % Rabatt auf jeden Waschgang und jeden Trockner.</p>
+                  </div>
+                </article>
+              </div>
+              <Link className="rabattkarte-abo-cta" href="/rabattkarte">
+                <Icon name="card" />
+                <span>
+                  <strong>Mitgliedskarte ansehen!</strong>
+                  <small>Mehr waschen. Weniger zahlen.</small>
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         <ReviewMarqueeSection
           reviews={cityReviews}
