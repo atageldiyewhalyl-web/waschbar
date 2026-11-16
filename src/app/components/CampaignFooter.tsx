@@ -11,9 +11,9 @@ export function CampaignFooter() {
         <p>© {new Date().getFullYear()} Waschbar. Alle Rechte vorbehalten.</p>
         <a
           className="footer-credit"
-          href="https://xn--nll-hoa.com"
+          href="https://nuell-agentur.com/"
           target="_blank"
-          rel="noopener noreferrer nofollow"
+          rel="noopener noreferrer"
         >
           <span>Site made by</span>
           <Image
